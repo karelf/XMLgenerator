@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    A release represents the act of exposing component to the public.
+    The release describes basic informations (who did it, when, why),
+    and the details of the single  'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.anritsu.com/CMS/2.4 C:\Users\cz040124\Documents\Anritsu\docgeneratorAnritsu\XSD-file\cms-2.4.xsd"
+             version="1.0">
+             <!-- http://rdstorage/artifactory/repo/com/anritsu/cms/2.4/cms-2.4.xsd" -->
+    <!-- Basic authoring details -->
+    <cms:author>Probes Team</cms:author>
+    <cms:contact>QMPA@anritsu.com</cms:contact>
+    <cms:date>@timestamp@</cms:date>
+
+    <!-- The list of distribution mailing list.-->
+    <!-- <cms:distribution-list type="DEVELOP">_EU-DK MasterClaw Developer</cms:distribution-list> -->
+     <cms:distribution-list type="RELEASE">!_EU-DK MasterClaw Releases</cms:distribution-list>
+
+    <!-- Release details -->
+    <cms:release-name>PROBE-SIMS</cms:release-name>
+    <cms:release-version>@project.version@</cms:release-version>
+
+    <!-- Precautions for this release -->
+    <cms:precaution>for eoCapture (FBC) usage FBC platform patch 0011 is needed</cms:precaution>
+
+    <!-- List of item releases -->
+    <cms:item>
+        <cms:name>probe-sims-@project.version@-rn-v1.doc</cms:name>
+        <cms:description>This release note</cms:description>
+        <cms:location>probe-sims-@project.version@-rn-v1.doc</cms:location>
+    </cms:item>
+
+    <cms:item>
+        <cms:name>probe-sims-@project.version@.rpm</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>probe-sims-@project.version@.rpm</cms:location>
+    </cms:item>
+    
+    <cms:item>
+        <cms:name>probe-sims-@project.version@-str-v1.doc</cms:name>
+        <cms:description>System test report</cms:description>
+        <cms:location>probe-sims-@project.version@-str-v1.doc</cms:location>
+    </cms:item>
+    <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+    <cms:part-release>
+
+        <cms:status>Active</cms:status>
+
+        <!-- Purpose values can be:
+            <Empty>->the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features 
+            please do not insert any text see 4 line above 
+        -->
+        <cms:purpose></cms:purpose>
+
+        <!--
+            Declare the baselines the part release works on
+        -->
+        <cms:baseline>MasterClaw 7.1</cms:baseline>
+
+        <cms:test-level>1</cms:test-level>
+
+        <cms:reference type="STR" name="System Test Report"
+                       uri="http://rddoc/rddoc/qmpa2/STR/QMPA_CZ_STR_probe-sims-@project.version@.doc"/>
+        <cms:reference type="STS" name="System Test Specification"
+                       uri="http://rddoc/rddoc"/>
+        <cms:reference type="MANUAL" name="Installation and Configuration Manual" 
+                       uri="http://intranet2.eu.anritsu.com/SBU6/RandD/MasterClaw%20User%20Documentation/Forms/MC7.1.aspx" />
+        <cms:reference type="RN" name="Release notes" 
+                       uri="http://utmnnfs/quest7-packages/probe-sims/sdr/probe-sims-@project.version@.doc" />
+                       
+                       
+                       
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>probe-sims package for Linux platform</cms:package>
+                <cms:mc-version>7.1</cms:mc-version>
+                <cms:level>FCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+            </cms:global>
+<!-- feature availability, leave in template for future use -->
+        <cms:feature>
+                <cms:name>Feature availability....– GB distribution</cms:name>
+                <cms:mc-version>7.1</cms:mc-version>
+                <cms:reason>Requires further testing</cms:reason>
+                <cms:level>FCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+            </cms:feature>
+     
+        </cms:availabilities>
+
+        <cms:dependencies mc-version="7.1">
+
+        <!-- Platform dependency -->
+        
+            <cms:platform-dependency>
+                <cms:component>CentOS-6/RHEL-6 Linux</cms:component>
+                <cms:required-version>6.4 (64b)</cms:required-version>
+                <cms:tested-version>6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            <cms:platform-dependency>
+                <cms:component>CentOS-5 Linux</cms:component>
+                <cms:required-version>5.8(64b)</cms:required-version>
+                <cms:tested-version>5.8(64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            <cms:platform-dependency>
+                <cms:component>GCC</cms:component>
+                <cms:required-version>4.8.2</cms:required-version>
+                <cms:tested-version>4.8.2</cms:tested-version>
+                <cms:description>64bit runtime libraries only</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            <cms:platform-dependency>
+                <cms:component>GCC</cms:component>
+                <cms:required-version>3.0.4</cms:required-version>
+                <cms:tested-version>3.0.4</cms:tested-version>
+                <cms:description>32bit runtime libraries only</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+
+<!--3rd party dependency -->
+            <cms:third-part-dependency>
+                <cms:component>Junit</cms:component>
+                <cms:required-version>4.8.2</cms:required-version>
+                <cms:tested-version>4.8.2</cms:tested-version>
+                <cms:description>Java testing framework</cms:description>
+                <cms:license uri="http://junit.org/license.html">Junit project licence</cms:license>
+            </cms:third-part-dependency>
+            <cms:third-part-dependency>
+                <cms:component> -2- Junit</cms:component>
+                <cms:required-version>4.8.2</cms:required-version>
+                <cms:tested-version>4.8.2</cms:tested-version>
+                <cms:description> -2- Java testing framework</cms:description>
+                <cms:license uri="http://junit.org/license.html">Junit project licence</cms:license>
+            </cms:third-part-dependency>
+
+<!-- LOCAL dependency -->
+            <cms:local-dependency>
+                <cms:component>apmlinux</cms:component>
+                <cms:required-version>4.2.8+</cms:required-version>
+                <cms:tested-version>4.2.8</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>apmlinux probe software for managing configurations, part of probe platform </cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>probe-conf</cms:component>
+                <cms:required-version>5.0.0+</cms:required-version>
+                <cms:tested-version>5.4.0</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration data for MC</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>deploy-server</cms:component>
+                <cms:required-version>5.0.0+</cms:required-version>
+                <cms:tested-version>5.1.0</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration software for MC</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>qmpa5</cms:component>
+                <cms:required-version>6.0.0+</cms:required-version>
+                <cms:tested-version>6.1.4</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>SIM data consumer</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>FBC platform patch</cms:component>
+                <cms:required-version>0011+</cms:required-version>
+                <cms:tested-version>0011</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Needed for FBC usage</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>infoservers</cms:component>
+                <cms:required-version>2.2.0+</cms:required-version>
+                <cms:tested-version>2.2.4</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Needed for ECR 740</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>configtool</cms:component>
+                <cms:required-version>5.6.0.1+</cms:required-version>
+                <cms:tested-version>5.6.0.1</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Needed for ECR 1501</cms:description>
+            </cms:local-dependency>
+
+<!-- monitored dependiencies, used for subcomponent tags-->
+            <cms:monitored-dependency>
+                <cms:component>li-ether-sim</cms:component>
+                <cms:required-version>@Version-li-ether-sim@</cms:required-version>
+                <cms:description>li-ether-sim-</cms:description>
+            </cms:monitored-dependency>
+            
+            <cms:monitored-dependency>
+                <cms:component>li-usim-ip</cms:component>
+                <cms:required-version>@Version-li-usim-ip@</cms:required-version>
+                <cms:description>rpm_usim_ip_</cms:description>
+            </cms:monitored-dependency>
+            
+            <cms:monitored-dependency>
+                <cms:component>li-usim</cms:component>
+                <cms:required-version>@Version-li-usim@</cms:required-version>
+                <cms:description>rpm_xsim_umts_v</cms:description>
+            </cms:monitored-dependency>
+            
+            <cms:monitored-dependency>
+                <cms:component>li-hdlu-sim</cms:component>
+                <cms:required-version>@Version-li-hdlu-sim.version@</cms:required-version>
+                <cms:description>li-hdlu-sim-</cms:description>
+            </cms:monitored-dependency>
+        </cms:dependencies>
+
+<!-- current release, must be first for generated mail to work!!! -->
+
+        <cms:activities released-in-version="@project.version@">
+              <cms:enh type="New feature" id="ECR 2178">Orange vProbe PoC - managing Juniper Virtual Network Information packet header</cms:enh>
+            <cms:epr id="44731" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=44731">Data loss in 11.1.6 ether-sim</cms:epr>
+            <cms:epr id="44930" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=44930">ECR1501 - Ph3 - TCP fields values</cms:epr>
+            <cms:epr id="44915" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=44915">crash in fb_gtpd</cms:epr>
+            <cms:epr id="45186" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45186">ECR2039 [RAW_SAVE] section should be updated for mode2 instead of mode 0</cms:epr>
+            <cms:epr id="45215" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45215">S1-U controlled by S11 not properly distributed</cms:epr>
+            <cms:epr id="44995" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=44995">li-ether-sim 11.1.8 exited with status 134, eoFinder 4.7.21 capture on sniffer links</cms:epr>
+            <cms:epr id="45094" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45094">ECR2039: li-ether-sim crashes when output file path in inspect rawsave dump does not exists</cms:epr>
+            <cms:epr id="45128" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45128">li-ether sim 11.1.10 exited with status 139</cms:epr>
+            <cms:epr id="45188" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45188">ECR2039 size shown in inspect rawsave info is always 0</cms:epr>
+            <cms:epr id="45245" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45245">ECR1501 - CSDR duration less than 5 minutes</cms:epr>
+            <cms:epr id="45289" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=45289">TAXUP and H248 reusing same Service Indicator, sim not allowing them</cms:epr>
+            <cms:epr id="44805" uri="https://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=44805">FBC 8x10G - rxf on the whole card does not work</cms:epr>
+
+        </cms:activities>
+
+<!-- must not be first, because first "activities" is used by script as "CurrentReleaseActivities" in mail -->
+<!-- current precautions (non fatal) -->
+        <cms:activities released-in-version="NOT_FIXED">
+            <cms:epr id="44555" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44555"> -NOT FIXED- ECR1501 - TCP resent packets - difference eoFinder vs Wir...</cms:epr>
+            <cms:epr id="44565" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44565"> -NOT FIXED- ECR 1501 UDP traffic - 2 CSDR for same IP address</cms:epr>
+            <cms:epr id="44566" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44566"> -NOT FIXED- ECR1501- UDP - Transport layer throughput value </cms:epr>
+            <cms:epr id="44045" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44045"> -NOT FIXED- [MISSISSIPPI]Memory leak occur (li-ether-sim) when runnin...</cms:epr>
+            <cms:epr id="44321" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44321"> -NOT FIXED- driver for 100G FBC not loaded</cms:epr>
+            <cms:epr id="44695" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44695"> -NOT FIXED- SFP modules not properly identified in 4XG cards</cms:epr>
+            <cms:epr id="44734" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44734"> -NOT FIXED- Invalid inspect statistic information</cms:epr>
+            <cms:epr id="44731" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44731"> -NOT FIXED- Data loss in 11.1.6 ether-sim</cms:epr>
+            <cms:epr id="44500" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44500"> -NOT FIXED- Li-eth-sim report Data lost=0 while protocol takes more t...</cms:epr>
+            <cms:epr id="44793" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44793"> -NOT FIXED- Failed to send event buffer for > 60 seconds, terminating...</cms:epr>
+            <cms:epr id="44804" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44804"> -NOT FIXED- Input traffic reported by inspect driver on a port withou...</cms:epr>
+            <cms:epr id="44538" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44538"> -NOT FIXED- GTP Probe sizing limits not according to reality</cms:epr>
+            <cms:epr id="44418" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44418"> -NOT FIXED- li-ether-sim 9.10.7 shows DataLost on LDAP below specific...</cms:epr>
+            <cms:epr id="44803" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44803"> -NOT FIXED- LTE_S1 not correlating fwd messages belonging to differen...</cms:epr>
+            <cms:epr id="44659" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44659"> -NOT FIXED- IP distribution not working properly in ether-sim</cms:epr>
+            <cms:epr id="44662" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44662"> -NOT FIXED- Wrong timestamps on PDUs in li-ether-sim</cms:epr>
+            <cms:epr id="44805" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44805"> -NOT FIXED- FBC 8x10G - rxf on the whole card does not work</cms:epr>
+            <cms:epr id="44830" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44830"> -NOT FIXED- Data lost after upgrading LUXG to FBC</cms:epr>
+        </cms:activities>
+
+<!-- NOT FIXED FATAL current precautions (fatal)  -->
+
+        <cms:activities released-in-version="NOT_FIXED_FATAL">
+            <cms:epr id="44662" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44662"> -FATAL 1- Wrong timestamps on PDUs in li-ether-sim</cms:epr>
+        </cms:activities>
+    
+        
+   
+<!-- old releases -->
+        <cms:activities released-in-version="4.2.3">
+            <cms:epr id="44545" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44545">ECR2044 li-hdlu probe is not sending its status regularly to alarm manager </cms:epr>
+            <cms:epr id="44522" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44522">Li-eth-sim data loss for Verona traffic </cms:epr>
+            <cms:epr id="44665" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44665">LinkSelection in RDC not working with strict sim filter </cms:epr>
+            <cms:epr id="44615" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44615">Verona traffic lost after ether-sim update </cms:epr>
+            <cms:epr id="44644" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44644">Uninstalling probe-sims 4.2.2 gives error ImportError: No module named cdb.CDB_V1 </cms:epr>
+            <cms:epr id="44636" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44636">eofinder client 4.7.18 shows decoding error DNS / Ganges 12.5.2-1 </cms:epr>
+            <cms:epr id="44638" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44638">S1 deciphering info-server loosing connection to probe with new ether-sim </cms:epr>
+        </cms:activities>
+        
+        
+
+    </cms:part-release>
+
+</cms:release>
