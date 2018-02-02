@@ -214,6 +214,15 @@
 			</cms:monitored-dependency>
 		  
 		</cms:dependencies>
+		
+		
+		<cms:dependencies mc-version="8.0">
+		
+		
+		
+		
+		
+		</cms:dependencies>
         
 
 <!-- current release, must be first for generated mail to work!!! -->
