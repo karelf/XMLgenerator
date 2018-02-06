@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    A release represents the act of exposing component to the public.
+    The release describes basic informations (who did it, when, why),
+    and the details of the single  'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
+    version="1.0">
+    <!-- Basic authoring details -->
+    <cms:author>Probe Team</cms:author>
+    <cms:contact>karel.forst@anritsu.com</cms:contact>
+    <cms:date>@timestamp@</cms:date>
+
+    <cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
+     <cms:group>Probe</cms:group>
+     <cms:arch>x86_64</cms:arch>
+     
+   <!-- The list of distribution mailing list.-->
+    <!-- <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases</cms:distribution-list> -->
+    <cms:distribution-list type="RELEASE">_EU-GL M4 Engineering Releases</cms:distribution-list>
+
+    <!-- Release details -->
+    <cms:release-name>probe-sims</cms:release-name>
+    <cms:release-version>@project.version@</cms:release-version>
+
+
+    <!-- List of item releases -->
+    <cms:item>
+        <cms:name>probe-sims-@project.version@.tgz</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
+    </cms:item>
+    
+    <!-- Precautions for this release 
+    <cms:precaution>for eoCapture (FBC) usage FBC platform patch 0012 is needed</cms:precaution>
+    <cms:precaution>ECR 2178 is turned off by default, see Release Notes for configuration</cms:precaution>
+    <cms:precaution>for eoCapture (FBC) usage FBC platform patch 0014 is needed</cms:precaution>  -->
+    
+    <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+    <cms:part-release>
+
+        <cms:status>NEW</cms:status>
+        <!--NEW, UPDATE, CANCEL -->
+
+        <!-- Purpose values can be:
+            <Empty> -> the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+        -->
+        <cms:purpose></cms:purpose>
+
+        <!--
+            Declare the baselines the part release works on
+        -->
+        <cms:baseline>MasterClaw 7.0.2</cms:baseline>
+
+        <cms:test-level>1</cms:test-level>
+
+        <cms:reference type="STR" name="System Test Report" docName="probe-sims-@str.version@-str-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/probe-sims"/>
+        <cms:reference type="STS" name="System Test Specification" docName=""
+                       uri="http://rddoc/rddoc"/>
+        <cms:reference type="MANUAL" name="Installation and Configuration Manual" docName=""
+                       uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw%20User%20Documentation/Forms/MasterClaw%20702%20%20GCA.aspx#"/>
+        <cms:reference type="RN" name="Release Notes" docName="probe-sims-@project.version@-rn-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/probe-sims"/>
+        <cms:reference type="QBASE" name="Deployment package for Linux" docName="probe-sims-@project.version@.tgz"
+                       uri="http://utmnnfs/quest7-packages/probe-sims"/>               
+        <cms:reference type="NOTE" name="" docName=""
+                       uri=""/>
+				   
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>probe-sims package for Linux platform</cms:package>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+            </cms:global>
+
+<!-- feature availability, leave in template for future use-->
+       <!-- <cms:feature>
+                <cms:name>ECR 1398: Paging in GB – GB distribution</cms:name>
+                <cms:mc-version>7.1</cms:mc-version>
+                <cms:reason>Requires further testing</cms:reason>
+                <cms:level>FCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+            </cms:feature>
+-->
+        </cms:availabilities>
+
+        <cms:dependencies mc-version="7.0.2">
+
+        <!-- PLATFORM dependency -->             
+            <cms:platform-dependency>
+                <cms:component>CentOS6.4_x86_64</cms:component>
+                <cms:required-version>6.4</cms:required-version>
+                <cms:tested-version>6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            <cms:platform-dependency>
+                <cms:component>CentOS6.6_x86_64</cms:component>
+                <cms:required-version>6.6</cms:required-version>
+                <cms:tested-version>6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            
+            <cms:platform-dependency>
+                <cms:component>CentOS-RHEL_netinstall</cms:component>
+                <cms:required-version>6.4</cms:required-version>
+                <cms:tested-version>6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            <cms:platform-dependency>
+                <cms:component>CentOS-RHEL_netinstall</cms:component>
+                <cms:required-version>6.6</cms:required-version>
+                <cms:tested-version>6.6 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            
+            
+            
+            <cms:platform-dependency>
+                <cms:component>CentOS5.8_x86_64</cms:component>
+                <cms:required-version>5.8</cms:required-version>
+                <cms:tested-version></cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+                                    
+  
+
+<!--  3rd party dependency -->
+			<cms:third-part-dependency>
+			
+					<!-- <cms:component>Junit</cms:component>
+				<cms:required-version>4.8.2</cms:required-version>
+					<cms:tested-version>4.8.2</cms:tested-version>
+					<cms:description>Java testing framework</cms:description>
+				<cms:license uri="http://junit.org/license.html">Junit project licence</cms:license> -->
+				
+				<cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+					<cms:required-version>0016</cms:required-version>
+					<cms:tested-version>0016</cms:tested-version>
+				<cms:description>FBC platform patch</cms:description>
+                
+				
+				
+			</cms:third-part-dependency>
+       
+   <!-- ***************************************************************************** -->
+   <!-- third party or Local for FBC patch !!!!!!!!!!!!!!!!!!!!!! -->	
+<!-- LOCAL dependency -->       
+ 
+          
+			<cms:local-dependency>
+				<cms:component>probe-conf</cms:component>
+				<cms:required-version>3.0.1.2</cms:required-version>
+				<cms:tested-version>4.1.10</cms:tested-version>
+				<cms:required>No</cms:required>
+				<cms:description>Configuration software for MC</cms:description>
+			</cms:local-dependency>
+                                    
+			<cms:local-dependency>
+				<cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+				<cms:required-version>0.016</cms:required-version>
+				<cms:tested-version>0016</cms:tested-version>
+				<cms:required>Yes</cms:required>
+				<cms:description>FBC platform patch</cms:description>
+			</cms:local-dependency>
+            
+			<cms:local-dependency>
+				<cms:component>deploy-server</cms:component>
+				<cms:required-version>2.2.0+</cms:required-version>
+				<cms:tested-version>4.2.6</cms:tested-version>
+				<cms:required>No</cms:required>
+				<cms:description>Configuration software for MC</cms:description>
+			</cms:local-dependency>
+            
+			<cms:local-dependency>
+				<cms:component>qmpa5</cms:component>
+				<cms:required-version>5.1.0+</cms:required-version>
+				<cms:tested-version>5.2.17</cms:tested-version>
+				<cms:required>No</cms:required>
+				<cms:description>SIM data consumer</cms:description>
+			</cms:local-dependency>
+            
+			<cms:local-dependency>
+				<cms:component>infoservers</cms:component>
+				<cms:required-version>1.6.0+</cms:required-version>
+				<cms:tested-version>1.7.3</cms:tested-version>
+				<cms:required>No</cms:required>
+				<cms:description>Needed for ECR 740</cms:description>
+			</cms:local-dependency>
+            
+			<cms:local-dependency>
+				<cms:component>configtool</cms:component>
+				<cms:required-version>4.5.0+</cms:required-version>
+				<cms:tested-version>4.5.5</cms:tested-version>
+				<cms:required>No</cms:required>
+				<cms:description>Needed for ECR 1501</cms:description>
+			</cms:local-dependency>
+
+			<!-- <cms:monitored-dependency>
+				<cms:component></cms:component>
+				<cms:required-version></cms:required-version>
+				<cms:tested-version></cms:tested-version>
+				<cms:description></cms:description>
+			</cms:monitored-dependency>
+			-->
+			
+			
+			
+			
+			
+			<!-- Integrates packages, used for subcomponent tags -->
+			<cms:integrates-packages>
+				<cms:integrates-packages-name>li-ether-sim</cms:integrates-packages-name>
+				<cms:integrates-packages-required-version>@li-ether-sim.version@</cms:integrates-packages-required-version>
+				<cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+				<cms:integrates-packages-description>li-ether-sim-</cms:integrates-packages-description>
+			</cms:integrates-packages>
+			<cms:integrates-packages>
+				<cms:integrates-packages-name>li-usim-ip</cms:integrates-packages-name>
+				<cms:integrates-packages-required-version>@li-usim-ip.version@</cms:integrates-packages-required-version>
+				<cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+				<cms:integrates-packages-description>rpm-usim-ip-</cms:integrates-packages-description>
+			</cms:integrates-packages>
+			<cms:integrates-packages>
+				<cms:integrates-packages-name>li-usim</cms:integrates-packages-name>
+				<cms:integrates-packages-required-version>@li-usim.version@</cms:integrates-packages-required-version>
+				<cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+				<cms:integrates-packages-description>li-usim-</cms:integrates-packages-description>
+			</cms:integrates-packages>
+			<cms:integrates-packages>
+				<cms:integrates-packages-name>li-hdlu-sim</cms:integrates-packages-name>
+				<cms:integrates-packages-required-version>@li-hdlu-sim.version@</cms:integrates-packages-required-version>
+				<cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+				<cms:integrates-packages-description>li-hdlu-sim-</cms:integrates-packages-description>
+			</cms:integrates-packages>
+
+            </cms:dependencies>
+
+<!-- current release, must be first for generated mail to work!!! -->
+
+		<cms:activities released-in-version="@project.version@">
+            <cms:epr id="47597" uri="http://sbu6rdbug.main.intgin.net/bugzilla/show_bug.cgi?id=47597">crashes in GTP layer - Kernel panic after sim upgrade</cms:epr>
+		</cms:activities>
+
+		
+<!-- must not be first, because first "activities" is used by script as "CurrentReleaseActivities" in mail -->
+<!-- current precautions (non fatal) 
+		<cms:activities released-in-version="NOT_FIXED">
+			
+		</cms:activities>
+		-->	
+		
+<!-- FATAL NOT FIXED in releae  current precautions (fatal)  
+		
+        <cms:activities released-in-version="NOT_FIXED_FATAL">
+	   
+            <cms:epr id="44830" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44830">Data lost after upgrading LUXG to FBC</cms:epr>
+        </cms:activities>
+	-->	
+		
+		
+		
+        <!-- old releases -->
+	   
+	   
+		<cms:activities released-in-version="2.11.20">
+			<cms:epr id="47377" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47377">Downlink bytes filled as 0 eventhough downlink traffic is present</cms:epr>
+			<cms:epr id="46892" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46892">pcap buffer size is limited to less than 4GB</cms:epr>
+			<cms:epr id="47174" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47174">ether-sim high memory usage</cms:epr>
+		</cms:activities>
+		
+		<cms:activities released-in-version="¨2.11.19">
+            <cms:epr id="45711" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45711">Li-ether-sim probably discarding PDUs which should be vis... </cms:epr>
+			<cms:epr id="46211" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46211">dns traffics losts </cms:epr>
+        </cms:activities>
+		
+		 <cms:activities released-in-version="2.11.18">
+            <cms:enh type="TASK" id="Fiberblaze SW">Fiberblaze SW 2.5.1.1 integrated</cms:enh>
+            <cms:epr id="45711 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45711 ">Li-ether-sim probably discarding PDUs which should be visible in Finder</cms:epr>
+            <cms:epr id="45704 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45704 ">assert at GtpXLayer</cms:epr>
+        </cms:activities>
+        
+        
+        <cms:activities released-in-version="2.11.17">
+            <cms:enh type="TASK" id="Fiberblaze SW">Fiberblaze SW 2.4.4.1 integrated</cms:enh>              
+            <cms:epr id="44866" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44866">gtpv2 pdu problems </cms:epr>
+            <cms:epr id="45333" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45333">Missing diameter messages </cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.11.16">
+        <cms:enh type="TASK" id="Fiberblaze SW">Fiberblaze SW 2.4.2.1 integrated</cms:enh>              
+        <cms:epr id="45212" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45212">li-usim-ip 11.0.9 log filling up partition</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.11.15">
+            <cms:epr id="44999" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44999">MAP dialogue has decode errors </cms:epr>
+        </cms:activities>
+
+        
+        <cms:activities released-in-version="2.11.14">
+            <cms:epr id="44980" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44980">li-ether-sim disconnecting from usim for s1 </cms:epr>
+            <cms:epr id="44897" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44897">Data Lost </cms:epr>
+            <cms:epr id="44971" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44971">li-ether-sim crashing after reading from master_esp.db </cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.11.13">
+            <cms:enh type="TASK" id="Fiberblaze SW">Fiberblaze SW 2.3.10.1 integrated</cms:enh>
+            <cms:epr id="44789" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44789">Array out of bounds</cms:epr>
+            <cms:epr id="44794" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44794">Thread 1 __assert_fail () from /lib64/libc.so.6</cms:epr>
+            <cms:epr id="44795" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44795">SctpLayer2.cc:989 : Assertion `sum_len == m2->m_layer_len...</cms:epr>
+            <cms:epr id="44812" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44812">MAP traffic not filltered by sim filter</cms:epr>
+            <cms:epr id="44500" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44500">Li-eth-sim report Data lost=0 while protocol takes more t... </cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.11.12">
+                <cms:epr id="44696" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44696">ether-sim 9.10.7 exited with status 134, Mississippi 14.3.1</cms:epr>
+                <cms:epr id="44635" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44635">Probe memory usage creep after ETHER-SIM 9.10.11</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.11.11">    
+                <cms:epr id="44555" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44555">ECR1501 - TCP resent packets - difference eoFinder vs Wir... </cms:epr>
+                <cms:epr id="43965" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43965">Wrong length set for PDU by H248-dechunking </cms:epr>
+                <cms:epr id="44097" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44097">eoIP SDR - QCI not filled in correctly </cms:epr>
+                <cms:epr id="44502" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44502">li-ether-sim 10.5.13.004 multiple restarts on S1 interface </cms:epr>
+                <cms:epr id="44521" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44521">Li-ether-sim 10.5.14 restarted on Roaming probe </cms:epr>
+                <cms:epr id="44531" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44531">Ether-sim crash on MSRP probe - </cms:epr>
+                <cms:epr id="44537" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44537">li-ether-sim 9.10.10 - restarts with GANGES </cms:epr>
+                <cms:epr id="44560" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44560">li-ether-sim 9.10.10 - not showing data lost </cms:epr>
+                <cms:epr id="44583" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44583">Ether-sim crashed with assertion failed on InsertElist </cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.11.10">    
+                <cms:epr id="44411" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44111">DUNA/DAVA alarms are not associated to all links in the linkset</cms:epr>
+                <cms:epr id="44447" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44447">Li-ether-sim 10.5.12 restarts due to MSRP layer</cms:epr>
+                <cms:epr id="44352" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44352">Incorrect session handling of layers above GTP with multiple GTP contexts per UE</cms:epr>
+                <cms:epr id="44428" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44428">extremely low deciphering rate for IPsec</cms:epr>
+                <cms:epr id="44429" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44429">Crash and Data loss observed after installing probe-sim 2.11.9</cms:epr>
+                <cms:epr id="44309" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44309">UP_STAT Sum does not match for different value of Session Type</cms:epr>
+                <cms:epr id="44244" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44244">S1 incorrect imsi</cms:epr>
+        </cms:activities>
+        
+        
+        <cms:activities released-in-version="2.11.9">
+                <cms:epr id="44332" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44332">SOAP over HTTP is being stripped away</cms:epr>
+                <cms:epr id="44069" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44069">li-ether-sim doesn't generate records with session type 0 on 2G/3G</cms:epr>
+                <cms:epr id="44102" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44102">GTP processing delay is triggering S1 low deciphering</cms:epr>
+        </cms:activities>                                                          
+        
+        <cms:activities released-in-version="2.11.8">    
+                <cms:epr id="44209 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44209 ">ImportError: No module named cdb.CDB_V1 </cms:epr>
+                <cms:epr id="44238 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44238 ">SIP / GTP ports mismatch </cms:epr>
+                <cms:epr id="44253 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44253 ">Segmentation fault in GtpXLayer </cms:epr>
+                <cms:epr id="44087 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44087 ">too many messages in log with S1 traffic </cms:epr>
+                <cms:epr id="44265 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44265 ">support for VF multihoming </cms:epr>
+        </cms:activities>
+        
+        
+        
+        <cms:activities released-in-version="2.11.7">    
+            <cms:epr id="44000 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44000 ">Decode errors and not filled IMSI </cms:epr>
+            <cms:epr id="43295 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43295 ">li-ether-sim crash in S1apSession::TdrTimeIntvl </cms:epr>
+            <cms:epr id="43668 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43668 ">Corrupted SCCP/TCAP packet (SCCP defrag issue?) </cms:epr>
+            <cms:epr id="44033 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44033 ">[ganges][li-ether-sim]Core was generated by `/nettest/app... </cms:epr>
+            <cms:epr id="44130 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44130 ">Duplicate packets seen even after setting discard_identical=2 </cms:epr>
+         </cms:activities>
+        
+        <cms:activities released-in-version="2.11.6">    
+			<cms:epr id="43959 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43959 ">3G-4G GTP Handovers </cms:epr>
+			<cms:epr id="43971 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43971 ">Li-ether-sim 9.10.5 crashing in S1 layer </cms:epr>
+			<cms:epr id="44014 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44014 ">li-ether-sim crash after latest upgrade </cms:epr>
+			<cms:epr id="43954 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43954 ">TCP defragmentation not working for SIP MESSAGE pdus </cms:epr>
+			<cms:epr id="43958 " uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43958 ">GTP FinishCtxRecord: missing session key </cms:epr>
+
+        </cms:activities>
+        
+        
+        
+        
+		<cms:activities released-in-version="2.11.5">    
+			<cms:epr id="43898" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43898">prbGroup assignment - not as expected - DMA Buffer filled... </cms:epr>
+			<cms:epr id="43668" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43668">Corrupted SCCP/TCAP packet (SCCP defrag issue?) </cms:epr>
+			<cms:epr id="43759" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43759">ESP parallelization does not work with LayerTreeTS.conf </cms:epr>
+			<cms:epr id="43820" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43820">reassembled ipv6 fragments are discarded with LayerTreeTS... </cms:epr>
+        </cms:activities>
+		
+		
+		
+		
+		
+		 <cms:activities released-in-version="2.11.4">    
+            <cms:epr id="43363" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43363">DUNA/DAVA alarms are created to not pertinent links</cms:epr>
+            <cms:epr id="43491" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43491">Missing SIP messages</cms:epr>
+            <cms:epr id="43528" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43528">Combining IP and Vlan SimFilters break REMAINING function...</cms:epr>
+            <cms:epr id="43686" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43686">Deduplication for IPv6 is not working</cms:epr>
+            <cms:epr id="43759" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43759">ESP parallelization does not work with LayerTreeTS.conf</cms:epr>
+        </cms:activities>
+		
+		
+		
+		
+
+        <cms:activities released-in-version="2.11.3">    
+            <cms:epr id="43440" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43440">Li-ether-sim crash observed</cms:epr>
+            <cms:epr id="43516" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43516">li-ether-sim 10.5.7 Using REMAINING captures less traffic...</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.11.2">    
+            <cms:epr id="43428" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43428">QCI filed is unfilled in layout FID 523 [li-ether-sim]</cms:epr>
+            <cms:epr id="42965" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42965">FBC filter parser functions must be called twice [li-ether-sim]</cms:epr>
+            <cms:epr id="43215" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43215">Raw Capture does not work on multiple interfaces simultaneously [li-ether-sim]</cms:epr>
+            <cms:epr id="43363" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43363">DUNA/DAVA alarms are created to not pertinent links [li-ether-sim]</cms:epr>
+            <cms:epr id="43396" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43396">ECR 1329 is not working Parallelization of Gtpv2FastTres [li-ether-sim]</cms:epr>
+            <cms:epr id="43247" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43247">Speed not shown correctly at inspect driver [li-ether-sim]</cms:epr>
+            <cms:epr id="43205" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43205">Using REMAINING or mtp.remaining captures less traffic</cms:epr>
+            <cms:epr id="43427" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43427">UP Source address field is not filled properly in FID 523 [li-ether-sim]</cms:epr>
+            <cms:epr id="43453" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43453">Ether-sim restarting on probe with GTP traffic [li-ether-sim]</cms:epr>
+            <cms:epr id="43499" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43499">Diameter message not split [li-ether-sim]</cms:epr>
+            <cms:epr id="43361" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43361">SIP messages is not forwarded to qmpa5 from GTPU Tunnel [li-ether-sim]</cms:epr>
+            <cms:epr id="43388" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43388">Low Gm deciphering rate [li-ether-sim]</cms:epr>
+            <cms:epr id="43260" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43260">IuB deciphering low [li-usim-ip]</cms:epr>
+            <cms:epr id="43261" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43261">Too many Undetermined call on RRC [li-usim-ip]</cms:epr>
+            <cms:epr id="43320" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43320">Log rotate doesn't work [li-usim-ip]</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.11.1">    
+            <cms:enh type="ECR" id="ECR 2029">MPLS tag traffic support in DoIP Ether-sim [li-ether-sim]</cms:enh>
+            <cms:enh type="TASK" id="N/A">Secondary PDP Context [li-ether-sim]</cms:enh>
+            <cms:epr id="43094" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43094">ether-sim user plane degradation [li-ether-sim]</cms:epr>
+            <cms:epr id="43284" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43284">Ether-sim crash in EthLayer:100 during stopping [li-ether-sim]</cms:epr>
+            <cms:epr id="43357" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43357">Not possible to disable m3ua alarm refresh [li-ether-sim]</cms:epr>
+            <cms:epr id="43400" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43400">Crash in GtpXLayer::PersistencyReadAll during start of SIM [li-ether-sim]</cms:epr>
+            <cms:epr id="43361" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43361">SIP messages is not forwarded to qmpa5 from GTPU Tunnel [li-ether-sim]</cms:epr>
+            <cms:epr id="43228" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43228">Using a valid PCAP - ether sim is restarted during Raw Capture</cms:epr>
+            <cms:epr id="43205" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43205">Using REMAINING or mtp.remaining captures less traffic</cms:epr>
+            <cms:epr id="43038" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43038">ether-sim is crashing on probe with GTPRAW</cms:epr>
+            <cms:epr id="43205" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43205">Using REMAINING or mtp.remaining captures less traffic</cms:epr>
+            <cms:epr id="43129" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43129">Missisng one direction in Gb dialogue</cms:epr>
+            <cms:epr id="43255" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43255">LinuxProbeInfo crashing ether-sim on Gn</cms:epr>
+            <cms:epr id="43264" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43264">Crash of ether-sim on probe with GTP traffic</cms:epr>
+            <cms:epr id="43111" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43111">Sim crash in GtpXLayer::FreeCtxBatch</cms:epr>
+            <cms:epr id="43216" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43216">ether-sim crash on sip traffic</cms:epr>
+            <cms:epr id="43265" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43265">li-ether-sim periodic crash with VoLTE generated traffic</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.11.0">
+            <cms:enh type="TASK" id="N/A">Secondary PDP Context [li-ether-sim]</cms:enh>
+            <cms:epr id="42259" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42259">3G-4G GTP Handovers [li-ether-sim]</cms:epr>
+            <cms:epr id="42434" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42434">{ sw_pcap } not implemented for FBC [li-ether-sim]</cms:epr>
+            <cms:epr id="42712" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42712">different GnFastTree.conf [li-ether-sim]</cms:epr>
+            <cms:epr id="42720" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42720">Missing messages on Diameter [li-ether-sim]</cms:epr>
+            <cms:epr id="43041" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43041">ether-sim - not all packets forwarded to qmpa5 [li-ether-sim]</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.10.1">
+            <cms:epr id="42434" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42434">{ sw_pcap } not implemented for FBC [li-ether-sim]</cms:epr>
+            <cms:epr id="41880" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41880">FBC 8x10G - Erroneous values for Signal - inspect driver [li-ether-sim]</cms:epr>
+            <cms:epr id="43006" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43006">raw capture is not working and it is crashing li-ether-sim</cms:epr>
+            <cms:epr id="42712" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42712">different GnFastTree.conf</cms:epr>
+            <cms:epr id="42720" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42720">Missing messages on Diameterer</cms:epr>
+            <cms:epr id="42950" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42950">ether-sim crash with the latest FBC FPGA</cms:epr>
+            <cms:epr id="43041" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43041">ether-sim - not all packets forwarded to qmpa5</cms:epr>
+            <cms:epr id="43042" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43042">eoCapture card delivered with not-supported FPGA5</cms:epr>
+            <cms:epr id="43047" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43047">ehter-sim mem leak</cms:epr>
+            <cms:epr id="42959" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42959">Inconsistent IMSI filling for Un-ciphered UE signalling</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.10.0">    
+            <cms:enh type="ECR" id="ECR 740">Deciphering of IPSec [li-ether-sim]</cms:enh>
+            <cms:epr id="42271" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42271">GTP Dialogue - IMSI not populated [li-ether-sim]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.9.5">
+            <cms:epr id="42477" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42477">Hw* parameters of RDC don't work with LU5 [li-ether-sim]</cms:epr>
+            <cms:epr id="42742" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42742">PointCode distribution problem [li-ether-sim]</cms:epr>
+            <cms:epr id="42721" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42721">Diameter using sctp layer not completed [li-ether-sim]</cms:epr>
+            <cms:epr id="42720" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42720">Missing messages on Diameter [li-ether-sim]</cms:epr>
+            <cms:epr id="42727" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42727">probe hung in LDAP Layer [li-ether-sim]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.9.4">
+            <cms:epr id="41532" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41532">Data lost on a FBC probe for LTE_X2 traffic [li-ether-sim]</cms:epr>
+            <cms:epr id="42432" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42432">GtpX layer refuses to create session for user data with IPV6 [li-ether-sim]</cms:epr>
+            <cms:epr id="42634" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42634">Missing SIP messages [li-ether-sim]</cms:epr>
+            <cms:epr id="42640" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42640">ether-sim restarts with GTPv2 [li-ether-sim]</cms:epr>
+            <cms:epr id="42621" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42621">Ether-sim restarts several times during the performance test of IMAP protocol [li-ether-sim]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.9.3">
+            <cms:epr id="42456" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42456">inspect does not return its output [li-ether-sim]</cms:epr>
+            <cms:epr id="42402" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42402">no output from inspect commands [li-ether-sim]</cms:epr>
+            <cms:epr id="42428" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42428">li-ether-sim 9.8.x crashed in Thread_Split on uninitialized m_si (LteTree.conf) [li-ether-sim]</cms:epr>
+            <cms:epr id="42508" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42508">li-ether-sim 9.8.2.x part 2 from EPR42428, crash in SctpLayer2 [li-ether-sim]</cms:epr>
+            <cms:epr id="42559" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42559">crash in GtpXLayer::FreeCtxBatch [li-ether-sim]</cms:epr>
+            <cms:epr id="42586" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42586">Assert failed in EET_RawCapture::RegisterResultQueue [li-ether-sim]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.9.2">
+            <cms:epr id="41880" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41880">FBC 8x10G - Erroneous values for Signal - inspect driver [li-ether-sim]</cms:epr>
+            <cms:epr id="32741" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=32741">IP-TDRs less than eoIP-TDRs CSDRs discarded due to long timeout [li-ether-sim]</cms:epr>
+            <cms:epr id="41479" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41479">IP Signalling Probe x perf reports DataLost only on processing probe [li-ether-sim]</cms:epr>
+            <cms:epr id="42163" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42163">LU50 driver not available for new kernel [li-ether-sim]</cms:epr>
+            <cms:epr id="42165" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42165">probe getting rebooted due to hdlu-sim [li-usim-ip]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.9.1">
+            <cms:enh type="TASK" id="N/A">Strict Sim Filter [li-ether-sim]</cms:enh>
+            <cms:enh type="TASK" id="N/A">Directional Sim Filter [li-ether-sim]</cms:enh>
+            <cms:enh type="ECR" id="ECR 1339">DUNA/DAVA alarms [li-ether-sim]</cms:enh>
+            <cms:epr id="41559" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41559">QoS Req/Neg fields should include only Bearer Qos fields [li-ether-sim]</cms:epr>
+            <cms:epr id="41823" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41823">Wrong length in SCTP layer after de-chunk [li-ether-sim]</cms:epr>
+            <cms:epr id="41950" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41950">H248 distribution by CTX not done properly - LayerTree.conf/LayerTreeTS.conf [li-ether-sim]</cms:epr>
+            <cms:epr id="41669" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41669">typo in alarm name [li-ether-sim]</cms:epr>
+            <cms:epr id="41868" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41868">New version does not update links to packages in CDB [probe-sims]</cms:epr>
+            <cms:epr id="42085" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42085">Unwanted SigInputAlarm present after li-ether-sim upgrade [li-ether-sim]</cms:epr>
+            <cms:epr id="42189" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42189">Missing IuB transactions [li-usim-ip]</cms:epr>
+            
+            <cms:epr id="41438" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41438">Incorrect generation and qosmos classification of UP_STATs [li-ether-sim]</cms:epr>
+            <cms:epr id="41870" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41870">ether-sim 9.5.3 crashing in S1 traffic processing [li-ether-sim]</cms:epr>
+            <cms:epr id="41422" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41422">UP_STAT and CP_STAT is generated under REMAINING linkset [li-ether-sim]</cms:epr>
+            <cms:epr id="40975" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40975">li-ether-sim restarts [li-ether-sim]</cms:epr>
+            <cms:epr id="40869" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40869">hdlu-sim Compat_Type UNKNOWN - UNABLE TO HANDLE [li-hdlu-sim]</cms:epr>
+            
+            <cms:epr id="41762" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41762">Master filters not merged into one PRB when the same PCAP is used on multiple input connectors [li-ether-sim]</cms:epr>
+            <cms:epr id="41764" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41764">FBC - PCAP grouping not done [li-ether-sim]</cms:epr>
+            <cms:epr id="41237" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41237">GTP GPDU tunnels don't work on GTPD client probe [li-ether-sim]</cms:epr>
+            <cms:epr id="42038" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42038">Some layer trees not updated for GTP rework [li-ether-sim]</cms:epr>
+            <cms:epr id="42082" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42082">ECR 1302 - missing Gtpv2SipTree.conf [li-ether-sim]</cms:epr>
+            
+            <cms:epr id="42122" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42122">sim filter on both ipv6 and ipv4 on the same link does not work [li-ether-sim]</cms:epr>
+            <cms:epr id="42171" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42171">4 PDUs distributed to links but only 3 captured [li-ether-sim]</cms:epr>
+            <cms:epr id="42178" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42178">only one direction captured by ether-sim [li-ether-sim]</cms:epr>
+            <cms:epr id="34116" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34116">Minor dataloss at LUXG using GTPV2Tree conf [li-ether-sim]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.9.0">
+            <cms:enh type="ECR" id="ECR 1302">SIP extension for VoLTE Support [li-ether-sim]</cms:enh>
+            <cms:epr id="41511" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41511">EndUserAddress filter doesn't work [li-ether-sim]</cms:epr>
+            <cms:epr id="41166" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41166">ether-sim crash OOPS: FBC returned packet on port fbc0.0 which is not configured [li-ether-sim]</cms:epr>
+            <cms:epr id="40812" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40812">IP Address distribution doesn't work properly [li-ether-sim]</cms:epr>
+            <cms:epr id="41647" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41647">PCAP filter does not reflect VLAN with FBC card [li-ether-sim]</cms:epr>
+            <cms:epr id="41612" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41612">li-usim-ip restarts [li-usim-ip]</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="2.8.0">
+            <cms:enh type="ECR" id="ECR 1044">Sniffer Link and Raw data capture [li-ether-sim]</cms:enh>
+            <cms:epr id="41102" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41102">+++ ASSERT FAILED: layer != NULL Parent layer GTP not found at level 3 [li-ether-sim]</cms:epr>
+            <cms:epr id="41413" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41413">UP_STAT "Bwd Teid" and "Fwd Teid" fields values are swapped [li-ether-sim]</cms:epr>
+            <cms:epr id="41092" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41092">Viber sessions are not correctly classified [li-ether-sim]</cms:epr>
+            <cms:epr id="40366" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40366">IP TDRs does not contain Session Type 8 - RTP user activity [li-ether-sim]</cms:epr>
+            <cms:epr id="40211" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40211">H248 decode with OSS failed messages in ether-sim log [li-ether-sim]</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.7.0">
+            <cms:enh type="ECR" id="ECR 1445">Fiberblaze GTP distribution [li-ether-sim]</cms:enh>
+            <cms:enh type="ECR" id="ECR 1153">Refactoring of UR-DOIP-005 DoIP Session coverage [li-ether-sim]</cms:enh>
+            <cms:enh type="TASK" id="N/A">GTP refactoring [li-ether-sim]</cms:enh>
+            <cms:epr id="40754" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40754">li-ether-sim used in cooperation group crashes [li-ether-sim]</cms:epr>
+            <cms:epr id="40539" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40539">Duplicated LinkSplit for coop group with LayerTreeTS.conf [li-ether-sim]</cms:epr>
+            <cms:epr id="40016" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40016">removing duplicates takes lot of CPU [li-ether-sim]</cms:epr>
+        </cms:activities>
+
+    </cms:part-release>
+
+</cms:release>
+
+

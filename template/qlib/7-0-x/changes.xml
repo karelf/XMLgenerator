@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	A release represents the act of exposing component to the public.
+	The release describes basic informations (who did it, when, why),
+	and the details of the single 'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
+             version="1.0">
+
+    <!-- Basic authoring details -->
+    <cms:author>Probes team</cms:author>
+    <cms:contact>karel.forst@anritsu.com</cms:contact>
+    <cms:date>@timestamp@</cms:date>
+	
+	<cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
+     <cms:group>Probe</cms:group>
+     <cms:arch>x86_64</cms:arch>
+
+    <!-- The list of distribution mailing list.-->
+    <cms:distribution-list type="DEVELOP">_EU-DK MasterClaw Developer</cms:distribution-list>
+    <cms:distribution-list type="RELEASE">_EU-DK MasterClaw Releases</cms:distribution-list>
+
+    <!-- Release details -->
+    <cms:release-name>qlib</cms:release-name>
+    <cms:release-version>@project.version@</cms:release-version>
+
+
+
+    <!-- List of item releases -->
+    
+    <cms:item>
+        <cms:name>qlib-@project.version@-1.x86_64.rpm</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/qlib/tqr</cms:location>
+    </cms:item>
+    <cms:item>
+        <cms:name>qlib-@project.version@-1.x86_64.rpm.md5sum</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/qlib/tqr</cms:location>
+    </cms:item>
+
+    <!-- Precautions for this release -->
+    <cms:precaution></cms:precaution>
+
+
+    <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+    <cms:part-release>
+
+        <cms:status>NEW</cms:status>
+
+        <!-- Purpose values can be:
+            <Empty> -> the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+        -->
+        <cms:purpose></cms:purpose>
+
+        <!--
+            Declare the baselines the part release works on
+        -->
+        <cms:baseline>MasterClaw 8.0</cms:baseline>
+
+        <cms:test-level>1</cms:test-level>
+
+		<cms:reference type="STR" name="System Test Report" docName="qlib-@project.version@-str-v1.doc"
+                       uri="http://utmnnfs/quest7-packges/qlib"/>
+		<cms:reference type="STS" name="System Test Specification" docName=""
+                       uri="http://rddoc/rddoc"/>
+		<cms:reference type="QBASE" name="Deployment package for Linux" docName="qlib-@project.version@-1.x86_64.rpm"
+                       uri="http://utmnnfs/quest7-packages/qlib"/>	
+		<cms:reference type="RN" name="Release note" docName="qlib-@project.version@-rn-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/qlib"/>
+		<cms:reference type="MANUAL" docName="" name="Installation and Configuration Manual"
+						uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw User Documentation/Forms/MasterClaw_8.0.aspx"/>
+        
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>qlib package for Linux platform</cms:package>
+                <cms:mc-version>8.0</cms:mc-version>
+                <cms:level>FCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+            </cms:global>
+						
+		  <cms:feature>
+               <cms:name>PDP 120 – Platform Auto Install and Config</cms:name>
+               <cms:mc-version>8.0</cms:mc-version>
+		     <cms:level>FCA</cms:level>
+		     <cms:risk>Medium</cms:risk>
+			<cms:reason>Requires further testing</cms:reason>
+			<cms:customers></cms:customers>
+			<cms:description>Description</cms:description>
+               
+			
+		  </cms:feature>
+			
+		  <cms:feature>
+               <cms:name>ECR 2000 – YUM and RPM packaging</cms:name>
+               <cms:mc-version>8.0</cms:mc-version>
+               <cms:level>FCA</cms:level>
+               <cms:risk>Medium</cms:risk>
+		     <cms:reason>Requires further testing</cms:reason>
+			<cms:customers></cms:customers>
+			<cms:description>Description</cms:description>
+		  </cms:feature>
+			
+			
+			
+        </cms:availabilities>
+
+
+        <cms:dependencies mc-version="8.0">
+            
+            <!-- 3rd party and platform and local dependency -->
+            
+            <cms:third-part-dependency> 
+                <cms:component>CentOS</cms:component>
+                <cms:required-version>6.x</cms:required-version>
+                <cms:tested-version>6.x</cms:tested-version>
+                <cms:description>Operating System</cms:description>
+                <cms:license uri="http://www.gnu.org/copyleft/gpl.html">GPL v2</cms:license>
+            </cms:third-part-dependency>
+		  
+            
+            <!-- Local dependency -->
+            <cms:local-dependency>
+                <cms:component>qbase</cms:component>
+                <cms:required-version>5.1.0</cms:required-version>
+                <cms:tested-version>5.1.3</cms:tested-version>
+			 <cms:required>Yes</cms:required>
+                <cms:description>QUEST7 Base Package</cms:description>
+            </cms:local-dependency>
+           
+		 
+            
+        </cms:dependencies>
+
+        <!-- current release -->
+        <cms:activities released-in-version="@project.version@">
+           <!-- <cms:enh type="PDP" id="120">Platform Auto Install and Config</cms:enh> -->
+			<cms:enh type="PDP" id="120">Platform Auto Install and Config</cms:enh>
+			<cms:enh type="ECR" id="2000">YUM and RPM packaging</cms:enh>
+			<cms:enh type="PDP" id="115" uri="http://google.com" availability="SDR">dummy PDP; ECR; TASK</cms:enh>
+        </cms:activities>
+
+        <!-- old releases --> 
+		
+		<cms:activities released-in-version="7.0.0.1">
+            <cms:enh type="PDP" id="120">Platform Auto Install and Config (SDR release)</cms:enh>
+        </cms:activities>
+		
+		<cms:activities released-in-version="7.0.0.0">
+            <cms:enh type="ECR" id="2000"> YUM and RPM packaging</cms:enh>
+            <!--  <	cms:epr id="987654" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=987654">dummy epr</cms:epr> 
+				<cms:enh type="PDP" id="115" uri="http://google.com" availability="SDR">dummy PDP; ECR; TASK</cms:enh> -->
+        </cms:activities>
+		
+        
+
+        
+        
+    </cms:part-release>
+
+</cms:release>
+

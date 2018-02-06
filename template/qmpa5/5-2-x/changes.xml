@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    A release represents the act of exposing component to the public.
+    The release describes basic informations (who did it, when, why),
+    and the details of the single 'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
+    version="1.0">
+
+                 <!-- Basic authoring details -->
+    <cms:author>Probes Team</cms:author>
+    <cms:contact>karel.forst@anritsu.com</cms:contact>
+    <cms:date>@timestamp@</cms:date>
+
+    <cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
+    <cms:group>Probe</cms:group>
+    <cms:arch>x86_64</cms:arch>
+    
+    
+    <!-- The list of distribution mailing list.-->
+    <!-- <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases</cms:distribution-list> -->
+    <cms:distribution-list type="RELEASE">_EU-GL M4 Engineering Releases</cms:distribution-list>
+
+    <!-- Release details -->
+    <cms:release-name>qmpa5</cms:release-name>
+    <cms:release-version>@project.version@</cms:release-version>
+
+
+    <!-- Precautions for this release
+    <cms:precaution>When used with eoCapture cards, FBC platform patch 0009+ is needed</cms:precaution>-->
+    
+    <!-- List of item releases -->
+    
+
+    <cms:item>
+        <cms:name>qmpa5-@project.version@.tgz</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/qmpa5</cms:location>
+    </cms:item>
+
+    
+    <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+    <cms:part-release>
+
+        <cms:status>NEW</cms:status>
+                <!-- NEW, UPDATE, CANCEL -->
+
+        <!-- Purpose values can be:
+            <Empty> -> the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+        -->
+        <cms:purpose></cms:purpose>
+
+        <!--
+            Declare the baselines the part release works on
+        -->
+        <cms:baseline>MasterClaw 7.0.2</cms:baseline>
+
+        <cms:test-level>1</cms:test-level>
+
+        <cms:reference type="STR" name="System Test Report" docName="qmpa5-@project.version@-str-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/system-test-report"/>
+        <cms:reference type="RN" name="Release note" docName="qmpa5-@project.version@-rn-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/qmpa5"/>               
+        <cms:reference type="STS" name="System Test Specification" docName=""
+                       uri="http://rddoc/rddoc"/>
+        <cms:reference type="MANUAL" name="Installation and Configuration Manual" docName=""
+                       uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw%20User%20Documentation/Forms/MasterClaw%20702%20%20GCA.aspx"/> <!-- MC 7.0.2 --> 
+					   <!-- uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw%20User%20Documentation/Forms/MasterClaw%20710%20%20GCA.aspx"/>  MC 7.1.0 -->
+					   <!-- uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw%20User%20Documentation/Forms/MasterClaw%2080%20%20TQR.aspx"/>   MC 8.0 -->
+        <cms:reference type="QBASE" name="Deployment package for Linux" docName="qmpa5-@project.version@.tgz"
+                       uri="http://utmnnfs/quest7-packages/qmpa5"/>               
+                       
+                       
+                       
+                       
+
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>qmpa5 package for Linux platform</cms:package>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+            </cms:global>
+            <!-- 
+            <cms:feature> 
+                <cms:name>ECR 1398: Paging in GB - GB distribution </cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>FCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+                <cms:reason>Requires further testing</cms:reason>
+            </cms:feature>
+			-->
+            
+
+            
+
+        </cms:availabilities>
+
+
+        <cms:dependencies mc-version="7.0.2">
+
+
+             <cms:platform-dependency>
+                <cms:component>CentOS5.8_x86_64</cms:component>
+                <cms:required-version>5.8</cms:required-version>
+                <cms:tested-version>Ce6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the Telnet server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            <cms:platform-dependency>
+                <cms:component>CentOS-RHEL_netinstall</cms:component>
+                <cms:required-version>7.2</cms:required-version>
+                <cms:tested-version>Ce6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the Telnet server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            <cms:platform-dependency>
+                <cms:component>CentOS-RHEL_netinstall</cms:component>
+                <cms:required-version>6.4</cms:required-version>
+                <cms:tested-version>Ce6.4 (64b)</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the Telnet server must be installed and running as well)</cms:description>
+                <cms:license></cms:license>
+            </cms:platform-dependency>
+            
+            
+            
+
+            <!-- no 3rd party dependency 
+            <cms:third-part-dependency>
+                <cms:component>Junit</cms:component>
+                <cms:required-version>4.8.2</cms:required-version>
+                <cms:tested-version>4.8.2</cms:tested-version>
+                <cms:description>Java testing framework</cms:description>
+                <cms:license uri="http://junit.org/license.html">Junit project licence</cms:license>
+            </cms:third-part-dependency>
+            -->
+
+ 
+            <cms:local-dependency>
+                <cms:component>configtool</cms:component>
+                <cms:required-version>4.5.0+</cms:required-version>
+                <cms:tested-version>4.5.6</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration software for MC</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>deploy-server</cms:component>
+                <cms:required-version>4.2.0+</cms:required-version>
+                <cms:tested-version>4.2.3</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Deploy server is generic server component that hosts several components used to deploy configuration to various MC systems</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>probe-conf</cms:component>
+                <cms:required-version>4.1.0+</cms:required-version>
+                <cms:tested-version>4.1.8</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration data for MC</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>qxts</cms:component>
+                <cms:required-version>6.8.0+</cms:required-version>
+                <cms:tested-version>6.8.3</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Call Trace Server (QXTS) provides Call Trace Client (QCT) with correlated calls, transactions and session</cms:description>
+            </cms:local-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>measif</cms:component>
+                <cms:required-version>9.0.2+</cms:required-version>
+                <cms:tested-version>9.0.6</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>MC interface for probes</cms:description>
+            </cms:local-dependency>
+
+    <!-- integrates package  -->
+            <!-- 
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>@subcomponent.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>Description</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>tag_format</cms:integrates-packages-description>
+            </cms:integrates-packages>
+           --> 
+        </cms:dependencies>
+
+        <!-- current release, must be first for generated mail to work!!! -->
+        <cms:activities released-in-version="@project.version@">
+         	<cms:epr id="46515" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46515">protocol restarts observed for ldap 3.1.0</cms:epr>
+			<cms:epr id="47177" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47177">LinuxProbeInfo method of determining machine primary IP address is unreliable</cms:epr>
+		</cms:activities>
+
+        <!-- must not be first, because first "activities" is used by script as "CurrentReleaseActivities" in mail -->
+        <!-- current precautions (non fatal) -->
+        <cms:activities released-in-version="NOT_FIXED">
+           
+		</cms:activities>
+
+        <!-- current precautions (fatal) -->
+        <!--
+        <cms:activities released-in-version="NOT_FIXED_FATAL">
+            <cms:epr id="12345" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=12345">fatal crash</cms:epr>
+        </cms:activities>
+        -->
+
+        <!-- old releases -->
+		
+		
+		<cms:activities released-in-version="5.2.16">
+         	<cms:epr id="45411" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45411">NTP alarm</cms:epr>
+			<cms:epr id="45378" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45378">disk compression should be enabled by default</cms:epr>	
+		</cms:activities>
+		
+		
+		<cms:activities released-in-version="5.2.15">
+			<cms:epr id="44284" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44284">At MTEL, the probe BL-PS2 has a big file qmpa5.log (150MB) with huge number of warnings </cms:epr>
+            <cms:epr id="44894" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44894">li-usim-ip 11.0.8 </cms:epr>
+        </cms:activities>
+		
+        <cms:activities released-in-version="5.2.14">
+            <cms:epr id="44468" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44468 ">selfmon script - simHealth should not check memory and CPU</cms:epr>
+            <cms:epr id="44382" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44382 ">qmpa5 not generating stack when protcol crash occurs</cms:epr>
+        </cms:activities>
+        
+        
+        <cms:activities released-in-version="5.2.13 Canceled"></cms:activities>
+        
+        <cms:activities released-in-version="5.2.12">
+            <cms:epr id="41884" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41884">Wrong MSISDN filling</cms:epr>
+            <cms:epr id="44246" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44246">Segm fault in HTable.cpp:60</cms:epr>
+            <cms:epr id="44101" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44101">Gb deciphering fails after return from IUPS</cms:epr>
+            
+        </cms:activities>
+        
+        
+        <cms:activities released-in-version="5.2.11">
+            <cms:enh type="PDP" id="PDP 110: Protocols">Protocols - 64bit architecture migration is FCA for MasterClaw 7.0.2</cms:enh>
+            <cms:enh type="ECR" id="ECR 1398">Paging in GB - GB distribution</cms:enh>
+            <cms:epr id="43991" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43991">Gb deciphereging failure for double-XID</cms:epr>
+            <cms:epr id="44008" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44008">Gb deciphering fails if sequence starts with PAGING</cms:epr>
+            <cms:epr id="44101" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44101">Gb deciphering fails after return from IUPS</cms:epr>
+        </cms:activities>
+        
+        
+        <cms:activities released-in-version="5.2.10">
+            <cms:epr id="43521" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43521">GB deciphering not working with LowestLayers=ETH_MAC</cms:epr>
+            <cms:epr id="43795" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43795">"Invalid filter received" - qmpa5.log flooded and /var/log partition filled to 100% very quickly</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="5.2.9">
+            <cms:epr id="43418" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43418">couple selfmon checks are not working</cms:epr>
+            <cms:epr id="43458" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43458">Probe was crashed</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="5.2.8">
+            <cms:epr id="43059" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43059">Gb deciphering low</cms:epr>
+            <cms:epr id="43292" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43292">Uninstall script crashes</cms:epr>
+        </cms:activities>
+
+	<cms:activities released-in-version="5.2.7">
+            <cms:epr id="42576" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42576">x logfile shows SIP-Expander FID 478 Index below SIP FID 534</cms:epr>
+            <cms:epr id="42980" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42980">IMSI not filled for SUSPEND/RESUME transactions</cms:epr>
+            <cms:epr id="43051" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43051">Complex IMS Call Inprogress Query causes sip protocol server restarts on all probes</cms:epr>
+        </cms:activities>
+	
+        <cms:activities released-in-version="5.2.6">
+            <cms:epr id="41112" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41112">IMSI updates not happening properly</cms:epr>
+            <cms:epr id="42852" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42852">IMSI not filled by key server</cms:epr>
+            <cms:epr id="42743" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42743">x sm update - crashed CT9 probe</cms:epr>
+            <cms:epr id="42799" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42799">Not possible to disable deciphering alarm</cms:epr>
+        </cms:activities>
+        
+        <cms:activities released-in-version="5.2.5">
+            <cms:epr id="42592" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42592">qmpa5 crashes in probe</cms:epr>
+            <cms:epr id="42745" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42745">lock input connectors and apply new snapshot</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.2.4">
+            <cms:enh type="ECR" id="ECR 1398">Paging in GB - GB distribution</cms:enh>
+            <cms:enh type="PDP" id="PDP 110">Protocols - 64bit architecture migration</cms:enh>
+            <cms:epr id="42448" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42448">Segmentation fault in x eventsrc write</cms:epr>
+            <cms:epr id="41851" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41851">One paging CSDR processed by two prot_servers</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.2.3">
+            <cms:epr id="41924" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41924">no point code info included in DUNA/DAVA alarms</cms:epr>
+            <cms:epr id="35037" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=35037">Warning in qmpa5.log when starting GTP capture</cms:epr>
+            <cms:epr id="42072" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42072">selfmon disabled by default</cms:epr>
+            <cms:epr id="42078" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42078">Selfmon qmpa protosHealth shows [p176064_f] Health CRITICAL</cms:epr>
+            <cms:epr id="41476" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41476">probeInfo does not run through in Booster and Cooperation Group with sec linux active</cms:epr>
+            <cms:epr id="42194" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42194">Health field not filled in selfmon protocol_servers message for 64bit protocols</cms:epr>
+            <cms:epr id="41664" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41664">Malformed output for gbDeciph info in selfmon</cms:epr>
+            <cms:epr id="41934" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41934">X CST does not show correct statistics for H248 - FID480</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.2.2">
+            <cms:enh type="ECR" id="ECR 1409">Continuous Integration - PROBE</cms:enh>
+            <cms:epr id="40298" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40298">qmpa protosHealth - protocol health - WARNING (CPU and memory process lifetime average returned by ps replaced with short average returned by top)</cms:epr>
+            <cms:epr id="40642" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40642">Source IP of 1st Leg differs to Source IP Address in Message pane of eoF (The bug was discovered in parsing of CSDR filter that modified the CSDR.)</cms:epr>
+            <cms:epr id="40743" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40743">browsing for one FID is getting stuck</cms:epr>
+            <cms:epr id="41359" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41359">Probe restarted - Error: e->m_eventType == sLUP_EVENT::ePDU</cms:epr>
+            <cms:epr id="41153" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41153">x command does not show/work the Cellid and PagingInfo options</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.2.1">
+            <cms:enh type="ECR" id="ECR 1398">Paging in GB - GB distribution (Parallel setting for GB protocol on links with key server configured now distributes GB traffic based on session IMSI tracking to protocol servers.)</cms:enh>
+            <cms:epr id="41398" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41398">qmpa5 not restarted after core dump caused by disk io errors (Additional log is added at the end of runMPA script to be able to check if it has terminated. Additional flags added at several commands after core dump should make sure they do not hang.)</cms:epr>
+            <cms:epr id="40642" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40642">Source IP of 1st Leg differs to Source IP Address in Message pane of eoF (The bug was discovered in parsing of CSDR filter that modified the CSDR.)</cms:epr>
+            <cms:epr id="41358" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41358">29 Signalling Probes crashed - shutdown by watchdog (The while loop parsing CSDR filters was missing break in case the filter exceeded the data buffer size which caused it couldn’t exit and qmpa5 became unresponsive.)</cms:epr>
+            <cms:epr id="34368" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34368">Mpamain memory leak (Small memory leak in qpthreads found and fixed.)</cms:epr>
+            <cms:epr id="41225" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41225">Restarts observed for protocol UMTS_IU-14.0.0 (The qmpa5 part of this problem - assert when protocol reports invalid number of CSDRs was removed. Qmpa5 now ignores invalid null CSDRs.)</cms:epr>
+            <cms:epr id="41142" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41142">"x selfmon" creates more output than expected when scrambling is enabled (Old problem workaround by enabling disabled CSDR layouts in case of scrambling was highlighted by recent introduction of SelfMon support. Now the proper fix is implemented.)</cms:epr>
+            <cms:epr id="41503" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41503">Raw data capturing may fail on booster configuration (Raw data capturing failed on booster configuration in some cases, now fixed)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.2.0">
+            <cms:enh type="PDP" id="PDP 110">Protocols - 64bit architecture migration</cms:enh>
+            <cms:epr id="40296" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40296">Selfmon - SIM health CRITICAL (Selfmon evaluation of SIM health – instance names condition corrected.)</cms:epr>
+            <cms:epr id="40298" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40298">qmpa protosHealth - protocol health - WARNING (CPU and memory process lifetime average returned by ps replaced with short average returned by top)</cms:epr>
+            <cms:epr id="40861" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40861">CSDR update reconnecting to probe is not happening properly (Introduced with EPR 34279 fix)</cms:epr>
+            <cms:epr id="40137" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40137">Error Activating Maintenance Scan and Automatic update using Clasic topology (Fixed in new versions)</cms:epr>
+            <cms:epr id="40416" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40416">Data lost which seems to be correlated with Nagios NRPE checks (Selfmon evaluation of link-set names was re-implemented to not retrieve CSLinksets output repeatedly.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.1.2">
+            <cms:epr id="40032" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40032">selfmon script - simHealth should not check memory and CPU (Thresholds increased (memory from 10% to 50%, CPU from 50% to 90%).)</cms:epr>
+            <cms:epr id="40861" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40861">CSDR update reconnecting to probe is not happening properly (Introduced with EPR 34279 fix)</cms:epr>
+            <cms:epr id="40296" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40296">Selfmon - SIM health CRITICAL (Selfmon evaluation of SIM health – instance names condition corrected.)</cms:epr>
+            <cms:epr id="40298" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40298">qmpa protosHealth - protocol health - WARNING (CPU and memory process lifetime average returned by ps replaced with short average returned by top)</cms:epr>
+            <cms:epr id="40416" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40416">Data lost which seems to be correlated with Nagios NRPE checks (Selfmon evaluation of link-set names was re-implemented to not retrieve CSLinksets output repeatedly.)</cms:epr>
+            <cms:epr id="40137" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40137">Error Activating Maintenance Scan and Automatic update using Clasic topology (Fixed in new versions)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.1.1">
+            <cms:epr id="40444" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40444">64bit Gb Deciphering zeroes ciphered part of PDU on first unsuccessful deciphering attempt which impacts success rate (A bug specific to 64bit qmpa5 versions fixed by not using repeated call of GEA algorithm for reverting back the changes made in PDU by failed deciphering attempt.)</cms:epr>
+            <cms:epr id="34279" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34279">Inconsistent IMSI filling in S1 CSDRs (A bug in qmpa5 update request re-syncing after timeouts could cause loss of more updates than those timeout-ed by EPR_34366 fault of info-server.)</cms:epr>
+            <cms:epr id="40308" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40308">nin file contains index with same name but different definition (Qmpa5 must support indexes with same name if they belong to different CSDR layouts.)</cms:epr>
+            <cms:epr id="32595" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=32595">wrong IMSI assigned (Part of deciphering and GB update fixes. TLLI is used with RAI as unique search key in qmpa5, in specific cases BVCI is used.)</cms:epr>
+            <cms:epr id="33738" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33738">Gb deciphering - connections on different BVCI confusing IOVUI (Part of deciphering and GB update fixes. TLLI is used with RAI as unique search key in qmpa5, in specific cases BVCI is used.)</cms:epr>
+            <cms:epr id="31152" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=31152">IMSI is not filled in some cases (Part of deciphering and GB update fixes. TLLI is used with RAI as unique search key in qmpa5, in specific cases BVCI is used.)</cms:epr>
+            <cms:epr id="30040" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=30040">gb deciphering values fluctuating (Part of deciphering and GB update fixes. TLLI is used with RAI as unique search key in qmpa5, in specific cases BVCI is used.)</cms:epr>
+            <cms:epr id="31756" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=31756">incorrect IMEISV filling on IuPS (Part of deciphering and GB update fixes. TLLI is used with RAI as unique search key in qmpa5, in specific cases BVCI is used.)</cms:epr>
+            <cms:epr id="34119" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34119">Low Gb deciphering ratio (Part of deciphering and GB update fixes. TLLI is used with RAI as unique search key in qmpa5, in specific cases BVCI is used.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.1.0">
+            <cms:enh type="ECR" id="ECR 1398">Paging Handling (New feature to drop unwanted Paging messages from Event Log of the probe.)</cms:enh>
+            <cms:epr id="34256" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34256">x perf hist gives wrong values (Values in x perf hist output weren't in accordance with x perf command (2.9Mbps vs 29Mbs).)</cms:epr>
+            <cms:epr id="33186" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33186">probe alarms (Alarms QMPA_OVERFLOW and NTP_ALARM were populated in the Alarm Manager after the migration to 6.4.2 even though they don't correspond to the actual state.)</cms:epr>
+            <cms:epr id="34300" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34300">CSDR index does not find CSDR with BCD number ending with F (The 'F' from BCD number was not stripped when building index.)</cms:epr>
+            <cms:epr id="35016" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=35016">selfmon script does not return pid (Mpamains pid was missing in selfmon output.)</cms:epr>
+            <cms:epr id="35018" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=35018">when selfmon disabled, selfmon script gets blocked (selfmon-status-qmpa5 was not able to detect missing "x selfmon".)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.9">
+            <cms:enh type="PDP" id="PDP 80">Autoconfiguration</cms:enh>
+            <cms:epr id="34154" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34154">qmpa5 crashed with stackdump (New “inprogress” command introduced to avoid application freezing by “icsdrlog” command.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.8">
+            <cms:enh type="TASK" id="N/A">LinuxProbeInfo.sh script collects FBC configuration (LinuxProbeInfo.sh script now includes FBC configuration file if such exists)</cms:enh>
+            <cms:epr id="34073" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34073">popen() calls possibly threaten severe slowdown (The use of pipe and dynamically forked sub-process replaced with regular file maintained by permanently running script also for SelfMon.)</cms:epr>
+            <cms:epr id="34036" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34036">qmpa5 restarted (Issue related  to EPR#34014 from CN lab was reported also from T&amp;Q.)</cms:epr>
+            <cms:epr id="34014" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34014">Random crashes on lab CT9 (Random crashes on CT9 were caused by setting invalid page size (too large) to prot_serv for CSDR reference to PDU truncation.)</cms:epr>
+            <cms:epr id="34007" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34007">qmpa5 writes uninitialized data after compressed block (Qmpa5 wrote uninitialized data after compressed block for 4K alignment.)</cms:epr>
+            <cms:epr id="33999" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33999">get csdrinfo missing for VoipCSDR=1 With setting VoioCSDR=1 the negotiation of RTP_STAT FID is missing from qmpa5 side. This may result in wrong chosen layout.)</cms:epr>
+            <cms:epr id="33792" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33792">incomplete list of channels reported to selfmon (The mistake was that selfmon printed only SI's having prot serv.)</cms:epr>
+            <cms:epr id="33654" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33654">x perf reported DataLost below 90Mbps (Further much less significant data loses were triggered by issue tracked in EPR#33467.)</cms:epr>
+            <cms:epr id="33615" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33615">prot_servs generate core file into small /var/log (Prot_serv default CWD changed to data subdirectory.)</cms:epr>
+            <cms:epr id="33610" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33610">core reduction sometimes hangs (Core reduction feature as implemented in 5.0.4 sometimes hangs on 32bit as well as on 64bit platform when unmaping regions of memory.)</cms:epr>
+            <cms:epr id="33467" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33467">possible slowdown on NTP_ALARM (The use of pipe and dynamically forked sub-process replaced with regular file maintained by permanently running script.)</cms:epr>
+            <cms:epr id="33389" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33389">executing x in x commands - error output (Usage hints corrected.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.7">
+            <cms:epr id="33351" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33351">probeInfo for coop groups contains two time li-ether-sim.log (Couple of LinuxProbeInfo.sh fixes.)</cms:epr>
+            <cms:epr id="33413" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33413">performance-protocol abort (Warning: HandleProcessEvents took... (Considered caused by EPR#33504 design issue.)</cms:epr>
+            <cms:epr id="33504" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33504">qmpa5 killed by watchdog (This is browsing performance optimizations design issue present in both 4.2.x and 5.0.x branches causing insufficient memory for cache problems leading into (sometimes temporary) fatal performance degradation.)</cms:epr>
+            <cms:epr id="33654" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33654">x perf reported DataLost below 90Mbps (Considered caused by EPR#33504 design issue.)</cms:epr>
+            <cms:epr id="33680" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33680">generation does not start if the number of csdr fields > 184 (Condition fixed.)</cms:epr>
+            <cms:epr id="33774" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33774">infinitely increasing memory allocation (Considered caused by EPR#33504 design issue.)</cms:epr>
+            <cms:epr id="31821" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=31821">xdr generator stopped (So far not the fix but additional logging as attempt to progress with investigation.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.6">
+            <cms:epr id="33492" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33492">../logfile/LogCache3.cpp line 516 no cache memory assertion (Improvement of fix provided in qmpa5-5.0.5)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.5">
+            <cms:epr id="33492" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33492">../logfile/LogCache3.cpp line 516 no cache memory assertion (Fixed by removing the periodicity of swap adjustment evaluation that could lead into LogFile cache memory uncontrolled allocation.)</cms:epr>
+            <cms:epr id="33493" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33493">Assertion after ProtServ Launch failed on fork error (Fixed the incomplete cleanup of prot_serv structures when fork() failed.)</cms:epr>
+            <cms:epr id="33527" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33527">hanging qmpa5 on ct9 (libstdc++-v3/libsupc++/eh_terminate.cc:47) (This is problem of C++ 3.0.4 runtime unable to unwind stack for exceptions - fixed by disabling inline functions for 32bit build.)</cms:epr>
+            <cms:epr id="33543" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33543">xkr::hash_log2 (Corruption of log file even the recovery passes all check sums is correctly handled now by new partition start and error report.)</cms:epr>
+            <cms:epr id="33613" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33613">voip probe found frozen (Investigated directly on probe and there was a race condition between "x csdrlog" command that prints status of browsers and update of browsers in CSDRServ2 ClientFilter=3 handling.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.4">
+            <cms:enh type="ECR" id="ECR 1279">ICSDR BulkChange (There is a new method to remove, update or add number of ICSDR filters at the same time.)</cms:enh>
+            <cms:enh type="TASK" id="N/A">Increase number of ICSDR browsers to 64</cms:enh>
+            <cms:epr id="33106" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33106">processing probe in cooperation group stopped working (Fixing the backtrace.kill script wrong calling path introduced with 64bit qmpa5. The root cause for “hanging” is hidden by backtrace.kill not started but may be equal to EPR_33367. In any case the hanging events processing probe will be re-started now as appropriate.)</cms:epr>
+            <cms:epr id="33475" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33475">Probe hangs, e.g x commands never returned (Duplicate of EPR #33106)</cms:epr>
+            <cms:epr id="32516" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=32516">Selfmon: some parameters not shown in txt format (Remaining part of the fix, the csdrs/current_browsers and csdrs/current_i_browsers weren’t filled in case of CSDR missing FID name, is already confirmed by T&amp;Q.)</cms:epr>            
+            <cms:epr id="33169" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33169">Gb data ciphered even when key is available (Serious problem in GEA (de)ciphering algorithm implementation when both input and output buffers used the same memory location.)</cms:epr>
+            <cms:epr id="31623" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=31623">Memory problem in QMPA5 64 bit version (Original expectation that 31918 fix of problem with multiple FID fixes also this was wrong. This was separate problem in TMSI_IMSI CSDR update module introduced with ClientFilter CSDR browsing performance improvements. The clearing of CSDR flags (reusing former interpretation ID) is fixed now.)</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.3">
+            <cms:epr id="33366" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33366">probe restart - error - m_browser2->m_file_browser</cms:epr>
+            <cms:epr id="33367" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33367">probe hung - ./bin/backtrace.kill: No such file or directory</cms:epr>
+            <cms:epr id="32929" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=32929">cLOG_TABLE2::PutEvent(cCSDR32) seg.fault crashes of qmpa5</cms:epr>
+            <cms:epr id="33235" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33235">x csl does not show statistics - x csrs does</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.2">
+            <cms:epr id="33331" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33331">protocol inspect does not work (Bug in PA interface fixed)</cms:epr>
+            <cms:epr id="33332" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33332">traces wo index may cause qxts emergency state </cms:epr>
+            <cms:epr id="33345" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33345">Assertion `m_write_pages.size() == m_partition</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="5.0.0">
+            <cms:enh type="ECR" id="ECR 1279">CSDRindex and FieldSelection (Part of  ECR1279: CSDRindex and FieldSelection tasks in CNCZ. Refer to section 9 for more details.)</cms:enh>
+        </cms:activities>
+    </cms:part-release>
+
+</cms:release>
+

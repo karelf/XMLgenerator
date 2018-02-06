@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd">
+
+    <!-- Basic authoring details -->
+    <cms:author>@maintainer_name@</cms:author>
+    <cms:contact>@maintainer_email@</cms:contact>
+    <cms:date>@date@</cms:date>
+    <cms:tier>Anritsu/MasterClaw/Foundation</cms:tier>
+    <cms:group>Platform</cms:group>
+
+    <!-- The list of distribution mailing list.-->
+    <cms:distribution-list type="DEVELOP">_EU-GL_M4_Engineering_Developer_Releases@anritsu.com</cms:distribution-list>
+    <cms:distribution-list type="RELEASE">_EU-GL_M4_Engineering_Releases@anritsu.com</cms:distribution-list>
+		<!-- <cms:distribution-list type="DEVELOP">qmpa@anritsu.com</cms:distribution-list> -->
+ 
+   <!-- Release details -->
+    <cms:release-name>CentOS-RHEL_FBC</cms:release-name>
+    <cms:release-version>@version@</cms:release-version>
+
+    
+		<cms:item>
+			<cms:name>CentOS-RHEL_FBC-@version@.pkg</cms:name>
+			<cms:description>Platform patch</cms:description>
+			<cms:location>http://utmnnfs/quest7-packages/platform/FBCsupport/</cms:location>
+		</cms:item>
+		<cms:item>
+			<cms:name>CentOS-RHEL_FBC-@version@.pkg.md5sum</cms:name>
+			<cms:description>Platform patch checksum</cms:description>
+			<cms:location>http://utmnnfs/quest7-packages/platform/FBCsupport/</cms:location>
+		</cms:item>
+    
+	
+    <!-- Precautions for this release -->
+    <cms:precaution></cms:precaution>
+    
+	
+	<!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+    <cms:part-release>
+
+        <cms:status>NEW</cms:status>
+        <!-- NEW, UPDATE, CANCEL -->
+
+        <!-- Purpose values can be:
+            <Empty> ->the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+        -->
+        
+        <cms:purpose></cms:purpose>
+		
+		
+		
+        <cms:baseline>MasterClaw 7.1</cms:baseline>
+	   <cms:baseline>MasterClaw 8.0</cms:baseline>
+        <cms:test-level>1</cms:test-level>
+
+			<cms:reference type="STR" name="Test Report" docName="CentOS-RHEL_FBC-@version@-str-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/platform/FBCsupport"/>
+			<cms:reference type="RN" name="Release Note" docName="CentOS-RHEL_FBC-@version@-rn-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/platform/FBCsupport"/>
+			<cms:reference type="MANUAL" name="Installation Guide" docName="" uri="http://intranet2.eu.anritsu.com/SBU6/RandD/MasterClaw%20User%20Documentation/Forms/MC7.1.aspx"/>
+			<cms:reference type="QBASE" name="Component" docName="CentOS-RHEL_FBC-@version@.pkg"
+                       uri="http://utmnnfs/quest7-packages/platform/FBCsupport"/>
+			<cms:reference type="NOTE" name="Component" docName=""
+                       uri=""/>			   
+
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>CentOS-RHEL_FBC</cms:package>
+                <cms:mc-version>7.1</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+                <cms:reason></cms:reason>
+            </cms:global>
+		  
+		  <cms:global>
+                <cms:package>CentOS-RHEL_FBC</cms:package>
+                <cms:mc-version>8.0</cms:mc-version>
+                <cms:level>FCA</cms:level>
+                <cms:risk>Medium</cms:risk>
+                <cms:reason></cms:reason>
+            </cms:global>
+			
+			<!-- *** Features *** 
+            <cms:feature>
+               <cms:name>ECR 2272</cms:name>
+               <cms:mc-version>7.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+               <cms:reason>Requires further testing</cms:reason>
+               <cms:customers></cms:customers>
+               <cms:description>Probe persistency update</cms:description>
+            </cms:feature>
+				-->
+        </cms:availabilities>
+		
+
+        <cms:dependencies mc-version="7.1">
+<!--       
+            <cms:local-dependency>
+                <cms:component>Unified MC Linux Platform</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.4</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>SRV plugin</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.4</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>platform-plugin_SRV (part of ULP)</cms:description>
+            </cms:local-dependency>
+    -->
+            <cms:local-dependency>
+                <cms:component>CentOS6.6_x86_64</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.8</cms:tested-version>
+                <cms:required>OneOf</cms:required>
+                <cms:description>platform_CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>RHEL6.6_x86_64</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.8</cms:tested-version>
+                <cms:required>OneOf</cms:required>
+                <cms:description>platform_CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>CentOS7-x86_64</cms:component>
+                <cms:required-version>5.0.0+</cms:required-version>
+                <cms:tested-version>5.0.2</cms:tested-version>
+                <cms:required>OneOf</cms:required>
+                <cms:description>platform_CentOS/CentOS7</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+                <cms:required-version>4.0.+</cms:required-version>
+                <cms:tested-version>4.0.8</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>platform_CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+		</cms:dependencies>
+		
+		<cms:dependencies mc-version="8.0">
+      <!--
+            <cms:local-dependency>
+                <cms:component>Unified MC Linux Platform</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.4</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>SRV plugin</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.4</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>platform-plugin_SRV (part of ULP)</cms:description>
+            </cms:local-dependency>
+    -->
+            <cms:local-dependency>
+                <cms:component>CentOS6.6_x86_64</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.8</cms:tested-version>
+                <cms:required>OneOf</cms:required>
+                <cms:description>platform_CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>RHEL6.6_x86_64</cms:component>
+                <cms:required-version>4.0.0+</cms:required-version>
+                <cms:tested-version>4.0.8</cms:tested-version>
+                <cms:required>OneOf</cms:required>
+                <cms:description>platform_CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>CentOS7-x86_64</cms:component>
+                <cms:required-version>5.0.0+</cms:required-version>
+                <cms:tested-version>5.0.2</cms:tested-version>
+                <cms:required>OneOf</cms:required>
+                <cms:description>platform_CentOS/CentOS7</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+                <cms:required-version>4.0.+</cms:required-version>
+                <cms:tested-version>4.0.8</cms:tested-version>
+                <cms:required>Yes</cms:required>
+                <cms:description>platform_CentOS/RHEL6.6</cms:description>
+            </cms:local-dependency>
+		</cms:dependencies>
+
+		
+		
+		
+        <!-- current release -->
+			<cms:activities released-in-version="@version@">
+				<cms:enh type="TASK" id="Fiberblaze SW 3.1.0.1">Fiberblaze SW 3.1.0.1 integrated</cms:enh>
+			</cms:activities>
+		
+		
+		<!-- Old version -->
+			<cms:activities released-in-version="2.0.1">
+    	    <cms:enh type="TASK" id="Fiberblaze SW 3.0.0.1">Fiberblaze SW 3.0.0.1 integrated</cms:enh>
+            <cms:epr id="44399" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46808">FBC load script should be changed not to use NUMA nodes</cms:epr>
+			</cms:activities>
+			<cms:activities released-in-version="2.0.0">
+					<cms:enh type="TASK" id="Fiberblaze SW 2.5.1.1">Fiberblaze SW 2.5.1.1 integrated</cms:enh>
+					<cms:enh type="ECR" id="ECR 2229">Huge pages integration</cms:enh>
+					<cms:enh type="PDP" id="PDP 120">Ansible integration</cms:enh>
+			</cms:activities>
+    </cms:part-release>
+
+</cms:release>
+
