@@ -15,7 +15,8 @@
     <cms:summary>Summary</cms:summary>
     <cms:description>Description</cms:description>
     <cms:arch>x86_64</cms:arch>
-    <!-- <cms:role>Role</cms:role> -->
+    
+    
 
     <!-- The list of distribution mailing list.-->
     <!--  <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases/cms:distribution-list>  -->
@@ -24,7 +25,7 @@
     <!-- Release details -->
     <cms:release-name>probe-sims</cms:release-name>
     <cms:release-long-name>Long name release</cms:release-long-name>
-    <cms:release-version>666.666.666</cms:release-version>
+    <cms:release-version>6.6.6</cms:release-version>
     
     
    
@@ -37,10 +38,14 @@
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
     </cms:item>
     <cms:item>
-	<cms:name>Name.md5sum</cms:name>
+	<cms:name>NameFiles.md5sum</cms:name>
 	<cms:description>MD5 sum</cms:description>
 	<cms:location>http://utmnnfs/quest7-packages/probe-sims/loc</cms:location>
     </cms:item>
+	
+	
+	
+	
 	
     
      <!-- Precautions for this release -->
@@ -52,7 +57,19 @@
     <!--
         A part-release identifies a piece of what we are release today in this XML.
     -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <cms:part-release>
+    
+    
+    
 
         <cms:status>NEW</cms:status>
         <!-- NEW, UPDATE, CANCEL -->
@@ -71,9 +88,11 @@
         <cms:baseline>MasterClaw 7.1</cms:baseline>
 	   <cms:baseline>MasterClaw 8.0</cms:baseline>
 
+	   
+	   
         <cms:test-level>1</cms:test-level>
 
-        <cms:reference type="STR" name="Test Report" docName="probe-sims-666.-str-v1.doc"
+        <cms:reference type="STR" name="System Test Report" docName="probe-sims-666.-str-v1.doc"
                        uri="http://utmnnfs/quest7-packages/probe-sims"/>
         <cms:reference type="STS" name="System Test Specification" docName=""
                        uri="http://rddoc/rddoc"/>
@@ -108,6 +127,8 @@
                 <cms:note>Global 2</cms:note>
             </cms:global>
     
+    
+    
             <!-- FEATURE  --> 
             <cms:feature>
                 <cms:name>Feature Name 1</cms:name>
@@ -128,6 +149,8 @@
                 <cms:description>feature 2</cms:description>
             </cms:feature>
             
+		  
+		  
     <!-- Other availability type -->
             <cms:other>
                 <cms:name>Other availability type</cms:name>
@@ -139,10 +162,10 @@
             </cms:other>
 		<cms:other>
                 <cms:name>Other availability type</cms:name>
-                <cms:mc-version>8.0</cms:mc-version>
-                <cms:level>TQR</cms:level>
+                <cms:mc-version>7.1</cms:mc-version>
+                <cms:level>GCA</cms:level>
                 <cms:description>Other avalability type description 2</cms:description>
-                <cms:risk>High</cms:risk>
+                <cms:risk>Low</cms:risk>
                 <cms:customers></cms:customers>
             </cms:other>
         </cms:availabilities>
@@ -193,6 +216,64 @@
                 <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
                 <cms:integrates-packages-description>Software Package contains the mediator program, the HDLU kernel driver, the FPGA programs, the FPGA filters and the qpthread dynamic library. Purpose is to intercept the signalling traffic carried on SS7 or ATM links monitored via various front end versions of HDLU board and to deliver the content to qmpa5 as PDU messages. Further the generated statistics and alarms are delivered to qmpa5 via TCP socket based SIM interface too.</cms:integrates-packages-description>
             </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>tmsi_imsi_server-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		   <cms:integrates-packages>
+                <cms:integrates-packages-name>usim_ctxkey_srv</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>usim_ctxkey_srv-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>key_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>key_server-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>msisdn_imsi_srv</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>msisdn_imsi_srv-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>apmlinux</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>apmlinux-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>hpcheck</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>hpcheck-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>hpe-service</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>hpe-service-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>scanning-module-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>scanning-module-sim-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  
+		  
 		  
     <!-- monitored dependency  -->
             <cms:monitored-dependency>
@@ -628,6 +709,10 @@
 
         </cms:dependencies>
  <!-- Konec druhych dependencie -->	   
+	   
+	   
+	   
+	   
 	   
 	   
 	   
