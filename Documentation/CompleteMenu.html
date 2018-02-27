@@ -1,0 +1,150 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>XML Schema Documenatation Menu</title>
+      <!-- saved from url=(0014)about:internet --><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="searchindex.js"></script><link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript">
+         <!--
+            $(document).ready(function () {
+                setTabs();
+            });
+    
+        	var filenames = null;
+        	var keywordIndex = null;
+
+        	function getSearchJS(searchBoxID, ulResults) 
+            {
+        		if (filenames == null) {
+        		    filenames = CreateFileRefs();
+        		}
+        		if (keywordIndex == null) {
+        		    keywordIndex = CreateWordIndex();
+        		}
+
+        		var data = '';
+        		var searchText = $("#" + searchBoxID).attr("value");
+        		var searchTerms = searchText.split(' ');
+        		var fileIndexResults = new Array();
+
+        		for (var sti = 0; sti < searchTerms.length; sti++) {
+        		    var searchTerm = trim(searchTerms[sti]).toLowerCase();
+
+        		    for (var i = 0; i < keywordIndex.length; i++) {
+        		        if (keywordIndex[i][0].indexOf(searchTerm) != -1) {
+        		            fileIndexResults = fileIndexResults.concat(keywordIndex[i][1]);
+        		        }
+        		    }
+        		}
+
+        		fileIndexResults = unique(fileIndexResults);
+        		for (var ri = 0; ri < fileIndexResults.length; ri++) {
+        		    var resultOffset = fileIndexResults[ri];
+        		    data += "<li><a href='" + filenames[resultOffset][1] + "' target='ContentFrame'>" + filenames[resultOffset][0] + "</a></li>";
+        		}
+
+        		if (data == '')
+        		    data = "<li>No Results</li>";
+
+        		$("#" + ulResults).html(data);
+        	}
+                        --></script></head>
+   <body>
+      <form action="CompleteMenu.html">
+         <ul class="tabs">
+            <li><a href="#tab1">Index</a></li>
+            <li><a href="#tab2">Search</a></li>
+         </ul>
+         <div class="tab_container">
+            <div id="tab1" class="tab_content">
+               <div>
+                  <ul id="ulMenu" class="treeview">
+                     <li id="Schema" class="parent"><a href="javascript:toggleNode('Schema')"><img height="11" width="11" src="images/plus.gif"></img>Schema</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="cms-2_10_xsd"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="cms-2_10_xsd.html" target="ContentFrame">cms-2.10.xsd</a></li>
+                           <li id="cms-restrictions-current_xsd"><a href="cms-restrictions-current_xsd.html" target="ContentFrame">cms-restrictions-current.xsd</a></li>
+                        </ul>
+                     </li>
+                     <li id="ComplexType" class="parent"><a href="javascript:toggleNode('ComplexType')"><img height="11" width="11" src="images/plus.gif"></img>ComplexType</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="activity-list-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="activity-list-type.html" target="ContentFrame">activity-list-type</a></li>
+                           <li id="activity-type-enh"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="activity-type-enh.html" target="ContentFrame">activity-type-enh</a></li>
+                           <li id="activity-type-epr"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="activity-type-epr.html" target="ContentFrame">activity-type-epr</a></li>
+                           <li id="availabilities-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="availabilities-type.html" target="ContentFrame">availabilities-type</a></li>
+                           <li id="customers"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="customers.html" target="ContentFrame">customers</a></li>
+                           <li id="dependencies-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="dependencies-type.html" target="ContentFrame">dependencies-type</a></li>
+                           <li id="dependency-local-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="dependency-local-type.html" target="ContentFrame">dependency-local-type</a></li>
+                           <li id="dependency-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="dependency-type.html" target="ContentFrame">dependency-type</a></li>
+                           <li id="distribution-list-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="distribution-list-type.html" target="ContentFrame">distribution-list-type</a></li>
+                           <li id="feature-availability-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="feature-availability-type.html" target="ContentFrame">feature-availability-type</a></li>
+                           <li id="global-availability-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="global-availability-type.html" target="ContentFrame">global-availability-type</a></li>
+                           <li id="integrates-packages1"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="integrates-packages1.html" target="ContentFrame">integrates-packages</a></li>
+                           <li id="item-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="item-type.html" target="ContentFrame">item-type</a></li>
+                           <li id="license-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="license-type.html" target="ContentFrame">license-type</a></li>
+                           <li id="monitored-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="monitored-type.html" target="ContentFrame">monitored-type</a></li>
+                           <li id="other-availability-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="other-availability-type.html" target="ContentFrame">other-availability-type</a></li>
+                           <li id="part-release-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="part-release-type.html" target="ContentFrame">part-release-type</a></li>
+                           <li id="part-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="part-type.html" target="ContentFrame">part-type</a></li>
+                           <li id="product-release-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="product-release-type.html" target="ContentFrame">product-release-type</a></li>
+                           <li id="reference-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="reference-type.html" target="ContentFrame">reference-type</a></li>
+                           <li id="third-part-dependency-type"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="third-part-dependency-type.html" target="ContentFrame">third-part-dependency-type</a></li>
+                        </ul>
+                     </li>
+                     <li id="Element" class="parent"><a href="javascript:toggleNode('Element')"><img height="11" width="11" src="images/plus.gif"></img>Element</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="release"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">cms</a>:
+                              <a href="release.html" target="ContentFrame">release</a></li>
+                        </ul>
+                     </li>
+                     <li id="SimpleType" class="parent"><a href="javascript:toggleNode('SimpleType')"><img height="11" width="11" src="images/plus.gif"></img>SimpleType</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="activity-type-enumeration-list"><a href="activity-type-enumeration-list.html" target="ContentFrame">activity-type-enumeration-list</a></li>
+                           <li id="arch-type"><a href="arch-type.html" target="ContentFrame">arch-type</a></li>
+                           <li id="availability-level-type"><a href="availability-level-type.html" target="ContentFrame">availability-level-type</a></li>
+                           <li id="codename-type"><a href="codename-type.html" target="ContentFrame">codename-type</a></li>
+                           <li id="component-name-enumeration"><a href="component-name-enumeration.html" target="ContentFrame">component-name-enumeration</a></li>
+                           <li id="customer-list-enumeration"><a href="customer-list-enumeration.html" target="ContentFrame">customer-list-enumeration</a></li>
+                           <li id="distribution-list-enumeration"><a href="distribution-list-enumeration.html" target="ContentFrame">distribution-list-enumeration</a></li>
+                           <li id="group-type"><a href="group-type.html" target="ContentFrame">group-type</a></li>
+                           <li id="integrates-packages-name1"><a href="integrates-packages-name1.html" target="ContentFrame">integrates-packages-name</a></li>
+                           <li id="mc-version-type"><a href="mc-version-type.html" target="ContentFrame">mc-version-type</a></li>
+                           <li id="reference-type-type"><a href="reference-type-type.html" target="ContentFrame">reference-type-type</a></li>
+                           <li id="risk-level-type"><a href="risk-level-type.html" target="ContentFrame">risk-level-type</a></li>
+                           <li id="schema-version"><a href="schema-version.html" target="ContentFrame">schema-version</a></li>
+                           <li id="tier-type"><a href="tier-type.html" target="ContentFrame">tier-type</a></li>
+                           <li id="version-type"><a href="version-type.html" target="ContentFrame">version-type</a></li>
+                        </ul>
+                     </li>
+                     <li id="Namespace" class="parent"><a href="javascript:toggleNode('Namespace')"><img height="11" width="11" src="images/plus.gif"></img>Namespace</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="http___www_anritsu_com_cms_2_10"><a href="http___www_anritsu_com_cms_2_10.html" target="ContentFrame">http://www.anritsu.com/CMS/2.10</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div id="tab2" class="tab_content"><input type="text" id="txtSearch"></input><input type="button" id="cmdSearch" value="Search" onclick="getSearchJS('txtSearch','ulSearch');"></input><div style="margin-top:10px;">
+                  <ul id="ulSearch" class="search"></ul>
+               </div>
+            </div>
+         </div>
+      </form>
+   </body>
+</html>

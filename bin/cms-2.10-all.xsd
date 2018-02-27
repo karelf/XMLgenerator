@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio 2017 - Developer Bundle Edition (Trial) 15.1.17.7979 (https://www.liquid-technologies.com)-->
+<!--
+    The XML Schema Definition for XML Releases, version 1.0
+    Copyright 2014 Anritsu. All rights reserved.
+-->
+<xsd:schema xmlns:cms="http://www.anritsu.com/CMS/2.10" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.anritsu.com/CMS/2.10" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--  
+        A release represents the act of exposing one or more components to
+        the public.
+        The release describes basic informations (who did it, when, why),
+        and the details of the single 'Part Release's the release comprises.
+    -->
+    <xsd:element name="release">
+        <xsd:complexType>
+            <xsd:sequence>
+                <!--
+                    Details of the Releaser
+                -->
+                <xsd:element name="author" type="xsd:string" />
+                <xsd:element name="contact" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="date" type="xsd:dateTime" />
+                <xsd:element name="tier" type="cms:tier-type" minOccurs="1" maxOccurs="1" />
+                <xsd:element name="group" type="cms:group-type" minOccurs="1" maxOccurs="1" />
+                <xsd:element name="summary" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="arch" type="cms:arch-type" minOccurs="0" maxOccurs="1" />
+                <!--
+                    The list of distribution mailing list.
+                    For testing purposes own email address can be used instead of Developers of Releases.
+                 -->
+                <xsd:element name="distribution-list" type="cms:distribution-list-type" minOccurs="1" maxOccurs="unbounded" />
+                <!--
+                    Details of the SW released
+                -->
+                <xsd:element name="release-name" type="cms:component-name-enumeration" minOccurs="1" maxOccurs="1" />
+                <xsd:element name="release-long-name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="release-version" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <!--
+                    The list of items released. The list must contain only installable files or md5sum. (rpm, tgz, gz, pkg, sh, exe, md5sum)
+                -->
+                <xsd:element name="item" type="cms:item-type" minOccurs="1" maxOccurs="unbounded" />
+                <!--
+                    The list of precautions, if any.
+                -->
+                <xsd:element name="precaution" minOccurs="0" maxOccurs="unbounded" />
+                <!--
+                    The parts we are releasing. We need at least one
+                -->
+                <xsd:element name="part-release" type="cms:part-release-type" minOccurs="1" maxOccurs="1" />
+                <!--
+                    The role to which the packet belongs
+                -->
+                <!--xsd:element name="role"
+                             type="xsd:string"
+                             minOccurs="1"
+                             maxOccurs="1"/-->
+            </xsd:sequence>
+            <!--
+                The version of the format. It may be used by applications
+                to apply different logic to validate and import data
+            -->
+            <xsd:attribute name="version" type="cms:version-type" />
+        </xsd:complexType>
+    </xsd:element>
+    <!--
+        A Product Release represents a release of the Product. The element
+        "product" shall exist in the system, while the version can be
+        created if missing.
+    -->
+    <xsd:complexType name="product-release-type">
+        <xsd:sequence>
+            <xsd:element name="product" type="xsd:string" />
+            <xsd:element name="version" type="cms:version-type" />
+            <xsd:element name="availability" type="cms:availability-level-type" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+        One of the parts we are releasing.
+    -->
+    <xsd:complexType name="part-type">
+        <xsd:sequence>
+            <xsd:element name="codename" type="cms:codename-type" />
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="description" type="xsd:string" />
+            <xsd:element name="type">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Anritsu Software" />
+                        <xsd:enumeration value="Anritsu Hardware" />
+                        <xsd:enumeration value="Anritsu License" />
+                        <xsd:enumeration value="3rd Party Software" />
+                        <xsd:enumeration value="3rd Party Hardware" />
+                        <xsd:enumeration value="3rd Party License" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+        One of the parts we are releasing.
+    -->
+    <xsd:complexType name="part-release-type">
+        <xsd:sequence>
+            <xsd:element name="status">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="NEW" />
+                        <xsd:enumeration value="UPDATE" />
+                        <xsd:enumeration value="CANCEL" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="purpose" type="xsd:string" />
+            <xsd:element name="baseline" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+            <xsd:element name="test-level" type="xsd:string" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="reference" type="cms:reference-type" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="availabilities" type="cms:availabilities-type" minOccurs="1" maxOccurs="1" />
+            <xsd:choice minOccurs="1" maxOccurs="unbounded">
+                <xsd:element name="dependencies" type="cms:dependencies-type" />
+                <xsd:element name="activities" type="cms:activity-list-type" />
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--These are basic type. They can be resused multiple times in the
+    schema definition. RN and STR type are mandatory for automatic release-->
+    <xsd:complexType name="reference-type">
+        <xsd:attribute name="codename" type="cms:codename-type" />
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="uri" type="xsd:string" use="required" />
+        <xsd:attribute name="docName" type="xsd:string" use="required" />
+        <xsd:attribute name="level" type="xsd:string" />
+        <xsd:attribute name="type" type="cms:reference-type-type" use="required" />
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="item-type">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="1" />
+            <xsd:element name="description" type="xsd:string" minOccurs="1" />
+            <xsd:element name="location" type="xsd:string" minOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="availabilities-type">
+        <xsd:sequence>
+            <xsd:element name="global" type="cms:global-availability-type" minOccurs="1" maxOccurs="unbounded" />
+            <xsd:element name="feature" type="cms:feature-availability-type" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="other" type="cms:other-availability-type" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="global-availability-type">
+        <xsd:sequence>
+            <xsd:element name="package" type="xsd:string" />
+            <xsd:element name="mc-version" type="cms:mc-version-type" />
+            <xsd:element name="level" type="cms:availability-level-type" />
+            <xsd:element name="risk" type="cms:risk-level-type" />
+            <xsd:element name="reason" type="xsd:string" minOccurs="0" />
+            <xsd:element name="customers" type="cms:customers" minOccurs="0" />
+            <xsd:element name="note" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="feature-availability-type">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="mc-version" type="cms:mc-version-type" />
+            <xsd:element name="level" type="cms:availability-level-type" />
+            <xsd:element name="risk" type="cms:risk-level-type" />
+            <xsd:element name="reason" type="xsd:string" minOccurs="0" />
+            <xsd:element name="customers" type="cms:customers" minOccurs="0" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="other-availability-type">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="mc-version" type="cms:mc-version-type" />
+            <xsd:element name="level" type="cms:availability-level-type" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0" />
+            <xsd:element name="risk" type="cms:risk-level-type" minOccurs="0" />
+            <xsd:element name="customers" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+ -->
+    <xsd:complexType name="third-part-dependency-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="xsd:string" />
+            <xsd:element name="required-version" type="xsd:string" />
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0" />
+            <xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+ -->
+    <xsd:complexType name="dependency-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="cms:component-name-enumeration" />
+            <xsd:element name="required-version">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[+]?" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0" />
+            <xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+ -->
+    <xsd:complexType name="dependency-local-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="cms:component-name-enumeration" />
+            <xsd:element name="required-version">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[+]?" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0" />
+            <xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="required" type="xsd:string" minOccurs="0" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="monitored-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="cms:component-name-enumeration" />
+            <xsd:element name="required-version" type="xsd:string" />
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="dependencies-type">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="local-dependency" type="cms:dependency-local-type" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="platform-dependency" type="cms:dependency-type" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="third-part-dependency" type="cms:third-part-dependency-type" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="monitored-dependency" type="cms:monitored-type" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="integrates-packages" type="cms:integrates-packages" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:choice>
+        <xsd:attribute name="mc-version" type="cms:mc-version-type" />
+    </xsd:complexType>
+    <xsd:complexType name="integrates-packages">
+        <xsd:sequence>
+            <xsd:element name="integrates-packages-name" type="cms:integrates-packages-name" />
+            <xsd:element name="integrates-packages-required-version" type="xsd:string" />
+            <xsd:element name="integrates-packages-tested-version" type="xsd:string" />
+            <xsd:element name="integrates-packages-description" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="activity-list-type">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="epr" type="cms:activity-type-epr" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="enh" type="cms:activity-type-enh" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:choice>
+        <xsd:attribute name="released-in-version" type="xsd:string" />
+    </xsd:complexType>
+    <!--
+    -->
+    <xsd:complexType name="activity-type-epr">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="id" type="xsd:integer" use="required" />
+                <xsd:attribute name="uri" type="xsd:string" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="activity-type-enh">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="id" type="xsd:string" />
+                <xsd:attribute name="uri" type="xsd:string" />
+                <xsd:attribute name="type" type="cms:activity-type-enumeration-list" />
+                <xsd:attribute name="availability" type="cms:availability-level-type" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <!--
+   -->
+    <xsd:complexType name="license-type">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="uri" type="xsd:string" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="distribution-list-type">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="cms:distribution-list-enumeration" />
+                <xsd:attribute name="email" type="xsd:string" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="customers">
+        <xsd:sequence>
+            <xsd:element name="customer" type="cms:customer-list-enumeration" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="integrates-packages-name">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="tmsi_imsi_server" />
+            <xsd:enumeration value="usim_ctxkey_srv" />
+            <xsd:enumeration value="key_server" />
+            <xsd:enumeration value="msisdn_imsi_srv" />
+            <xsd:enumeration value="li-ether-sim" />
+            <xsd:enumeration value="li-hdlu-sim" />
+            <xsd:enumeration value="li-usim" />
+            <xsd:enumeration value="li-usim-ip" />
+            <xsd:enumeration value="apmlinux" />
+            <xsd:enumeration value="hpcheck" />
+            <xsd:enumeration value="hpe-service" />
+            <xsd:enumeration value="scanning-module-sim" />
+            <xsd:enumeration value="neds" />
+            <xsd:enumeration value="qpos" />
+            <xsd:enumeration value="qroot" />
+            <xsd:enumeration value="qsockets" />
+            <xsd:enumeration value="qrmi" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="mc-version-type">
+        <xsd:restriction base="xsd:string">
+            <!--xsd:enumeration value="6.4.2"/-->
+            <xsd:enumeration value="7.0.2" />
+            <xsd:enumeration value="7.1" />
+            <xsd:enumeration value="8.0" />
+            <xsd:enumeration value="8.0.1" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="reference-type-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RN" />
+            <xsd:enumeration value="STR" />
+            <xsd:enumeration value="STS" />
+            <xsd:enumeration value="SRS" />
+            <xsd:enumeration value="SDS" />
+            <xsd:enumeration value="SRDS" />
+            <xsd:enumeration value="URD" />
+            <xsd:enumeration value="ECR" />
+            <xsd:enumeration value="EPR" />
+            <xsd:enumeration value="ENH" />
+            <xsd:enumeration value="MANUAL" />
+            <xsd:enumeration value="HYPERLINK" />
+            <xsd:enumeration value="QBASE" />
+            <xsd:enumeration value="EXE" />
+            <xsd:enumeration value="PFORUM" />
+            <xsd:enumeration value="ISO" />
+            <xsd:enumeration value="SIG" />
+            <xsd:enumeration value="EMAIL" />
+            <xsd:enumeration value="NOTE" />
+            <xsd:enumeration value="ULTR" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="codename-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Za-z0-9_\-\.]+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="version-type">
+        <xsd:restriction base="xsd:string" />
+    </xsd:simpleType>
+    <xsd:simpleType name="availability-level-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="GCA" />
+            <xsd:enumeration value="FCA" />
+            <xsd:enumeration value="SDR" />
+            <xsd:enumeration value="SCR" />
+            <xsd:enumeration value="TQR" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tier-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Anritsu/MasterClaw/Foundation" />
+            <xsd:enumeration value="Anritsu/MasterClaw/Acquisition" />
+            <xsd:enumeration value="Anritsu/MasterClaw/Mediation" />
+            <xsd:enumeration value="Anritsu/MasterClaw/Application" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="group-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Administration" />
+            <xsd:enumeration value="Analysis" />
+            <xsd:enumeration value="Backend" />
+            <xsd:enumeration value="Correlation" />
+            <xsd:enumeration value="Intelligence" />
+            <xsd:enumeration value="Mapping" />
+            <xsd:enumeration value="Platform" />
+            <xsd:enumeration value="Probe" />
+            <xsd:enumeration value="Protocol" />
+            <xsd:enumeration value="System" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="distribution-list-enumeration">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DEVELOP" />
+            <xsd:enumeration value="RELEASE" />
+            <xsd:enumeration value="SUPPORT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="activity-type-enumeration-list">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ECR" />
+            <xsd:enumeration value="PDP" />
+            <xsd:enumeration value="TASK" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="arch-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="noarch" />
+            <xsd:enumeration value="i686" />
+            <xsd:enumeration value="x86_64" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="risk-level-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Low" />
+            <xsd:enumeration value="Medium" />
+            <xsd:enumeration value="High" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="customer-list-enumeration">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DTAG" />
+            <xsd:enumeration value="Excelcom" />
+            <xsd:enumeration value="Jasper" />
+            <xsd:enumeration value="Megafon" />
+            <xsd:enumeration value="Mobily" />
+            <xsd:enumeration value="NetCologne" />
+            <xsd:enumeration value="O2 CZ" />
+            <xsd:enumeration value="Orange France" />
+            <xsd:enumeration value="Telcel" />
+            <xsd:enumeration value="Telefonica CZ" />
+            <xsd:enumeration value="Telefonica International" />
+            <xsd:enumeration value="Telefonica" />
+            <xsd:enumeration value="Telenor Serbia" />
+            <xsd:enumeration value="TIWS" />
+            <xsd:enumeration value="TMNL" />
+            <xsd:enumeration value="TO2" />
+            <xsd:enumeration value="Turkcell" />
+            <xsd:enumeration value="U-Mobile" />
+            <xsd:enumeration value="VipNet" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="component-name-enumeration">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="alarm-srv" />
+            <xsd:enumeration value="alarm-ui" />
+            <xsd:enumeration value="ansible_2.3" />
+            <xsd:enumeration value="backup" />
+            <xsd:enumeration value="bo-manager" />
+            <xsd:enumeration value="bo-model" />
+            <xsd:enumeration value="BusinessObject_XI41SP5.3" />
+            <xsd:enumeration value="BusinessObject_XI41SP9" />
+            <xsd:enumeration value="cdb" />
+            <xsd:enumeration value="cdb-if" />
+            <xsd:enumeration value="cdb-load" />
+            <xsd:enumeration value="cdb-model" />
+            <xsd:enumeration value="CentOS5.8_x86_64" />
+            <xsd:enumeration value="CentOS6.4_x86_64" />
+            <xsd:enumeration value="CentOS6.6_x86_64" />
+            <xsd:enumeration value="CentOS7-x86_64" />
+            <xsd:enumeration value="CentOS-RHEL_FBC" />
+            <xsd:enumeration value="CentOS-RHEL_FBCsupport_PA" />
+            <xsd:enumeration value="CentOS-RHEL_netinstall" />
+            <xsd:enumeration value="CentOS-RHEL_updates" />
+            <xsd:enumeration value="cis" />
+            <xsd:enumeration value="configtool" />
+            <xsd:enumeration value="configtool-ui" />
+            <xsd:enumeration value="DellSUU_15.07.200.30" />
+            <xsd:enumeration value="DellSUU_15.07.200.30_Win" />
+            <xsd:enumeration value="DellSUU_17.04" />
+            <xsd:enumeration value="deploy-server" />
+            <xsd:enumeration value="documentation" />
+            <xsd:enumeration value="dris" />
+            <xsd:enumeration value="dwh-ndaf" />
+            <xsd:enumeration value="eoCare" />
+            <xsd:enumeration value="eofb-server" />
+            <xsd:enumeration value="eoLive-catalog" />
+            <xsd:enumeration value="eoMind" />
+            <xsd:enumeration value="eoSearch" />
+            <xsd:enumeration value="eosearch-loader" />
+            <xsd:enumeration value="eosearch-ui" />
+            <xsd:enumeration value="eoSight_server" />
+            <xsd:enumeration value="eoxdr" />
+            <xsd:enumeration value="finder" />
+            <xsd:enumeration value="finder-cci" />
+            <xsd:enumeration value="finder-off" />
+            <xsd:enumeration value="finder-srv" />
+            <xsd:enumeration value="finder-ws" />
+            <xsd:enumeration value="HPSPP_2016.04.0" />
+            <xsd:enumeration value="HPSPP_2016.10.0" />
+            <xsd:enumeration value="HPSPP_2017.04.0" />
+            <xsd:enumeration value="HPSPP_2017.07.1" />
+            <xsd:enumeration value="infoservers" />
+            <xsd:enumeration value="java8_x86_64" />
+            <xsd:enumeration value="java-libs" />
+            <xsd:enumeration value="li-ether-sim" />
+            <xsd:enumeration value="libcompatrh72" />
+            <xsd:enumeration value="live-catalog" />
+            <xsd:enumeration value="live-srv" />
+            <xsd:enumeration value="live-ui" />
+            <xsd:enumeration value="lms-ui" />
+            <xsd:enumeration value="map-srv" />
+            <xsd:enumeration value="mcls" />
+            <xsd:enumeration value="mcls-model" />
+            <xsd:enumeration value="measif" />
+            <xsd:enumeration value="mics" />
+            <xsd:enumeration value="ndaf" />
+            <xsd:enumeration value="ndaf-elasticsearch" />
+            <xsd:enumeration value="ndaf-elasticsearch" />
+            <xsd:enumeration value="ndaf-kafka" />
+            <xsd:enumeration value="ndaf-storm" />
+            <xsd:enumeration value="ndaf-tools" />
+            <xsd:enumeration value="ndaf-zookeeper" />
+            <xsd:enumeration value="ngv-cdr" />
+            <xsd:enumeration value="nisc" />
+            <xsd:enumeration value="options" />
+            <xsd:enumeration value="plib" />
+            <xsd:enumeration value="portal" />
+            <xsd:enumeration value="PostgreSQL_9.3.5-1" />
+            <xsd:enumeration value="probe-conf" />
+            <xsd:enumeration value="probe-sims" />
+            <xsd:enumeration value="protocol-AINTERFACE_WB" />
+            <xsd:enumeration value="protocol-CALIFORNIA" />
+            <xsd:enumeration value="protocol-CHENNAI_JAPAN" />
+            <xsd:enumeration value="protocol-COLORADO" />
+            <xsd:enumeration value="protocol-DIAMETER_3GPP" />
+            <xsd:enumeration value="protocol-ETSI_ISDN" />
+            <xsd:enumeration value="protocol-EVEREST" />
+            <xsd:enumeration value="protocol-GANGES" />
+            <xsd:enumeration value="protocol-GPRS_GB_IP" />
+            <xsd:enumeration value="protocol-IKE_V2" />
+            <xsd:enumeration value="protocol-IMAP" />
+            <xsd:enumeration value="protocol-IP_STAT" />
+            <xsd:enumeration value="protocol-ISDN_IP" />
+            <xsd:enumeration value="protocol-ITU_H248_GCP" />
+            <xsd:enumeration value="protocol-LDAP_V3" />
+            <xsd:enumeration value="protocol-LTE_S1" />
+            <xsd:enumeration value="protocol-LTE_SGS" />
+            <xsd:enumeration value="protocol-LTE_SLS" />
+            <xsd:enumeration value="protocol-LTE_X2" />
+            <xsd:enumeration value="protocol-MEXICO_BELL_SIGTRAN" />
+            <xsd:enumeration value="protocol-MISSISSIPPI" />
+            <xsd:enumeration value="protocol-MSRP" />
+            <xsd:enumeration value="protocol-RADIUS_AAA" />
+            <xsd:enumeration value="protocol-RHINE" />
+            <xsd:enumeration value="protocol-SCAI_NOR" />
+            <xsd:enumeration value="protocol-servers" />
+            <xsd:enumeration value="protocol-SMS_SMPP" />
+            <xsd:enumeration value="protocol-SOAP" />
+            <xsd:enumeration value="protocol-srs" />
+            <xsd:enumeration value="protocol-THAMES" />
+            <xsd:enumeration value="protocol-UMTS_IU" />
+            <xsd:enumeration value="protocol-UMTS_IU_BELL" />
+            <xsd:enumeration value="protocol-UMTS_IUB" />
+            <xsd:enumeration value="protocol-UMTS_IUH" />
+            <xsd:enumeration value="protocol-UMTS_IUR" />
+            <xsd:enumeration value="protocol-UNISTIM" />
+            <xsd:enumeration value="protocol-VERONA_WHITE_SIGTRAN" />
+            <xsd:enumeration value="protocol-VOLGA" />
+            <xsd:enumeration value="python" />
+            <xsd:enumeration value="python" />
+            <xsd:enumeration value="qbase" />
+            <xsd:enumeration value="qlib" />
+            <xsd:enumeration value="qlinux-kernel-pfring" />
+            <xsd:enumeration value="qmon" />
+            <xsd:enumeration value="qmpa5" />
+            <xsd:enumeration value="qnss" />
+            <xsd:enumeration value="qpas2" />
+            <xsd:enumeration value="qpduf" />
+            <xsd:enumeration value="qprotinst" />
+            <xsd:enumeration value="qxdrs" />
+            <xsd:enumeration value="qxts" />
+            <xsd:enumeration value="rdas" />
+            <xsd:enumeration value="RHEL5.8_x86_64" />
+            <xsd:enumeration value="RHEL6.4_x86_64" />
+            <xsd:enumeration value="RHEL6.6_x86_64" />
+            <xsd:enumeration value="RHEL7-x86_64" />
+            <xsd:enumeration value="rqs" />
+            <xsd:enumeration value="scanning-module" />
+            <xsd:enumeration value="sdlt" />
+            <xsd:enumeration value="sec-linux" />
+            <xsd:enumeration value="security-srv" />
+            <xsd:enumeration value="security-ui" />
+            <xsd:enumeration value="selfmon" />
+            <xsd:enumeration value="storage-srv" />
+            <xsd:enumeration value="storage-ui" />
+            <xsd:enumeration value="tableau-manager" />
+            <xsd:enumeration value="tableau-model" />
+            <xsd:enumeration value="Tableau_10.3" />
+            <xsd:enumeration value="ulp-yum" />
+            <xsd:enumeration value="uninorm" />
+            <xsd:enumeration value="Vertica_723-19" />
+            <xsd:enumeration value="Vertica_801-2" />
+            <xsd:enumeration value="Vertica_801-6" />
+            <xsd:enumeration value="Vertica_811-6" />
+            <xsd:enumeration value="virtual-probe" />
+            <xsd:enumeration value="windows2012r2" />
+            <xsd:enumeration value="WiresharkVnc" />
+            <xsd:enumeration value="yum" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="int-packages" />
+    
+    
+    
+</xsd:schema>

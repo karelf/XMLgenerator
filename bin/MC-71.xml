@@ -1,0 +1,246 @@
+
+	<cms:dependencies mc-version="7.1"> <!-- START dependencies mc-version 7.1 -->
+    <!-- Platform dependency --> 
+            <cms:platform-dependency>
+                <cms:component>CentOS6.4_x86_64</cms:component>
+                <cms:required-version>6.4+</cms:required-version>
+                <cms:tested-version>6.4 (64b)</cms:tested-version>
+                <cms:description>Platform depemdency 1 MC 7.1</cms:description>
+                <cms:license>GPL v2 http://www.gnu.org/copyleft/gpl.html</cms:license>
+            </cms:platform-dependency>
+            <cms:platform-dependency>
+                <cms:component>CentOS7-x86_64</cms:component>
+                <cms:required-version>7.4+</cms:required-version>
+                <cms:tested-version>7.4 (64b)</cms:tested-version>
+                <cms:description>Platform dependency 2 MC 7.1</cms:description>
+                <cms:license>GPL v2 http://www.gnu.org/copyleft/gpl.html</cms:license>
+            </cms:platform-dependency>
+		<!-- integrates packages, used for subcomponent tags -->
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>li-ether-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-ether-sim.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>purpose of is to intercept the signalling traffic (SoIP probe) or user plane traffic (VoIP probe) carried on IP, to strip the tunnelling protocols if any and to deliver the content to qmpa5 as PDU messages. Further the generated statistics, alarms and optionally also STAT CSDRs are delivered to qmpa5 via TCP socket based SIM interface too. Optionally also the DoIP functionality may be enabled in li-ether-sim. In addition to standard Ethernet interfaces the IP traffic may be captured also using special board types for higher performance using included kernel drivers.</cms:integrates-packages-description>
+            </cms:integrates-packages>
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>li-usim-ip</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-usim-ip.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10 interfaces carried on IP links, via standard Ethernet interfaces or using special board types for higher performance using included kernel drivers. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
+                </cms:integrates-packages>
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>li-usim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-usim.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10, IU-CS, IU-PS interfaces carried on ATM links via HDLU board STM1 front end. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
+            </cms:integrates-packages>
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>li-hdlu-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-hdlu-sim.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Software Package contains the mediator program, the HDLU kernel driver, the FPGA programs, the FPGA filters and the qpthread dynamic library. Purpose is to intercept the signalling traffic carried on SS7 or ATM links monitored via various front end versions of HDLU board and to deliver the content to qmpa5 as PDU messages. Further the generated statistics and alarms are delivered to qmpa5 via TCP socket based SIM interface too.</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>tmsi_imsi_server-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>software package contains server, testing client and configuration files necessary for running a TMSI_IMSI Server application. The TMSI_IMSI server functionality basically serves as a functional module in a Master Claw for mapping of changing temporary subscriber identity – LAC+TMSI number, to the permanent identities IMSI, IMEI and MSISDN. This is used for data records enrichment in circuit switched domain (2G A-interface and 3G IuCS).</cms:integrates-packages-description>
+             </cms:integrates-packages>
+		   <cms:integrates-packages>
+                <cms:integrates-packages-name>usim_ctxkey_srv</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>usim_ctxkey_srv-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>functionality serves as a functional module in a MasterClaw UMTS (3G) Iub monitoring and deciphering system based on USIM components</cms:integrates-packages-description>
+             </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>key_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>key_server-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>contains one main program file, few dynamic libraries and two configuration files necessary for running a Key Server application on a PC with Linux operating system (a probe). Besides it contains a script for diagnostic communication and database client utility. The Key Server functionality serves as a functional module in a Master Claw MPA based GPRS-Gb monitoring and decrypting system and optionally for IMSI/IMEI/MSISDN data records enrichment in packet switched domain (2,5G GPRS-Gb and 3G IuPS).</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>msisdn_imsi_srv</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>msisdn_imsi_srv-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>apmlinux</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>apmlinux-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>hpcheck</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>hpcheck-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>hpe-service</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>hpe-service-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+		  <cms:integrates-packages>
+                <cms:integrates-packages-name>scanning-module-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>scanning-module-sim-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+            </cms:integrates-packages>
+    <!-- monitored dependency  -->
+            <cms:monitored-dependency>
+                <cms:component>ndaf-elasticsearch</cms:component>
+                <cms:required-version>15</cms:required-version>
+                <cms:tested-version>1</cms:tested-version>
+                <cms:description>(1) Monitored description  FIRST</cms:description>
+            </cms:monitored-dependency>
+            <cms:monitored-dependency>
+                <cms:component>ndaf-elasticsearch</cms:component>
+                <cms:required-version>14</cms:required-version>
+                <cms:tested-version>2</cms:tested-version>
+                <cms:description>(2) Monitored description 2 FIRST</cms:description>
+            </cms:monitored-dependency>
+<!-- 3rd part dependency qmpa5 START -->
+		<cms:third-part-dependency> 
+               <cms:component>google protobufs</cms:component>
+               <cms:required-version>2.5.0+</cms:required-version>
+               <cms:tested-version>2.5.0</cms:tested-version>
+               <cms:description>Mechanism for serializing structured data</cms:description>
+               <cms:license>https://github.com/google/protobuf/blob/master/LICENSE</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>LZ4</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license>2-Clause BSD license https://opensource.org/licenses/bsd-license.php</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>LZO, miniLZO</cms:component>
+               <cms:required-version>2.x+</cms:required-version>
+               <cms:tested-version>2.x+</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license>GPL v2 http://www.oberhumer.com/opensource/gpl.html</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>ZLIB</cms:component>
+               <cms:required-version>1.2.x+</cms:required-version>
+               <cms:tested-version>1.2.x+</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license>Free license for zlib https://www.zlib.net/zlib_license.html</cms:license>
+		</cms:third-part-dependency>
+	<!-- 3rd part depemdency STOP qmpa5 MC 7.1 -->
+	<!-- 3rd part dependency probe-sims START -->
+		<cms:third-part-dependency> 
+               <cms:component>ASN.1 Compiler </cms:component>
+               <cms:required-version>9.0.2+</cms:required-version>
+               <cms:tested-version>9.0.2</cms:tested-version>
+               <cms:description>Compiler</cms:description>
+               <cms:license>Commercial License for Deployment OSS Nokalva  license 9669</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>CentOS-RHEL_FBC</cms:component>
+               <cms:required-version>2.1(2).1(2)</cms:required-version>
+               <cms:tested-version>2.1(2).1(2)</cms:tested-version>
+               <cms:description>Needed for eoCapture (FBC) usage</cms:description>
+               <cms:license>Licence TEST</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>DPDK</cms:component>
+               <cms:required-version>17.0.2+</cms:required-version>
+               <cms:tested-version>17.0.2</cms:tested-version>
+               <cms:description>Libraries and drivers for fast packet processing</cms:description>
+               <cms:license>BSD https://opensource.org/licenses/BSD-3-Clause</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>google protobufs</cms:component>
+               <cms:required-version>2.5.0+</cms:required-version>
+               <cms:tested-version>2.5.0</cms:tested-version>
+               <cms:description>Mechanism for serializing structured data</cms:description>
+               <cms:license>https://github.com/google/protobuf/blob/master/LICENSE</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>kernel driver</cms:component>
+               <cms:required-version></cms:required-version>
+               <cms:tested-version></cms:tested-version>
+               <cms:description></cms:description>
+               <cms:license>GPL v3 http://www.gnu.org/copyleft/gpl.html</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>LZ4</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license>2-Clause BSD license https://opensource.org/licenses/bsd-license.php</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>LIBPCAP PCAP library</cms:component>
+               <cms:required-version>1.8.1+</cms:required-version>
+               <cms:tested-version>1.8.1</cms:tested-version>
+               <cms:description>Library for capturing packets</cms:description>
+               <cms:license>3-clause BSD license, https://opensource.org/licenses/BSD-3-Clause</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>PF_RING</cms:component>
+               <cms:required-version>5.6.1+</cms:required-version>
+               <cms:tested-version>5.6.1</cms:tested-version>
+               <cms:description>PF_RING library</cms:description>
+               <cms:license>BSD, GPL v2</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>Qosmos - ixEngine</cms:component>
+               <cms:required-version>4.18.2+</cms:required-version>
+               <cms:tested-version>4.18.2</cms:tested-version>
+               <cms:description>DPI SW engine for IP traffic analysis</cms:description>
+               <cms:license>Commercial License for Deployment  See Section 4 for MasterClaw License Terms.</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>Telchemy - VQMon</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Voice Quality Measurement System</cms:description>
+               <cms:license>Commercial License for Deployment  See Section 4 for MasterClaw License Terms.</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>Unwind</cms:component>
+               <cms:required-version>1.x+</cms:required-version>
+               <cms:tested-version>1.x+</cms:tested-version>
+               <cms:description>Define a portable and efficient API</cms:description>
+               <cms:license>http://www.xfree86.org/3.3.6/COPYRIGHT2.html#3</cms:license>
+          </cms:third-part-dependency>
+		<cms:third-part-dependency> 
+               <cms:component>ZLIB</cms:component>
+               <cms:required-version>1.2.x+</cms:required-version>
+               <cms:tested-version>1.2.1</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license>Free license for zlib https://www.zlib.net/zlib_license.html</cms:license>
+          </cms:third-part-dependency>
+		
+	<!-- 3rd part depemdency STOP probe-sims MC 7.1 -->
+	<!-- 3rd part depemdency START INFOSERVER MC 7.1 -->
+		<cms:third-part-dependency> 
+               <cms:component>google protobufs</cms:component>
+               <cms:required-version>2.5.0+</cms:required-version>
+               <cms:tested-version>2.5.0</cms:tested-version>
+               <cms:description>Mechanism for serializing structured data </cms:description>
+               <cms:license>https://github.com/google/protobuf/blob/master/LICENSE</cms:license>
+          </cms:third-part-dependency>
+<!-- 3rd part depemdency STOP INFOSERVER MC 7.1 -->		
+    <!-- Local dependency -->
+            <cms:local-dependency>
+                <cms:component>configtool</cms:component>
+                <cms:required-version>5.6.0.1+</cms:required-version>
+                <cms:tested-version>5.6.0.1</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>(1) Local dependency FIRST</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+                <cms:required-version>2.0.1</cms:required-version>
+                <cms:tested-version>2.0.1</cms:tested-version>
+			 <cms:required>No</cms:required>
+			 <cms:description>(2) Local dependencyFIRST</cms:description>
+		  </cms:local-dependency>
+     </cms:dependencies>
+<!-- END dependencies mc-version 7.1 -->	

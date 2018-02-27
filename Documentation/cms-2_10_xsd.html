@@ -1,0 +1,462 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema cms-2.10.xsd in XML Anritsu </title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'cms-2_10_xsd');
+                        --></script><div class="pageheader">
+         Documentation for XML Anritsu 
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>cms-2.10.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_anritsu_com_cms_2_10.html">http://www.anritsu.com/CMS/2.10</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+
+&lt;!--
+    The XML Schema Definition for XML Releases, version 1.0
+    Copyright 2014 Anritsu. All rights reserved.
+--&gt;
+&lt;xsd:schema xmlns:cms="http://www.anritsu.com/CMS/2.10"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.anritsu.com/CMS/2.10"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"&gt;
+
+    &lt;xsd:include schemaLocation="http://rdstorage:8081/artifactory/cms-repo-local/com/anritsu/cms-restrictions/current/cms-restrictions-current.xsd"/&gt;
+	
+	&lt;!--
+        A release represents the act of exposing one or more components to
+        the public.
+        The release describes basic informations (who did it, when, why),
+        and the details of the single 'Part Release's the release comprises.
+    --&gt;
+	
+    &lt;xsd:element name="release"&gt;
+        &lt;xsd:complexType&gt;
+            &lt;xsd:sequence&gt;
+                &lt;!--
+                    Details of the Releaser
+                --&gt;
+                &lt;xsd:element name="author" type="xsd:string" /&gt;
+                &lt;xsd:element name="contact" type="xsd:string" minOccurs="0" maxOccurs="1"/&gt;
+                &lt;xsd:element name="date" type="xsd:dateTime" /&gt;
+		        &lt;xsd:element name="tier" type="cms:tier-type" minOccurs="1" maxOccurs="1"/&gt;
+                &lt;xsd:element name="group" type="cms:group-type" minOccurs="1" maxOccurs="1"/&gt;
+                &lt;xsd:element name="summary" type="xsd:string" minOccurs="0" maxOccurs="1"/&gt;
+                &lt;xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/&gt;
+                &lt;xsd:element name="arch" type="cms:arch-type" minOccurs="0" maxOccurs="1"/&gt;
+
+
+                &lt;!--
+                    The list of distribution mailing list.
+                    For testing purposes own email address can be used instead of Developers of Releases.
+                 --&gt;
+                &lt;xsd:element name="distribution-list" type="cms:distribution-list-type"  minOccurs="1" maxOccurs="unbounded"/&gt;
+
+                &lt;!--
+                    Details of the SW released
+                --&gt;
+                &lt;xsd:element name="release-name" type="cms:component-name-enumeration" minOccurs="1" maxOccurs="1"/&gt;
+                &lt;xsd:element name="release-long-name" type="xsd:string" minOccurs="0" maxOccurs="1" /&gt;
+                &lt;xsd:element name="release-version" minOccurs="1" maxOccurs="1"&gt;
+                    &lt;xsd:simpleType&gt;
+                        &lt;xsd:restriction base="xsd:string"&gt;
+                            &lt;xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?"/&gt;
+                        &lt;/xsd:restriction&gt;
+                    &lt;/xsd:simpleType&gt;
+                &lt;/xsd:element&gt;
+
+
+                &lt;!--
+                    The list of items released. The list must contain only installable files or md5sum. (rpm, tgz, gz, pkg, sh, exe, md5sum)
+                --&gt;
+                &lt;xsd:element name="item"
+                             type="cms:item-type"
+                             minOccurs="1"
+                             maxOccurs="unbounded"/&gt;
+
+                &lt;!--
+                    The list of precautions, if any.
+                --&gt;
+                &lt;xsd:element name="precaution" minOccurs="0" maxOccurs="unbounded"/&gt;
+
+                &lt;!--
+                    The parts we are releasing. We need at least one
+                --&gt;
+                &lt;xsd:element name="part-release"
+                             type="cms:part-release-type"
+                             minOccurs="1"
+                             maxOccurs="1"/&gt;
+
+                  &lt;!--
+                    The role to which the packet belongs
+                --&gt;
+                &lt;!--xsd:element name="role"
+                             type="xsd:string"
+                             minOccurs="1"
+                             maxOccurs="1"/--&gt;            
+
+            &lt;/xsd:sequence&gt;
+
+            &lt;!--
+                The version of the format. It may be used by applications
+                to apply different logic to validate and import data
+            --&gt;
+            &lt;xsd:attribute name="version" type="cms:version-type"/&gt;
+        &lt;/xsd:complexType&gt;
+    &lt;/xsd:element&gt;
+
+    &lt;!--
+        A Product Release represents a release of the Product. The element
+        "product" shall exist in the system, while the version can be
+        created if missing.
+    --&gt;
+    &lt;xsd:complexType name="product-release-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="product" type="xsd:string"/&gt;
+            &lt;xsd:element name="version" type="cms:version-type"/&gt;
+            &lt;xsd:element name="availability" type="cms:availability-level-type"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;	
+    
+	&lt;!--
+        One of the parts we are releasing.
+    --&gt;
+    &lt;xsd:complexType name="part-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="codename" type="cms:codename-type"/&gt;
+            &lt;xsd:element name="name" type="xsd:string"/&gt;
+            &lt;xsd:element name="description" type="xsd:string"/&gt;
+            &lt;xsd:element name="type"&gt;
+                &lt;xsd:simpleType&gt;
+                    &lt;xsd:restriction base="xsd:string"&gt;
+                        &lt;xsd:enumeration value="Anritsu Software"/&gt;
+                        &lt;xsd:enumeration value="Anritsu Hardware"/&gt;
+                        &lt;xsd:enumeration value="Anritsu License"/&gt;
+                        &lt;xsd:enumeration value="3rd Party Software"/&gt;
+                        &lt;xsd:enumeration value="3rd Party Hardware"/&gt;
+                        &lt;xsd:enumeration value="3rd Party License"/&gt;
+                    &lt;/xsd:restriction&gt;
+                &lt;/xsd:simpleType&gt;
+            &lt;/xsd:element&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+        One of the parts we are releasing.
+    --&gt;
+    &lt;xsd:complexType name="part-release-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="status"&gt;
+                &lt;xsd:simpleType&gt;
+                    &lt;xsd:restriction base="xsd:string"&gt;
+                        &lt;xsd:enumeration value="NEW"/&gt;
+                        &lt;xsd:enumeration value="UPDATE"/&gt;
+                        &lt;xsd:enumeration value="CANCEL"/&gt;
+                    &lt;/xsd:restriction&gt;
+                &lt;/xsd:simpleType&gt;
+            &lt;/xsd:element&gt;
+            &lt;xsd:element name="purpose" type="xsd:string"/&gt;
+            &lt;xsd:element name="baseline" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;xsd:element name="test-level" type="xsd:string" minOccurs="0" maxOccurs="1"/&gt;
+            &lt;xsd:element name="reference" type="cms:reference-type" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;xsd:element name="availabilities" type="cms:availabilities-type" minOccurs="1" maxOccurs="1" /&gt;
+            &lt;xsd:choice minOccurs="1" maxOccurs="unbounded"&gt;
+                &lt;xsd:element name="dependencies" type="cms:dependencies-type"/&gt;
+                &lt;xsd:element name="activities" type="cms:activity-list-type"/&gt;
+            &lt;/xsd:choice&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--These are basic type. They can be resused multiple times in the
+    schema definition. RN and STR type are mandatory for automatic release--&gt;
+
+    &lt;xsd:complexType name="reference-type"&gt;
+        &lt;xsd:attribute name="codename" type="cms:codename-type"/&gt;
+        &lt;xsd:attribute name="name" type="xsd:string"/&gt;
+        &lt;xsd:attribute name="uri" type="xsd:string" use="required"/&gt;
+        &lt;xsd:attribute name="docName" type="xsd:string" use="required"/&gt;
+        &lt;xsd:attribute name="level" type="xsd:string"/&gt;
+        &lt;xsd:attribute name="type" type="cms:reference-type-type" use="required" /&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="item-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="name"  minOccurs="1"  type="xsd:string" /&gt;
+            &lt;xsd:element name="description"  minOccurs="1"  type="xsd:string" /&gt;
+            &lt;xsd:element name="location"  minOccurs="1"  type="xsd:string" /&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="availabilities-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="global"  minOccurs="1" maxOccurs="unbounded" type="cms:global-availability-type" /&gt;
+            &lt;xsd:element name="feature" minOccurs="0" maxOccurs="unbounded" type="cms:feature-availability-type" /&gt;
+            &lt;xsd:element name="other" minOccurs="0" maxOccurs="unbounded" type="cms:other-availability-type" /&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="global-availability-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="package" type="xsd:string" /&gt;
+            &lt;xsd:element name="mc-version" type="cms:mc-version-type" /&gt;
+            &lt;xsd:element name="level" type="cms:availability-level-type" /&gt;
+            &lt;xsd:element name="risk" type="cms:risk-level-type" /&gt;
+            &lt;xsd:element name="reason" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="customers" type="cms:customers" minOccurs="0"/&gt;
+            &lt;xsd:element name="note" type="xsd:string" minOccurs="0" /&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="feature-availability-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="name" type="xsd:string" /&gt;
+            &lt;xsd:element name="mc-version" type="cms:mc-version-type" /&gt;
+            &lt;xsd:element name="level" type="cms:availability-level-type" /&gt;
+            &lt;xsd:element name="risk" type="cms:risk-level-type" /&gt;
+            &lt;xsd:element name="reason" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="customers" type="cms:customers" minOccurs="0"/&gt;
+            &lt;xsd:element name="description" type="xsd:string" minOccurs="0"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="other-availability-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="name" type="xsd:string" /&gt;
+            &lt;xsd:element name="mc-version" type="cms:mc-version-type" /&gt;
+            &lt;xsd:element name="level" type="cms:availability-level-type" /&gt;
+            &lt;xsd:element name="description" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="risk" type="cms:risk-level-type" minOccurs="0"/&gt;
+            &lt;xsd:element name="customers" type="xsd:string" minOccurs="0"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+	
+	&lt;!--
+ --&gt;
+    &lt;xsd:complexType name="third-part-dependency-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="component" type="xsd:string"/&gt;
+            &lt;xsd:element name="required-version" type="xsd:string"/&gt;
+            &lt;xsd:element name="tested-version" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="description" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+	
+    &lt;!--
+ --&gt;
+    &lt;xsd:complexType name="dependency-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="component" type="cms:component-name-enumeration"/&gt;
+            &lt;xsd:element name="required-version"&gt;
+			&lt;xsd:simpleType&gt;
+                        &lt;xsd:restriction base="xsd:string"&gt;
+                            &lt;xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[+]?"/&gt;
+                        &lt;/xsd:restriction&gt;
+                    &lt;/xsd:simpleType&gt;
+			&lt;/xsd:element&gt;
+            &lt;xsd:element name="tested-version" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="description" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+ --&gt;
+    &lt;xsd:complexType name="dependency-local-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="component" type="cms:component-name-enumeration"/&gt;
+            &lt;xsd:element name="required-version"&gt;
+			&lt;xsd:simpleType&gt;
+                        &lt;xsd:restriction base="xsd:string"&gt;
+                            &lt;xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[+]?"/&gt;
+                        &lt;/xsd:restriction&gt;
+                    &lt;/xsd:simpleType&gt;
+			&lt;/xsd:element&gt;
+            &lt;xsd:element name="tested-version" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1"/&gt;
+            &lt;xsd:element name="required" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="description" type="xsd:string" minOccurs="0"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;xsd:complexType name="monitored-type"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element name="component" type="cms:component-name-enumeration"/&gt;
+            &lt;xsd:element name="required-version" type="xsd:string"/&gt;
+            &lt;xsd:element name="tested-version" type="xsd:string" minOccurs="0"/&gt;
+            &lt;xsd:element name="description" type="xsd:string" minOccurs="0"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;xsd:complexType name="dependencies-type"&gt;
+        &lt;xsd:choice minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="local-dependency" type="cms:dependency-local-type"/&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="platform-dependency" type="cms:dependency-type"/&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="third-part-dependency" type="cms:third-part-dependency-type"/&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="monitored-dependency" type="cms:monitored-type"/&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="integrates-packages" type="cms:integrates-packages"/&gt;
+        &lt;/xsd:choice&gt;
+        &lt;xsd:attribute  name="mc-version" type="cms:mc-version-type"/&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;xsd:complexType name="integrates-packages"&gt;
+    	&lt;xsd:sequence&gt;
+            &lt;xsd:element name="integrates-packages-name" type="cms:integrates-packages-name"/&gt;
+            &lt;xsd:element name="integrates-packages-required-version" type="xsd:string"/&gt;
+            &lt;xsd:element name="integrates-packages-tested-version" type="xsd:string"/&gt;
+            &lt;xsd:element name="integrates-packages-description" type="xsd:string"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="activity-list-type"&gt;
+        &lt;xsd:choice minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="epr" type="cms:activity-type-epr"/&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="enh" type="cms:activity-type-enh"/&gt;
+        &lt;/xsd:choice&gt;
+        &lt;xsd:attribute  name="released-in-version" type="xsd:string"/&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!--
+    --&gt;
+    &lt;xsd:complexType name="activity-type-epr"&gt;
+        &lt;xsd:simpleContent&gt;
+            &lt;xsd:extension base="xsd:string"&gt;
+                &lt;xsd:attribute  name="id" type="xsd:integer" use="required"/&gt;
+                &lt;xsd:attribute  name="uri" type="xsd:string"/&gt;
+            &lt;/xsd:extension&gt;
+        &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;   
+	
+	&lt;xsd:complexType name="activity-type-enh"&gt;
+        &lt;xsd:simpleContent&gt;
+            &lt;xsd:extension base="xsd:string"&gt;
+                &lt;xsd:attribute  name="id" type="xsd:string" /&gt;
+                &lt;xsd:attribute  name="uri" type="xsd:string"/&gt;
+                &lt;xsd:attribute  name="type" type="cms:activity-type-enumeration-list"/&gt;
+				&lt;xsd:attribute  name="availability" type="cms:availability-level-type" /&gt;
+            &lt;/xsd:extension&gt;
+        &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;  
+
+    &lt;!--
+   --&gt;
+    &lt;xsd:complexType name="license-type"&gt;
+        &lt;xsd:simpleContent&gt;
+            &lt;xsd:extension base="xsd:string"&gt;
+                &lt;xsd:attribute  name="uri" type="xsd:string"/&gt;
+            &lt;/xsd:extension&gt;
+        &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;xsd:complexType name="distribution-list-type"&gt;
+        &lt;xsd:simpleContent&gt;
+            &lt;xsd:extension base="xsd:string"&gt;
+                &lt;xsd:attribute  name="type" type="cms:distribution-list-enumeration"/&gt;
+                &lt;xsd:attribute  name="email" type="xsd:string"/&gt;
+            &lt;/xsd:extension&gt;
+        &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;    
+
+    &lt;xsd:complexType name="customers"&gt;
+        &lt;xsd:sequence&gt;
+            &lt;xsd:element minOccurs="0"  maxOccurs="unbounded" name="customer" type="cms:customer-list-enumeration"/&gt;
+        &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+&lt;/xsd:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="activity-list-type.html">activity-list-type</a></li>
+                     <li><a href="activity-type-enh.html">activity-type-enh</a></li>
+                     <li><a href="activity-type-epr.html">activity-type-epr</a></li>
+                     <li><a href="availabilities-type.html">availabilities-type</a></li>
+                     <li><a href="customers.html">customers</a></li>
+                     <li><a href="dependencies-type.html">dependencies-type</a></li>
+                     <li><a href="dependency-local-type.html">dependency-local-type</a></li>
+                     <li><a href="dependency-type.html">dependency-type</a></li>
+                     <li><a href="distribution-list-type.html">distribution-list-type</a></li>
+                     <li><a href="feature-availability-type.html">feature-availability-type</a></li>
+                     <li><a href="global-availability-type.html">global-availability-type</a></li>
+                     <li><a href="integrates-packages1.html">integrates-packages</a></li>
+                     <li><a href="item-type.html">item-type</a></li>
+                     <li><a href="license-type.html">license-type</a></li>
+                     <li><a href="monitored-type.html">monitored-type</a></li>
+                     <li><a href="other-availability-type.html">other-availability-type</a></li>
+                     <li><a href="part-release-type.html">part-release-type</a></li>
+                     <li><a href="part-type.html">part-type</a></li>
+                     <li><a href="product-release-type.html">product-release-type</a></li>
+                     <li><a href="reference-type.html">reference-type</a></li>
+                     <li><a href="third-part-dependency-type.html">third-part-dependency-type</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="Element" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Elements:</b></td>
+            </tr>
+            <tr id="Element_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="release.html">release</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for XML Anritsu <br/>
+         Generated using 
+         <a href="https://www.liquid-technologies.com/">Liquid Studio 2018 - Developer Bundle (Trial) 16.0.2.8114</a></div>
+   </body>
+</html>
