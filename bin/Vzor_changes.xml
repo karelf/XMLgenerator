@@ -23,9 +23,9 @@
     
 
     <!-- The list of distribution mailing list.-->
-    <!--  <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases/cms:distribution-list>  -->
-    <cms:distribution-list type="RELEASE">_EU-GL M4 Engineering Releases</cms:distribution-list> 
-
+	<cms:distribution-list type="RELEASE">_EU-GL M4 Engineering Developer Releases</cms:distribution-list>
+	<cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Releases</cms:distribution-list> 
+	<cms:distribution-list type="SUPPORT">_EU-GL M4 Engineering Developer Releases</cms:distribution-list>
     <!-- Release details -->
     <cms:release-name>probe-sims</cms:release-name>
     <cms:release-long-name>Long name release</cms:release-long-name>
@@ -38,23 +38,133 @@
     
     
     <!-- List of item releases -->
+    <!-- ********************* -->
+    <!-- Files ITEMS for probe-sims -->
     <cms:item>
-        <cms:name>probe-sims-666.xxx.tgz</cms:name>
+        <cms:name>probe-sims-@project-version@.tgz</cms:name>
         <cms:description>Deployment package for Linux</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
-    </cms:item>
-    <!-- MD5sum file for qmpa5 -->
+	</cms:item>
      <cms:item>
-		<cms:name>qmpa5-7.1.2.001.md5sum</cms:name>
+        <cms:name>probe-sims-@project-version@.tgz.md5sum</cms:name>
+        <cms:description>filres probe-sims @project-version@</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
+	</cms:item>
+	<cms:item>
+        <cms:name>probe-sims-@project-version@-1x86_64.rpm</cms:name>
+        <cms:description>filres probe-sims @project-version@</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
+	</cms:item>
+	<cms:item>	
+	<cms:name>probe-sims-@project-version@-1x86_64.rpm.md5sum</cms:name>
+        <cms:description>filres probe-sims @project-version@</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
+	</cms:item>
+<!-- probe-sims END -->    
+
+    
+<!-- Files ITEMS for MEASIF -->
+     <cms:item>
+		<cms:name>qmpa-@project-version@.tgz</cms:name>
+		<cms:description>Developer files</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	<cms:item>
+		<cms:name>measif-@project-version@.tgz</cms:name>
+		<cms:description>file qmpa-@project.version@.tgz</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	<cms:item>
+	<cms:name>qmpa-@project-version@.md5sum</cms:name>
+		<cms:description>Check sum file</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+<!-- MEQASIF END -->
+    
+<!--  files ITEM for qmpa5 -->
+     <cms:item>
+		<cms:name>qmpa5-@project-version@.md5sum</cms:name>
+		<cms:description>file qmpa5-@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	<cms:item>
+		<cms:name>qmpa5-@project-version@.tgz</cms:name>
 		<cms:description>Check sum MD5 file qmpa5-@project.version@.md5sum</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
-    </cms:item>
-    <!-- MD5sum file for infoserver  a další SW doplnit podle TC-->
+	</cms:item>
+    <cms:item>
+		<cms:name>qmpa5-@project-version@.x86_64.rpm</cms:name>
+		<cms:description> file qmpa5-@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+<!-- qmpa5 END -->	
+
+<!--  files ITEM for ETHER-SIM -->
      <cms:item>
-		<cms:name>infoserver.md5sum</cms:name>
+		<cms:name>li-ether-sim-@project-version@.md5sum</cms:name>
+		<cms:description>file qmpa5-@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	
+    <cms:item>
+		<cms:name>li-ether-sim-@project-version@.x86_64.rpm</cms:name>
+		<cms:description> file qmpa5-@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+<!-- ETHER-SIM END -->	
+
+<!--  files ITEM for qlib -->
+     <cms:item>
+		<cms:name>qlib-@project-version@-1.x86_64.rpm.md5sum</cms:name>
+		<cms:description>file @project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	
+    <cms:item>
+		<cms:name>li-ether-sim-@project-version@-1.x86_64.rpm</cms:name>
+		<cms:description> file -@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	
+	<cms:item>
+		<cms:name>qlib-devel-@project-verison@.tgz</cms:name>
+		<cms:description> file -@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	<cms:item>
+		<cms:name>qlib-Linux-@project-verison@.tgz</cms:name>
+		<cms:description> file -@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+	<cms:item>
+		<cms:name>qlib-Linux-@project-verison@.tgz.md5sum</cms:name>
+		<cms:description> file -@project.version@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+	</cms:item>
+<!-- qlib END -->	
+
+    
+    
+    
+    <!--  file ITEM for infoserver  -->
+     <cms:item>
+		<cms:name>infoserver-project-version@.md5sum</cms:name>
 		<cms:description>Check sum MD5 file </cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
     </cms:item>
+    
+    
+    <cms:item>
+		<cms:name>infoserver-@project-version@-1.x86_64.rpm</cms:name>
+		<cms:description>file -@project-verison@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+    </cms:item>
+    
+    <cms:item>
+		<cms:name>infoserver-@project-version@.tgz</cms:name>
+		<cms:description>file -@project-verison@</cms:description>
+		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
+    </cms:item>	
     
     
 	
@@ -167,13 +277,13 @@
 			  -->
             </cms:global>
             <cms:global>
-                <cms:package>probe-sims package for Linux platform Globa 2</cms:package>
+                <cms:package>probe-sims package for Linux platform Globa 2 1</cms:package>
                 <cms:mc-version>7.1</cms:mc-version>
                 <cms:level>TQR</cms:level>
                 <cms:risk>High</cms:risk>
             </cms:global>
 		  <cms:global>
-                <cms:package>probe-sims package for Linux platform Globa 3</cms:package>
+                <cms:package>probe-sims package for Linux platform Globa 3 1</cms:package>
                 <cms:mc-version>8.0</cms:mc-version>
                 <cms:level>FCA</cms:level>
                 <cms:risk>Medium</cms:risk>
@@ -225,9 +335,10 @@
         </cms:availabilities>
 
 	   
+<!-- START dependencies mc-version 7.1 -->
+<!-- ********************************* -->
 	   
-	   
-	<cms:dependencies mc-version="7.1"> <!-- START dependencies mc-version 7.1 -->
+	<cms:dependencies mc-version="7.1"> 
 <!-- Platform dependency --> 
             <cms:platform-dependency>
                 <cms:component>CentOS6.4_x86_64</cms:component>
@@ -521,13 +632,15 @@
             </cms:local-dependency>
      </cms:dependencies>
 
+<!--END dependencies mc-version 7.1 -->
+<!-- ********************************* -->	
+<!-- ********************************* -->	
+<!-- ********************************* -->	
 
+<!-- START dependencies mc-version 8.0 -->
+<!-- ********************************* -->	
 
-
-	<!--END dependencies mc-version 7.1 -->
-
-
-	<cms:dependencies mc-version="8.0"> <!-- START dependencies mc-version 8.0 -->
+	<cms:dependencies mc-version="8.0"> 
 <!-- Platform dependency -->
           <cms:platform-dependency>
 			<cms:component>CentOS7-x86_64</cms:component>
@@ -538,88 +651,88 @@
 		</cms:platform-dependency>
 <!-- integrates packages, used for subcomponent tags -->
 		<cms:integrates-packages>
-			<cms:integrates-packages-name>li-ether-sim</cms:integrates-packages-name>
-			<cms:integrates-packages-required-version>li-ether-sim.version-1</cms:integrates-packages-required-version>
-			<cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-			<cms:integrates-packages-description>8.0 purpose of is to intercept the signalling traffic (SoIP probe) or user plane traffic (VoIP probe) carried on IP, to strip the tunnelling protocols if any and to deliver the content to qmpa5 as PDU messages. Further the generated statistics, alarms and optionally also STAT CSDRs are delivered to qmpa5 via TCP socket based SIM interface too. Optionally also the DoIP functionality may be enabled in li-ether-sim. In addition to standard Ethernet interfaces the IP traffic may be captured also using special board types for higher performance using included kernel drivers.</cms:integrates-packages-description>
-		</cms:integrates-packages>
-		<cms:integrates-packages>
-			<cms:integrates-packages-name>li-usim-ip</cms:integrates-packages-name>
-			<cms:integrates-packages-required-version>li-usim-ip.version-1</cms:integrates-packages-required-version>
-			<cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-			<cms:integrates-packages-description>8.0 is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10 interfaces carried on IP links, via standard Ethernet interfaces or using special board types for higher performance using included kernel drivers. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
-			</cms:integrates-packages>
+                <cms:integrates-packages-name>li-ether-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-ether-sim.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>purpose of is to intercept the signalling traffic (SoIP probe) or user plane traffic (VoIP probe) carried on IP, to strip the tunnelling protocols if any and to deliver the content to qmpa5 as PDU messages. Further the generated statistics, alarms and optionally also STAT CSDRs are delivered to qmpa5 via TCP socket based SIM interface too. Optionally also the DoIP functionality may be enabled in li-ether-sim. In addition to standard Ethernet interfaces the IP traffic may be captured also using special board types for higher performance using included kernel drivers.</cms:integrates-packages-description>
+            </cms:integrates-packages>
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>li-usim-ip</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-usim-ip.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10 interfaces carried on IP links, via standard Ethernet interfaces or using special board types for higher performance using included kernel drivers. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
+                </cms:integrates-packages>
             <cms:integrates-packages>
                 <cms:integrates-packages-name>li-usim</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>li-usim.version-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10, IU-CS, IU-PS interfaces carried on ATM links via HDLU board STM1 front end. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10, IU-CS, IU-PS interfaces carried on ATM links via HDLU board STM1 front end. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
             </cms:integrates-packages>
             <cms:integrates-packages>
                 <cms:integrates-packages-name>li-hdlu-sim</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>li-hdlu-sim.version-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 Software Package contains the mediator program, the HDLU kernel driver, the FPGA programs, the FPGA filters and the qpthread dynamic library. Purpose is to intercept the signalling traffic carried on SS7 or ATM links monitored via various front end versions of HDLU board and to deliver the content to qmpa5 as PDU messages. Further the generated statistics and alarms are delivered to qmpa5 via TCP socket based SIM interface too.</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Software Package contains the mediator program, the HDLU kernel driver, the FPGA programs, the FPGA filters and the qpthread dynamic library. Purpose is to intercept the signalling traffic carried on SS7 or ATM links monitored via various front end versions of HDLU board and to deliver the content to qmpa5 as PDU messages. Further the generated statistics and alarms are delivered to qmpa5 via TCP socket based SIM interface too.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>tmsi_imsi_server-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Server software package contains server, testing client and configuration files necessary for running a TMSI_IMSI Server application. The TMSI_IMSI server functionality basically serves as a functional module in a Master Claw for mapping of changing temporary subscriber identity – LAC+TMSI number, to the permanent identities IMSI, IMEI and MSISDN. This is used for data records enrichment in circuit switched domain (2G A-interface and 3G IuCS).</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>software package contains server, testing client and configuration files necessary for running a TMSI_IMSI Server application. The TMSI_IMSI server functionality basically serves as a functional module in a Master Claw for mapping of changing temporary subscriber identity – LAC+TMSI number, to the permanent identities IMSI, IMEI and MSISDN. This is used for data records enrichment in circuit switched domain (2G A-interface and 3G IuCS).</cms:integrates-packages-description>
              </cms:integrates-packages>
 		   <cms:integrates-packages>
                 <cms:integrates-packages-name>usim_ctxkey_srv</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>usim_ctxkey_srv-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>functionality serves as a functional module in a MasterClaw UMTS (3G) Iub monitoring and deciphering system based on USIM component</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>The usim_ctxkey_srv  (key server) functionality serves as a functional module in a MasterClaw UMTS (3G) Iub monitoring and deciphering system based on USIM components. Software Package contains one main program file, few dynamic libraries and two configuration files necessary for running a Key Server application on a PC with Linux operating system (a probe). Besides it contains a script for diagnostic communication and database client utility. The Key Server functionality serves as a functional module in a Master Claw MPA based GPRS-Gb monitoring and decrypting system and optionally for IMSI/IMEI/MSISDN data records enrichment in packet switched domain (2,5G GPRS-Gb and 3G IuPS)</cms:integrates-packages-description>
              </cms:integrates-packages>
 		  <cms:integrates-packages>
-                <cms:integrates-packages-name>key_server</cms:integrates-packages-name>
+                <cms:integrates-packages-name>key_server</cms:integrates-packages-name> <!-- funkcionality move to ctxkey_server -->
                 <cms:integrates-packages-required-version>key_server-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>The key server Software Package contains one main program file, few dynamic libraries and two configuration files necessary for running a Key Server application on a PC with Linux operating system (a probe). Besides it contains a script for diagnostic communication and database client utility. The Key Server functionality serves as a functional module in a Master Claw MPA based GPRS-Gb monitoring and decrypting system and optionally for IMSI/IMEI/MSISDN data records enrichment in packet switched domain (2,5G GPRS-Gb and 3G IuPS).</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Move to usimctx server - Software Package contains one main program file, few dynamic libraries and two configuration files necessary for running a Key Server application on a PC with Linux operating system (a probe). Besides it contains a script for diagnostic communication and database client utility. The Key Server functionality serves as a functional module in a Master Claw MPA based GPRS-Gb monitoring and decrypting system and optionally for IMSI/IMEI/MSISDN data records enrichment in packet switched domain (2,5G GPRS-Gb and 3G IuPS).</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>msisdn_imsi_srv</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>msisdn_imsi_srv-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 Description</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>DServer Software Package contains one program file, supporting dynamic libraries and configuration files necessary for running a MSISDN_IMSI Server application on a PC with Linux operating system.  The MSISDN_IMSI Server functionality serves as a functional module in a MasterClaw for mapping between MS_ISDN and IMSI.Important note: MSISDN_IMSI server does not support correlation on links with load-sharing. It means that IMSI and MSISDN must be correlated in CSDR by protocol inside the probe. Such assumption is not valid e.g. for MAP links in many customer networks.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>apmlinux</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>apmlinux-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 Description</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>hpcheck</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>hpcheck-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 Description</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>hpe-service</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>hpe-service-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 Description</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>scanning-module-sim</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>scanning-module-sim-1</cms:integrates-packages-required-version>
-                <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>8.0 Description</cms:integrates-packages-description>
+                <cms:integrates-packages-tested-version>TestedVersiion 8.0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
             </cms:integrates-packages>
 <!-- monitored dependency --> 
             <cms:monitored-dependency>
                 <cms:component>ndaf-elasticsearch</cms:component>
                 <cms:required-version>15</cms:required-version>
-                <cms:tested-version>1</cms:tested-version>
+                <cms:tested-version>TestedVersiion 8.0</cms:tested-version>
                 <cms:description>8.0 Monitored description 2</cms:description>
             </cms:monitored-dependency>
             <cms:monitored-dependency>
                 <cms:component>ndaf-elasticsearch</cms:component>
                 <cms:required-version>14</cms:required-version>
-                <cms:tested-version>2</cms:tested-version>
+                <cms:tested-version>TestedVersiion 8.0</cms:tested-version>
                 <cms:description>8.0 Monitored description 2</cms:description>
             </cms:monitored-dependency>
             
@@ -628,14 +741,14 @@
             <cms:third-part-dependency> 
                <cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
                <cms:required-version>2.1.2</cms:required-version>
-               <cms:tested-version>2.1.2</cms:tested-version>
+               <cms:tested-version>TestedVersiion 8.0</cms:tested-version>
                <cms:description>Needed for FBC usage</cms:description>
                <cms:license>Licence TEST</cms:license>
           </cms:third-part-dependency>
 		<cms:third-part-dependency> 
                <cms:component>ASN.1 Compiler</cms:component>
                <cms:required-version>9.0.2+</cms:required-version>
-               <cms:tested-version>9.0.2</cms:tested-version>
+               <cms:tested-version>TestedVersiion 8.0</cms:tested-version>
                <cms:description>Compiler</cms:description>
                <cms:license>Commercial License for Deployment OSS Nokalva  license 9669</cms:license>
           </cms:third-part-dependency>
@@ -869,10 +982,10 @@
 
     <!-- NOT FIXED FATAL current precautions (fatal)   -->
             <cms:activities released-in-version="NOT_FIXED_FATAL">
-                <cms:epr id="46311" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46311">NOT_FIXED_FATAL EPR FATAL</cms:epr>
+                <cms:epr id="46311" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46311">NOT_FIXED_FATAL EPR</cms:epr>
                 <cms:enh type="ECR" uri="http//" availability="GCA" id="2039">NOT_FIXED_FATAL Enhacmen FATAL</cms:enh>
-                <cms:enh type="TASK" uri="http//" availability="TQR" id="Fiberblaze SW 2.4.4.1">NOT_FIXED_FATAL TASK FATAL</cms:enh>
-                <cms:enh type="PDP" uri="http//" availability="FCA" id="115">NOT_FIXED_FATAL PDP FATAL</cms:enh>
+                <cms:enh type="TASK" uri="http//" availability="TQR" id="Fiberblaze SW 2.4.4.1">NOT_FIXED_FATAL TASK</cms:enh>
+                <cms:enh type="PDP" uri="http//" availability="FCA" id="115">NOT_FIXED_FATAL PDP</cms:enh>
             </cms:activities>
 
 		<!-- test --> 
