@@ -347,6 +347,13 @@
                 <cms:description>Platform dependency 1 MC 7.1</cms:description>
                 <cms:license uri="http://www.gnu.org/copyleft/gpl.html">7.1 GPL v2</cms:license>
             </cms:platform-dependency>
+		  <cms:platform-dependency>
+                <cms:component>CentOS6.6_x86_64</cms:component>
+                <cms:required-version>6.6+</cms:required-version>
+                <cms:tested-version>6.6 (64b)</cms:tested-version>
+                <cms:description>Platform dependency 1 MC 7.1</cms:description>
+                <cms:license uri="http://www.gnu.org/copyleft/gpl.html">7.1 GPL v2</cms:license>
+            </cms:platform-dependency>
             <cms:platform-dependency>
                 <cms:component>CentOS7-x86_64</cms:component>
                 <cms:required-version>7.4+</cms:required-version>
