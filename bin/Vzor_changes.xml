@@ -258,7 +258,8 @@
                         uri="http://utmnnfs/quest7-packages/probe-sims"/>					    
 		<cms:reference type="ULTR" name="ULTR" docName="ULTR.xxx" level="SCR"
                         uri="http://utmnnfs/quest7-packages/probe-sims"/>	
-		
+		<cms:reference type="NOTE" name="NoteName" docName="N"
+                        uri=""/>
 	  
 	  
 	  
@@ -407,7 +408,7 @@
             </cms:integrates-packages>
             <cms:integrates-packages>
                 <cms:integrates-packages-name>li-hdlu-sim</cms:integrates-packages-name>
-                <cms:integrates-packages-required-version>li-hdlu-sim.version-1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-required-version>li-hdlu-sim.version-1@li-hdlu-sim.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>TestedVersiion</cms:integrates-packages-tested-version>
                 <cms:integrates-packages-description>Software Package contains the mediator program, the HDLU kernel driver, the FPGA programs, the FPGA filters and the qpthread dynamic library. Purpose is to intercept the signalling traffic carried on SS7 or ATM links monitored via various front end versions of HDLU board and to deliver the content to qmpa5 as PDU messages. Further the generated statistics and alarms are delivered to qmpa5 via TCP socket based SIM interface too.</cms:integrates-packages-description>
             </cms:integrates-packages>
@@ -1084,7 +1085,7 @@
                 <cms:enh type="PDP" uri="http//" availability="FCA" id="115">TEST PSP</cms:enh>
             </cms:activities>
 
-    <!-- old releases -->
+    <!-- old releases  pro celou verzi MC 12, 13, ... -->
 
 
             <cms:activities released-in-version="4.3.10">
