@@ -1,6 +1,0 @@
-infoservers-3.5.0-1.x86_64.rpm
-infoservers-3.5.0.md5sum
-infoservers-3.5.0.tgz
-infoservers-3.5.0-changes-v1.xml
-infoservers-3.5.0-rn-v1.doc
-infoservers-3.5.0-str-v1.doc
