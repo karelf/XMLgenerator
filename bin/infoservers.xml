@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    A release represents the act of exposing component to the public.
+    The release describes basic informations (who did it, when, why),
+    and the details of the single 'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
+    version="1.0">
+    <!-- Basic authoring details -->
+    <cms:author>Probes Team</cms:author>
+    <cms:contact>jan.kelbel@anritsu.com</cms:contact>
+    <cms:date>@timestamp@</cms:date>
+    <cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
+    <cms:group>Probe</cms:group>
+    <cms:arch>x86_64</cms:arch>
+
+    <!-- The list of distribution mailing list.-->
+    <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases</cms:distribution-list>
+    <cms:distribution-list type="RELEASE">_EU-DK MasterClaw Releases</cms:distribution-list>
+    
+    <!-- Release details -->
+    <cms:release-name>infoservers</cms:release-name>
+    <cms:release-version>@project.version@</cms:release-version>
+
+    <!-- Precautions for this release 
+    <cms:precaution>When used with eoCapture cards, FBC platform patch 0009+ is needed</cms:precaution>-->
+
+    <!-- List of item releases -->
+    <cms:item>
+        <cms:name>infoservers-@project.version@-1.x86_64.rpm</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/infoservers/tqr</cms:location>
+    </cms:item>
+    <cms:item>
+        <cms:name>infoservers-@project.version@-1.x86_64.rpm.md5sum</cms:name>
+        <cms:description>Checksumsum file</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/infoservers/tqr</cms:location>
+    </cms:item>
+
+    <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+    <cms:part-release>
+        <cms:status>NEW</cms:status>
+        <!-- NEW, UPDATE, CANCEL -->
+        <!-- Purpose values can be:
+            <Empty> -> the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+        -->
+        <cms:purpose></cms:purpose>
+
+        <!--
+            Declare the baselines the part release works on
+        -->
+        <cms:baseline>MasterClaw 8.0.1</cms:baseline>
+        <cms:test-level>1</cms:test-level>
+        <cms:reference type="QBASE" name="Deployment package for Linux" docName="infoservers-@project.version@-1.x86_64.rpm"
+                       uri="http://utmnnfs/quest7-packages/infoservers/tqr" />
+        <cms:reference type="RN" name="Release note" docName="infoservers-@project.version@-rn-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/infoservers/tqr" />
+        <cms:reference type="STR" name="System Test Report" docName="infoservers-@project.version@-str-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/infoservers/tqr" />
+        <cms:reference type="MANUAL" name="Installation and Configuration Guide" docName=""
+                       uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw User Documentation/Forms/MasterClaw_8.0.aspx" />
+        <cms:reference type="STS" name="System Test Specification" docName=""
+                       uri="http://rddoc/rddoc" />
+
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>infoservers package for Linux platform</cms:package>
+                <cms:mc-version>8.0.1</cms:mc-version>
+                <cms:level>SDR</cms:level>
+                <cms:risk>High</cms:risk>
+            </cms:global>
+            <!-- feature availability, leave in template for future use -->
+            <!--
+            <cms:feature>
+                <cms:name>ECR 2444</cms:name> 
+                <cms:mc-version>8.0.1</cms:mc-version> 
+                <cms:level>TQR</cms:level> 
+                <cms:risk>High</cms:risk> 
+                <cms:reason>Requires further testing</cms:reason> 
+                <cms:description>IPv6 support for management IP of Probe and central servers</cms:description> 
+            </cms:feature>
+            -->
+        </cms:availabilities>
+
+        <cms:dependencies mc-version="8.0.1">
+	<!-- Platform dependency -->
+			<cms:platform-dependency>
+				<cms:component>CentOS7-x86_64</cms:component>
+				<cms:required-version>5.0.0+</cms:required-version>
+				<cms:tested-version>5.0.7</cms:tested-version>
+				<cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+				<cms:license />
+			</cms:platform-dependency>
+     <!--  3rd party dependency -->
+            <cms:third-part-dependency> 
+                <cms:component>google protobufs</cms:component>
+                <cms:required-version>2.5.0+</cms:required-version>
+                <cms:tested-version>2.5.0</cms:tested-version>
+                <cms:description>Mechanism for serializing structured data </cms:description>
+                <cms:license uri="https://github.com/google/protobuf/blob/master/LICENSE">protobufs licence</cms:license>
+            </cms:third-part-dependency>
+            
+            <cms:local-dependency>
+                <cms:component>deploy-server</cms:component>
+                <cms:required-version>6.0.0</cms:required-version>
+                <cms:tested-version>6.0.0</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration software for MC</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>probe-conf</cms:component>
+                <cms:required-version>6.0.0</cms:required-version>
+                <cms:tested-version>6.0.0</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration data for MC</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>qmpa5</cms:component>
+                <cms:required-version>7.1.0+</cms:required-version>
+                <cms:tested-version>7.1.4</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>A-if GSM TMSI_IMSI CSDR update client and MAP,UMTS-IuCS,GPRS-GS browsed data source</cms:description>
+            </cms:local-dependency>
+            <!-- integrated package -->
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>@tmsi_imsi_srv.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version />
+                <cms:integrates-packages-description>software package contains server, testing client and configuration files necessary for running a TMSI_IMSI Server application. The TMSI_IMSI server functionality basically serves as a functional module in a Master Claw for mapping of changing temporary subscriber identity – LAC+TMSI number, to the permanent identities IMSI, IMEI and MSISDN. This is used for data records enrichment in circuit switched domain (2G A-interface and 3G IuCS).</cms:integrates-packages-description>
+            </cms:integrates-packages>
+            <cms:integrates-packages>
+                <cms:integrates-packages-name>usim_ctxkey_srv</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>@usim_ctxkey_srv.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version />
+                <cms:integrates-packages-description>The usim_ctxkey_srv (key server) functionality serves as a functional module in a MasterClaw UMTS (3G) Iub monitoring and deciphering system based on USIM components. The key server Software Package contains one main program file, few dynamic libraries and two configuration files necessary for running a Key Server application on a PC with Linux operating system (a probe). Besides it contains a script for diagnostic communication and database client utility. The Key Server functionality serves as a functional module in a Master Claw MPA based GPRS-Gb monitoring and decrypting system and optionally for IMSI/IMEI/MSISDN data records enrichment in packet switched domain (2,5G GPRS-Gb and 3G IuPS).</cms:integrates-packages-description>
+            </cms:integrates-packages>
+        </cms:dependencies>
+
+        <!-- current release, must be first for generated mail to work!!! -->
+        <cms:activities released-in-version="@project.version@">
+            <cms:enh type="ECR" id="2444">IPv6 support for management IP of Probe and central servers</cms:enh>
+        </cms:activities>
+
+        <!-- must not be first, because first "activities" is used by script as "CurrentReleaseActivities" in mail -->
+
+        <!-- current precautions (non fatal) -->
+        <!--
+		<cms:activities released-in-version="NOT_FIXED">
+			<cms:epr id="12345" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=12345">issue</cms:epr>
+		</cms:activities>
+        -->
+
+        <!-- current precautions (fatal) -->
+        <!--
+		<cms:activities released-in-version="NOT_FIXED_FATAL">
+			<cms:epr id="12345" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=12345">fatal crash</cms:epr>
+		</cms:activities>
+        -->
+
+        <!-- old releases -->
+	   
+	   <!--  last old releases 
+        <cms:activities released-in-version="3.4.0">
+            <cms:enh type="PDP" id="120">Platform Auto Install and Config</cms:enh>
+            <cms:enh type="ECR" id="2000">YUM and RPM packaging</cms:enh>
+            <cms:enh type="ECR" id="2032">xDR Feed for UE Capability Inform</cms:enh>
+            <cms:enh type="ECR" id="2035">4G-3G handover for UP_STAT</cms:enh>
+            <cms:enh type="ECR" id="2025">Information Server to be optimize</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.3.2">
+            <cms:epr id="46587" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46587">Package not started automatically after installation using ansible</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.3.1">
+            <cms:enh type="PDP" id="120">Platform Auto Install and Config</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.3.0.1">
+            <cms:enh type="PDP" id="120">Platform Auto Install and Config (SDR)</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.3.0">
+            <cms:enh type="ECR" id="2035">ECR2035 4G-3G handover for UP_STAT</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.2.0">
+            <cms:enh type="ECR" id="2025">ECR2025 Information Server to be optimized for UMTS traffic</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.1.0">
+            <cms:enh type="ECR" id="2000">ECR 2032 - xDR Feed for UE Capability Information</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="3.0.0">
+            <cms:enh type="ECR" id="2000">ECR 2000 YUM and RPM packaging</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.3.0">
+            <cms:enh type="ECR" id="2041">ECR 2041 2,5G/4G transitions not supported by GPRS-GB deciphering and CSDR update</cms:enh>
+            <cms:epr id="43314" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43314">tmsi_imsi_srv: high memory consumption = slow responses = CSDR update timeouts = decreased success rate</cms:epr>
+            <cms:epr id="43894" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43894">tmsi_imsi_srv: MSISDN filling rate below the expected 90% on Iucs and Ainterface</cms:epr>
+            <cms:epr id="43755" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43755">key_server: qmpa disconnects when updating layouts</cms:epr>
+            <cms:epr id="43938" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43938">UMTS_IU_DECIPHERING_486 not used by gb key_server functionality</cms:epr>
+            <cms:epr id="43939" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43939">gb messages not deciphered</cms:epr>
+            <cms:epr id="44247" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44247">CK/IK from GTP not available as KC for Gb deciphering</cms:epr>
+            <cms:epr id="43972" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43972">usim_ctxkey_srv: x csdrup reset command not working</cms:epr>
+            <cms:epr id="44104" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44104">x browsers_reset command is not working on usim_ctxkey_srv</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.8 canceled">
+            <cms:epr id="43998" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43998">key_server: selfmon - replacing popen function (can cause...</cms:epr>
+            <cms:epr id="43894" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43894">tmsi_imsi_srv: MSISDN filling rate below the expected 90%...</cms:epr>
+            <cms:epr id="43938" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43938">UMTS_IU_DECIPHERING_486 not used by gb key_server functio...</cms:epr>
+            <cms:epr id="43939" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43939">gb messages not deciphered</cms:epr>
+            <cms:epr id="43972" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43972">usim_ctxkey_srv: x csdrup reset command not working</cms:epr>
+            <cms:epr id="44104" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44104">x browsers_reset command is not working on usim_ctxkey_srv</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.7">
+            <cms:epr id="43998" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43998">key_server: selfmon - replacing popen function (can cause process hanging)</cms:epr>
+            <cms:epr id="43755" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43755">key_server: qmpa disconnects when updating layouts</cms:epr>
+            <cms:epr id="43840" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43840">tmsi_imsi_srv: TIsrv-5.1.2 (STOPPED) reported by selfmon 1.10.6</cms:epr>
+            <cms:epr id="44007" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=44007">key_server: low deciphering, UMTS_IU_DECIPHERING layout not recognized</cms:epr>
+            <cms:epr id="43972" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43972">usim_ctxkey_srv: x csdrup reset command not working</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.6">
+            <cms:epr id="43471" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43471">Zero LTE deciphering</cms:epr>
+            <cms:epr id="43313" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43313">When more instances on one machine, x command works based on path</cms:epr>
+            <cms:epr id="43374" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43374">UNKNOWN usim_ctxkey_srv UMTS_filling</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.5">
+            <cms:epr id="43131" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=43131">usim_ctxkey_srv crash during database loading</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.4">
+            <cms:enh type="ECR" id="740">ECR 740 Deciphering of IPSec</cms:enh>
+            <cms:enh type="ECR" id="1371">ECR 1371 Selfom tmsi_imsi_srv</cms:enh>
+            <cms:enh type="ECR" id="1409">ECR 1409 Continuous Integration - PROBE</cms:enh>
+            <cms:enh type="PDP" id="103">MC 7.1 platform changes - gcc v4.8, ksh, omniorb</cms:enh>
+            <cms:epr id="42958" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42958">Incorrect MSISDN filled in S1 when UL is missing on S6a</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.3">
+            <cms:epr id="987654" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=">dummy epr</cms:epr> 
+            <cms:epr id="42614" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42614">memory usage of the key server</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.2">
+            <cms:epr id="42643" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42643">usim_ctxkey_srv 3.1.0 - no file created dumping Ipsec map</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.1">
+            <cms:epr id="41235" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41235">no results returned by tmsi_imsi_cli.sh</cms:epr>
+            <cms:epr id="42128" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42128">errors related to Central Server</cms:epr>
+            <cms:epr id="42139" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=42139">failed_queries service not available</cms:epr>
+            <cms:epr id="41878" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41878">Key_server crashed with FATAL error</cms:epr>
+            <cms:epr id="41726" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41726">ti conn_stat command has no output</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.2.0">
+            <cms:enh type="ECR" id="740">ECR 740 Deciphering of IPSec</cms:enh>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.1.0">
+            <cms:enh type="ECR" id="1371">ECR 1371 Selfom tmsi_imsi_srv</cms:enh>
+            <cms:enh type="ECR" id="1409">ECR 1409 Continuous Integration - PROBE</cms:enh>
+            <cms:epr id="41264" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=41264">High memory usage in TMSI IMSI servers</cms:epr>
+            <cms:epr id="40868" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=40868">Key server crashed with signal 1</cms:epr>
+            <cms:epr id="33800" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=33800">memory usage tmsi imsi</cms:epr>
+        </cms:activities>
+
+        <cms:activities released-in-version="2.0.0">
+            <cms:enh type="PDP" id="103">MC 7.1 platform changes - gcc v4.8, ksh, omniorb</cms:enh>
+            <cms:epr id="34212" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34212">IuPS IMEI and IMEISV population</cms:epr>
+            <cms:epr id="34364" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=34364">CSDR field updates found in database not allways filled in</cms:epr>
+        </cms:activities>
+	-->
+    </cms:part-release>
+</cms:release>
