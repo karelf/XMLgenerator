@@ -42,23 +42,23 @@
     <!-- ********************* -->
     <!-- Files ITEMS for probe-sims -->
     <cms:item>
-        <cms:name>probe-sims-@project-version@.tgz</cms:name>
+        <cms:name>probe-sims---TEST--TEST.tgz</cms:name>
         <cms:description>Deployment package for Linux</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
      <cms:item>
-        <cms:name>probe-sims-@project-version@.tgz.md5sum</cms:name>
-        <cms:description>filres probe-sims @project-version@</cms:description>
+        <cms:name>probe-sims---TEST--TEST.tgz.md5sum</cms:name>
+        <cms:description>filres probe-sims --TEST--TEST</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
 	<cms:item>
-        <cms:name>probe-sims-@project-version@-1x86_64.rpm</cms:name>
-        <cms:description>filres probe-sims @project-version@</cms:description>
+        <cms:name>probe-sims---TEST--TEST-1x86_64.rpm</cms:name>
+        <cms:description>filres probe-sims --TEST--TEST</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
 	<cms:item>	
-	<cms:name>probe-sims-@project-version@-1x86_64.rpm.md5sum</cms:name>
-        <cms:description>filres probe-sims @project-version@</cms:description>
+	<cms:name>probe-sims---TEST--TEST-1x86_64.rpm.md5sum</cms:name>
+        <cms:description>filres probe-sims --TEST--TEST</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
 <!-- probe-sims END -->    
@@ -66,17 +66,17 @@
     
 <!-- Files ITEMS for MEASIF -->
      <cms:item>
-		<cms:name>qmpa-@project-version@.tgz</cms:name>
+		<cms:name>qmpa---TEST--TEST.tgz</cms:name>
 		<cms:description>Developer files</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
 	<cms:item>
-		<cms:name>measif-@project-version@.tgz</cms:name>
+		<cms:name>measif---TEST--TEST.tgz</cms:name>
 		<cms:description>file qmpa-@project.version@.tgz</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
 	<cms:item>
-	<cms:name>qmpa-@project-version@.md5sum</cms:name>
+	<cms:name>qmpa---TEST--TEST.md5sum</cms:name>
 		<cms:description>Checksum file</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
@@ -84,17 +84,17 @@
     
 <!--  files ITEM for qmpa5 -->
      <cms:item>
-		<cms:name>qmpa5-@project-version@.md5sum</cms:name>
+		<cms:name>qmpa5---TEST--TEST.md5sum</cms:name>
 		<cms:description>file qmpa5-@project.version@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
 	<cms:item>
-		<cms:name>qmpa5-@project-version@.tgz</cms:name>
+		<cms:name>qmpa5---TEST--TEST.tgz</cms:name>
 		<cms:description>Check sum MD5 file qmpa5-@project.version@.md5sum</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
     <cms:item>
-		<cms:name>qmpa5-@project-version@.x86_64.rpm</cms:name>
+		<cms:name>qmpa5---TEST--TEST.x86_64.rpm</cms:name>
 		<cms:description> file qmpa5-@project.version@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
@@ -102,13 +102,13 @@
 
 <!--  files ITEM for ETHER-SIM -->
      <cms:item>
-		<cms:name>li-ether-sim-@project-version@.md5sum</cms:name>
+		<cms:name>li-ether-sim---TEST--TEST.md5sum</cms:name>
 		<cms:description>file qmpa5-@project.version@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
 	
     <cms:item>
-		<cms:name>li-ether-sim-@project-version@.x86_64.rpm</cms:name>
+		<cms:name>li-ether-sim---TEST--TEST.x86_64.rpm</cms:name>
 		<cms:description> file qmpa5-@project.version@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
@@ -116,13 +116,13 @@
 
 <!--  files ITEM for qlib -->
      <cms:item>
-		<cms:name>qlib-@project-version@-1.x86_64.rpm.md5sum</cms:name>
+		<cms:name>qlib---TEST--TEST-1.x86_64.rpm.md5sum</cms:name>
 		<cms:description>file @project.version@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
 	
     <cms:item>
-		<cms:name>li-ether-sim-@project-version@-1.x86_64.rpm</cms:name>
+		<cms:name>li-ether-sim---TEST--TEST-1.x86_64.rpm</cms:name>
 		<cms:description> file -@project.version@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
 	</cms:item>
@@ -156,13 +156,13 @@
     
     
     <cms:item>
-		<cms:name>infoserver-@project-version@-1.x86_64.rpm</cms:name>
+		<cms:name>infoserver---TEST--TEST-1.x86_64.rpm</cms:name>
 		<cms:description>file -@project-verison@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
     </cms:item>
     
     <cms:item>
-		<cms:name>infoserver-@project-version@.tgz</cms:name>
+		<cms:name>infoserver---TEST--TEST.tgz</cms:name>
 		<cms:description>file -@project-verison@</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/LOCATION</cms:location>
     </cms:item>	
