@@ -35,7 +35,7 @@
     
 <!-- ****************************************************** -->
     <!-- ************** VZOR CHANGES for ALL app ************** -->
-<!-- ****************************************************** -->	
+<!-- ****************************************************** -->
     
     
     <!-- List of item releases -->
@@ -528,7 +528,7 @@
 	-->	
 		<cms:third-part-dependency> 
                <cms:component>DPDK</cms:component>
-               <cms:required-version>17.0.2+</cms:required-version>
+               <cms:required-version>Any</cms:required-version>
                <cms:tested-version>17.0.2</cms:tested-version>
                <cms:description>Libraries and drivers for fast packet processing</cms:description>
                <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">7.1 BSD</cms:license>
@@ -918,8 +918,8 @@
           </cms:third-part-dependency>
 		<cms:third-part-dependency> 
                <cms:component>>CentOS-RHEL_FBC</cms:component>
-               <cms:required-version>2.1.x</cms:required-version>
-               <cms:tested-version>2.1.2</cms:tested-version>
+               <cms:required-version>2.1.3</cms:required-version>
+               <cms:tested-version>2.1.3</cms:tested-version>
                <cms:description>Needed for eoCapture (FBC) usage</cms:description>
                <cms:license>Licence TEST</cms:license>
           </cms:third-part-dependency>
@@ -928,7 +928,7 @@
                <cms:required-version>any</cms:required-version>
                <cms:tested-version>17.0.2</cms:tested-version>
                <cms:description>Libraries and drivers for fast packet processing</cms:description>
-               <cms:license uri="BSD https://opensource.org/licenses/BSD-3-Clause"></cms:license>
+               <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">BSD 3</cms:license>
           </cms:third-part-dependency>
 		<cms:third-part-dependency> 
                <cms:component>google protobufs</cms:component>
