@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 file:/C:/Users/forkar/Documents/GIT-SVN-BitBuck/XMLgenerator/bin/cms-2.10-all.xsd" version="version0">
+    <cms:author>author0</cms:author>
+    <cms:contact>contact0</cms:contact>
+    <cms:date>2006-05-04T18:13:51.0</cms:date>
+    <cms:tier>Anritsu/MasterClaw/Foundation</cms:tier>
+    <cms:group>Administration</cms:group>
+    <cms:summary>summary0</cms:summary>
+    <cms:description>description0</cms:description>
+    <cms:arch>noarch</cms:arch>
+    <cms:distribution-list type="DEVELOP" email="email0">distribution-list0</cms:distribution-list>
+    <cms:distribution-list type="DEVELOP" email="email1">distribution-list1</cms:distribution-list>
+    <cms:distribution-list type="DEVELOP" email="email2">distribution-list2</cms:distribution-list>
+    <cms:release-name>alarm-srv</cms:release-name>
+    <cms:release-long-name>release-long-name0</cms:release-long-name>
+    <cms:release-version>0.0.0</cms:release-version>
+    <cms:item>
+        <cms:name>name0</cms:name>
+        <cms:description>description1</cms:description>
+        <cms:location>location0</cms:location>
+    </cms:item>
+    <cms:item>
+        <cms:name>name1</cms:name>
+        <cms:description>description2</cms:description>
+        <cms:location>location1</cms:location>
+    </cms:item>
+    <cms:item>
+        <cms:name>name2</cms:name>
+        <cms:description>description3</cms:description>
+        <cms:location>location2</cms:location>
+    </cms:item>
+    <cms:precaution>
+    </cms:precaution>
+    <cms:precaution>
+    </cms:precaution>
+    <cms:precaution>
+    </cms:precaution>
+    <cms:part-release>
+        <cms:status>NEW</cms:status>
+        <cms:purpose>purpose0</cms:purpose>
+        <cms:baseline>baseline0</cms:baseline>
+        <cms:baseline>baseline1</cms:baseline>
+        <cms:baseline>baseline2</cms:baseline>
+        <cms:test-level>test-level0</cms:test-level>
+        <cms:reference codename="codename0" name="name0" uri="uri0" docName="docName0" level="level0" type="RN"/>
+        <cms:reference codename="codename1" name="name1" uri="uri1" docName="docName1" level="level1" type="RN"/>
+        <cms:reference codename="codename2" name="name2" uri="uri2" docName="docName2" level="level2" type="RN"/>
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>package0</cms:package>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+                <cms:reason>reason0</cms:reason>
+                <cms:customers>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                </cms:customers>
+                <cms:note>note0</cms:note>
+            </cms:global>
+            <cms:global>
+                <cms:package>package1</cms:package>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+                <cms:reason>reason1</cms:reason>
+                <cms:customers>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                </cms:customers>
+                <cms:note>note1</cms:note>
+            </cms:global>
+            <cms:global>
+                <cms:package>package2</cms:package>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+                <cms:reason>reason2</cms:reason>
+                <cms:customers>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                </cms:customers>
+                <cms:note>note2</cms:note>
+            </cms:global>
+            <cms:feature>
+                <cms:name>name3</cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+                <cms:reason>reason3</cms:reason>
+                <cms:customers>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                </cms:customers>
+                <cms:description>description4</cms:description>
+            </cms:feature>
+            <cms:feature>
+                <cms:name>name4</cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+                <cms:reason>reason4</cms:reason>
+                <cms:customers>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                </cms:customers>
+                <cms:description>description5</cms:description>
+            </cms:feature>
+            <cms:feature>
+                <cms:name>name5</cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:risk>Low</cms:risk>
+                <cms:reason>reason5</cms:reason>
+                <cms:customers>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                    <cms:customer>DTAG</cms:customer>
+                </cms:customers>
+                <cms:description>description6</cms:description>
+            </cms:feature>
+            <cms:other>
+                <cms:name>name6</cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:description>description7</cms:description>
+                <cms:risk>Low</cms:risk>
+                <cms:customers>customers0</cms:customers>
+            </cms:other>
+            <cms:other>
+                <cms:name>name7</cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:description>description8</cms:description>
+                <cms:risk>Low</cms:risk>
+                <cms:customers>customers1</cms:customers>
+            </cms:other>
+            <cms:other>
+                <cms:name>name8</cms:name>
+                <cms:mc-version>7.0.2</cms:mc-version>
+                <cms:level>GCA</cms:level>
+                <cms:description>description9</cms:description>
+                <cms:risk>Low</cms:risk>
+                <cms:customers>customers2</cms:customers>
+            </cms:other>
+        </cms:availabilities>
+        <cms:dependencies mc-version="7.0.2">
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version0</cms:tested-version>
+                <cms:license uri="uri3">license0</cms:license>
+                <cms:required>required0</cms:required>
+                <cms:description>description10</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version1</cms:tested-version>
+                <cms:license uri="uri4">license1</cms:license>
+                <cms:required>required1</cms:required>
+                <cms:description>description11</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version2</cms:tested-version>
+                <cms:license uri="uri5">license2</cms:license>
+                <cms:required>required2</cms:required>
+                <cms:description>description12</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version3</cms:tested-version>
+                <cms:description>description13</cms:description>
+                <cms:license uri="uri6">license3</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version4</cms:tested-version>
+                <cms:description>description14</cms:description>
+                <cms:license uri="uri7">license4</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version5</cms:tested-version>
+                <cms:description>description15</cms:description>
+                <cms:license uri="uri8">license5</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component6</cms:component>
+                <cms:required-version>required-version6</cms:required-version>
+                <cms:tested-version>tested-version6</cms:tested-version>
+                <cms:description>description16</cms:description>
+                <cms:license uri="uri9">license6</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component7</cms:component>
+                <cms:required-version>required-version7</cms:required-version>
+                <cms:tested-version>tested-version7</cms:tested-version>
+                <cms:description>description17</cms:description>
+                <cms:license uri="uri10">license7</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component8</cms:component>
+                <cms:required-version>required-version8</cms:required-version>
+                <cms:tested-version>tested-version8</cms:tested-version>
+                <cms:description>description18</cms:description>
+                <cms:license uri="uri11">license8</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version9</cms:required-version>
+                <cms:tested-version>tested-version9</cms:tested-version>
+                <cms:description>description19</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version10</cms:required-version>
+                <cms:tested-version>tested-version10</cms:tested-version>
+                <cms:description>description20</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version11</cms:required-version>
+                <cms:tested-version>tested-version11</cms:tested-version>
+                <cms:description>description21</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version0</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version0</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description0</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version1</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version1</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description1</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version2</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version2</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description2</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version12</cms:tested-version>
+                <cms:license uri="uri12">license9</cms:license>
+                <cms:required>required3</cms:required>
+                <cms:description>description22</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version13</cms:tested-version>
+                <cms:license uri="uri13">license10</cms:license>
+                <cms:required>required4</cms:required>
+                <cms:description>description23</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version14</cms:tested-version>
+                <cms:license uri="uri14">license11</cms:license>
+                <cms:required>required5</cms:required>
+                <cms:description>description24</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version15</cms:tested-version>
+                <cms:description>description25</cms:description>
+                <cms:license uri="uri15">license12</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version16</cms:tested-version>
+                <cms:description>description26</cms:description>
+                <cms:license uri="uri16">license13</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version17</cms:tested-version>
+                <cms:description>description27</cms:description>
+                <cms:license uri="uri17">license14</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component18</cms:component>
+                <cms:required-version>required-version18</cms:required-version>
+                <cms:tested-version>tested-version18</cms:tested-version>
+                <cms:description>description28</cms:description>
+                <cms:license uri="uri18">license15</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component19</cms:component>
+                <cms:required-version>required-version19</cms:required-version>
+                <cms:tested-version>tested-version19</cms:tested-version>
+                <cms:description>description29</cms:description>
+                <cms:license uri="uri19">license16</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component20</cms:component>
+                <cms:required-version>required-version20</cms:required-version>
+                <cms:tested-version>tested-version20</cms:tested-version>
+                <cms:description>description30</cms:description>
+                <cms:license uri="uri20">license17</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version21</cms:required-version>
+                <cms:tested-version>tested-version21</cms:tested-version>
+                <cms:description>description31</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version22</cms:required-version>
+                <cms:tested-version>tested-version22</cms:tested-version>
+                <cms:description>description32</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version23</cms:required-version>
+                <cms:tested-version>tested-version23</cms:tested-version>
+                <cms:description>description33</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version3</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version3</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description3</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version4</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version4</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description4</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version5</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version5</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description5</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version24</cms:tested-version>
+                <cms:license uri="uri21">license18</cms:license>
+                <cms:required>required6</cms:required>
+                <cms:description>description34</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version25</cms:tested-version>
+                <cms:license uri="uri22">license19</cms:license>
+                <cms:required>required7</cms:required>
+                <cms:description>description35</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version26</cms:tested-version>
+                <cms:license uri="uri23">license20</cms:license>
+                <cms:required>required8</cms:required>
+                <cms:description>description36</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version27</cms:tested-version>
+                <cms:description>description37</cms:description>
+                <cms:license uri="uri24">license21</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version28</cms:tested-version>
+                <cms:description>description38</cms:description>
+                <cms:license uri="uri25">license22</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version29</cms:tested-version>
+                <cms:description>description39</cms:description>
+                <cms:license uri="uri26">license23</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component30</cms:component>
+                <cms:required-version>required-version30</cms:required-version>
+                <cms:tested-version>tested-version30</cms:tested-version>
+                <cms:description>description40</cms:description>
+                <cms:license uri="uri27">license24</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component31</cms:component>
+                <cms:required-version>required-version31</cms:required-version>
+                <cms:tested-version>tested-version31</cms:tested-version>
+                <cms:description>description41</cms:description>
+                <cms:license uri="uri28">license25</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component32</cms:component>
+                <cms:required-version>required-version32</cms:required-version>
+                <cms:tested-version>tested-version32</cms:tested-version>
+                <cms:description>description42</cms:description>
+                <cms:license uri="uri29">license26</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version33</cms:required-version>
+                <cms:tested-version>tested-version33</cms:tested-version>
+                <cms:description>description43</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version34</cms:required-version>
+                <cms:tested-version>tested-version34</cms:tested-version>
+                <cms:description>description44</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version35</cms:required-version>
+                <cms:tested-version>tested-version35</cms:tested-version>
+                <cms:description>description45</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version6</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version6</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description6</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version7</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version7</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description7</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version8</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version8</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description8</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+        </cms:dependencies>
+<!--        <cms:activities released-in-version="released-in-version0">
+            <cms:epr id="0" uri="uri30">epr0</cms:epr>
+            <cms:epr id="0" uri="uri31">epr1</cms:epr>
+            <cms:epr id="0" uri="uri32">epr2</cms:epr>
+            <cms:epr id="0" uri="uri33">epr3</cms:epr>
+            <cms:epr id="0" uri="uri34">epr4</cms:epr>
+            <cms:epr id="0" uri="uri35">epr5</cms:epr>
+            <cms:epr id="0" uri="uri36">epr6</cms:epr>
+            <cms:epr id="0" uri="uri37">epr7</cms:epr>
+            <cms:epr id="0" uri="uri38">epr8</cms:epr>
+        </cms:activities>-->
+        <cms:dependencies mc-version="7.0.2">
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version36</cms:tested-version>
+                <cms:license uri="uri39">license27</cms:license>
+                <cms:required>required9</cms:required>
+                <cms:description>description46</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version37</cms:tested-version>
+                <cms:license uri="uri40">license28</cms:license>
+                <cms:required>required10</cms:required>
+                <cms:description>description47</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version38</cms:tested-version>
+                <cms:license uri="uri41">license29</cms:license>
+                <cms:required>required11</cms:required>
+                <cms:description>description48</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version39</cms:tested-version>
+                <cms:description>description49</cms:description>
+                <cms:license uri="uri42">license30</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version40</cms:tested-version>
+                <cms:description>description50</cms:description>
+                <cms:license uri="uri43">license31</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version41</cms:tested-version>
+                <cms:description>description51</cms:description>
+                <cms:license uri="uri44">license32</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component42</cms:component>
+                <cms:required-version>required-version42</cms:required-version>
+                <cms:tested-version>tested-version42</cms:tested-version>
+                <cms:description>description52</cms:description>
+                <cms:license uri="uri45">license33</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component43</cms:component>
+                <cms:required-version>required-version43</cms:required-version>
+                <cms:tested-version>tested-version43</cms:tested-version>
+                <cms:description>description53</cms:description>
+                <cms:license uri="uri46">license34</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component44</cms:component>
+                <cms:required-version>required-version44</cms:required-version>
+                <cms:tested-version>tested-version44</cms:tested-version>
+                <cms:description>description54</cms:description>
+                <cms:license uri="uri47">license35</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version45</cms:required-version>
+                <cms:tested-version>tested-version45</cms:tested-version>
+                <cms:description>description55</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version46</cms:required-version>
+                <cms:tested-version>tested-version46</cms:tested-version>
+                <cms:description>description56</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version47</cms:required-version>
+                <cms:tested-version>tested-version47</cms:tested-version>
+                <cms:description>description57</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version9</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version9</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description9</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version10</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version10</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description10</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version11</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version11</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description11</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version48</cms:tested-version>
+                <cms:license uri="uri48">license36</cms:license>
+                <cms:required>required12</cms:required>
+                <cms:description>description58</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version49</cms:tested-version>
+                <cms:license uri="uri49">license37</cms:license>
+                <cms:required>required13</cms:required>
+                <cms:description>description59</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version50</cms:tested-version>
+                <cms:license uri="uri50">license38</cms:license>
+                <cms:required>required14</cms:required>
+                <cms:description>description60</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version51</cms:tested-version>
+                <cms:description>description61</cms:description>
+                <cms:license uri="uri51">license39</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version52</cms:tested-version>
+                <cms:description>description62</cms:description>
+                <cms:license uri="uri52">license40</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version53</cms:tested-version>
+                <cms:description>description63</cms:description>
+                <cms:license uri="uri53">license41</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component54</cms:component>
+                <cms:required-version>required-version54</cms:required-version>
+                <cms:tested-version>tested-version54</cms:tested-version>
+                <cms:description>description64</cms:description>
+                <cms:license uri="uri54">license42</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component55</cms:component>
+                <cms:required-version>required-version55</cms:required-version>
+                <cms:tested-version>tested-version55</cms:tested-version>
+                <cms:description>description65</cms:description>
+                <cms:license uri="uri55">license43</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component56</cms:component>
+                <cms:required-version>required-version56</cms:required-version>
+                <cms:tested-version>tested-version56</cms:tested-version>
+                <cms:description>description66</cms:description>
+                <cms:license uri="uri56">license44</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version57</cms:required-version>
+                <cms:tested-version>tested-version57</cms:tested-version>
+                <cms:description>description67</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version58</cms:required-version>
+                <cms:tested-version>tested-version58</cms:tested-version>
+                <cms:description>description68</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version59</cms:required-version>
+                <cms:tested-version>tested-version59</cms:tested-version>
+                <cms:description>description69</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version12</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version12</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description12</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version13</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version13</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description13</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version14</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version14</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description14</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version60</cms:tested-version>
+                <cms:license uri="uri57">license45</cms:license>
+                <cms:required>required15</cms:required>
+                <cms:description>description70</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version61</cms:tested-version>
+                <cms:license uri="uri58">license46</cms:license>
+                <cms:required>required16</cms:required>
+                <cms:description>description71</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version62</cms:tested-version>
+                <cms:license uri="uri59">license47</cms:license>
+                <cms:required>required17</cms:required>
+                <cms:description>description72</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version63</cms:tested-version>
+                <cms:description>description73</cms:description>
+                <cms:license uri="uri60">license48</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version64</cms:tested-version>
+                <cms:description>description74</cms:description>
+                <cms:license uri="uri61">license49</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version65</cms:tested-version>
+                <cms:description>description75</cms:description>
+                <cms:license uri="uri62">license50</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component66</cms:component>
+                <cms:required-version>required-version66</cms:required-version>
+                <cms:tested-version>tested-version66</cms:tested-version>
+                <cms:description>description76</cms:description>
+                <cms:license uri="uri63">license51</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component67</cms:component>
+                <cms:required-version>required-version67</cms:required-version>
+                <cms:tested-version>tested-version67</cms:tested-version>
+                <cms:description>description77</cms:description>
+                <cms:license uri="uri64">license52</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component68</cms:component>
+                <cms:required-version>required-version68</cms:required-version>
+                <cms:tested-version>tested-version68</cms:tested-version>
+                <cms:description>description78</cms:description>
+                <cms:license uri="uri65">license53</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version69</cms:required-version>
+                <cms:tested-version>tested-version69</cms:tested-version>
+                <cms:description>description79</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version70</cms:required-version>
+                <cms:tested-version>tested-version70</cms:tested-version>
+                <cms:description>description80</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version71</cms:required-version>
+                <cms:tested-version>tested-version71</cms:tested-version>
+                <cms:description>description81</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version15</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version15</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description15</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version16</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version16</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description16</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version17</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version17</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description17</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+        </cms:dependencies>
+<!--        <cms:activities released-in-version="released-in-version1">
+            <cms:epr id="0" uri="uri66">epr9</cms:epr>
+            <cms:epr id="0" uri="uri67">epr10</cms:epr>
+            <cms:epr id="0" uri="uri68">epr11</cms:epr>
+            <cms:epr id="0" uri="uri69">epr12</cms:epr>
+            <cms:epr id="0" uri="uri70">epr13</cms:epr>
+            <cms:epr id="0" uri="uri71">epr14</cms:epr>
+            <cms:epr id="0" uri="uri72">epr15</cms:epr>
+            <cms:epr id="0" uri="uri73">epr16</cms:epr>
+            <cms:epr id="0" uri="uri74">epr17</cms:epr>
+        </cms:activities>-->
+        <cms:dependencies mc-version="7.0.2">
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version72</cms:tested-version>
+                <cms:license uri="uri75">license54</cms:license>
+                <cms:required>required18</cms:required>
+                <cms:description>description82</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version73</cms:tested-version>
+                <cms:license uri="uri76">license55</cms:license>
+                <cms:required>required19</cms:required>
+                <cms:description>description83</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version74</cms:tested-version>
+                <cms:license uri="uri77">license56</cms:license>
+                <cms:required>required20</cms:required>
+                <cms:description>description84</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version75</cms:tested-version>
+                <cms:description>description85</cms:description>
+                <cms:license uri="uri78">license57</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version76</cms:tested-version>
+                <cms:description>description86</cms:description>
+                <cms:license uri="uri79">license58</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version77</cms:tested-version>
+                <cms:description>description87</cms:description>
+                <cms:license uri="uri80">license59</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component78</cms:component>
+                <cms:required-version>required-version78</cms:required-version>
+                <cms:tested-version>tested-version78</cms:tested-version>
+                <cms:description>description88</cms:description>
+                <cms:license uri="uri81">license60</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component79</cms:component>
+                <cms:required-version>required-version79</cms:required-version>
+                <cms:tested-version>tested-version79</cms:tested-version>
+                <cms:description>description89</cms:description>
+                <cms:license uri="uri82">license61</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component80</cms:component>
+                <cms:required-version>required-version80</cms:required-version>
+                <cms:tested-version>tested-version80</cms:tested-version>
+                <cms:description>description90</cms:description>
+                <cms:license uri="uri83">license62</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version81</cms:required-version>
+                <cms:tested-version>tested-version81</cms:tested-version>
+                <cms:description>description91</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version82</cms:required-version>
+                <cms:tested-version>tested-version82</cms:tested-version>
+                <cms:description>description92</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version83</cms:required-version>
+                <cms:tested-version>tested-version83</cms:tested-version>
+                <cms:description>description93</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version18</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version18</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description18</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version19</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version19</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description19</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version20</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version20</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description20</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version84</cms:tested-version>
+                <cms:license uri="uri84">license63</cms:license>
+                <cms:required>required21</cms:required>
+                <cms:description>description94</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version85</cms:tested-version>
+                <cms:license uri="uri85">license64</cms:license>
+                <cms:required>required22</cms:required>
+                <cms:description>description95</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version86</cms:tested-version>
+                <cms:license uri="uri86">license65</cms:license>
+                <cms:required>required23</cms:required>
+                <cms:description>description96</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version87</cms:tested-version>
+                <cms:description>description97</cms:description>
+                <cms:license uri="uri87">license66</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version88</cms:tested-version>
+                <cms:description>description98</cms:description>
+                <cms:license uri="uri88">license67</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version89</cms:tested-version>
+                <cms:description>description99</cms:description>
+                <cms:license uri="uri89">license68</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component90</cms:component>
+                <cms:required-version>required-version90</cms:required-version>
+                <cms:tested-version>tested-version90</cms:tested-version>
+                <cms:description>description100</cms:description>
+                <cms:license uri="uri90">license69</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component91</cms:component>
+                <cms:required-version>required-version91</cms:required-version>
+                <cms:tested-version>tested-version91</cms:tested-version>
+                <cms:description>description101</cms:description>
+                <cms:license uri="uri91">license70</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component92</cms:component>
+                <cms:required-version>required-version92</cms:required-version>
+                <cms:tested-version>tested-version92</cms:tested-version>
+                <cms:description>description102</cms:description>
+                <cms:license uri="uri92">license71</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version93</cms:required-version>
+                <cms:tested-version>tested-version93</cms:tested-version>
+                <cms:description>description103</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version94</cms:required-version>
+                <cms:tested-version>tested-version94</cms:tested-version>
+                <cms:description>description104</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version95</cms:required-version>
+                <cms:tested-version>tested-version95</cms:tested-version>
+                <cms:description>description105</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version21</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version21</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description21</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version22</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version22</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description22</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version23</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version23</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description23</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version96</cms:tested-version>
+                <cms:license uri="uri93">license72</cms:license>
+                <cms:required>required24</cms:required>
+                <cms:description>description106</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version97</cms:tested-version>
+                <cms:license uri="uri94">license73</cms:license>
+                <cms:required>required25</cms:required>
+                <cms:description>description107</cms:description>
+            </cms:local-dependency>
+            <cms:local-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version98</cms:tested-version>
+                <cms:license uri="uri95">license74</cms:license>
+                <cms:required>required26</cms:required>
+                <cms:description>description108</cms:description>
+            </cms:local-dependency>
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version99</cms:tested-version>
+                <cms:description>description109</cms:description>
+                <cms:license uri="uri96">license75</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version100</cms:tested-version>
+                <cms:description>description110</cms:description>
+                <cms:license uri="uri97">license76</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:platform-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>0.0</cms:required-version>
+                <cms:tested-version>tested-version101</cms:tested-version>
+                <cms:description>description111</cms:description>
+                <cms:license uri="uri98">license77</cms:license>
+            </cms:platform-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component102</cms:component>
+                <cms:required-version>required-version102</cms:required-version>
+                <cms:tested-version>tested-version102</cms:tested-version>
+                <cms:description>description112</cms:description>
+                <cms:license uri="uri99">license78</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component103</cms:component>
+                <cms:required-version>required-version103</cms:required-version>
+                <cms:tested-version>tested-version103</cms:tested-version>
+                <cms:description>description113</cms:description>
+                <cms:license uri="uri100">license79</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:third-part-dependency>
+                <cms:component>component104</cms:component>
+                <cms:required-version>required-version104</cms:required-version>
+                <cms:tested-version>tested-version104</cms:tested-version>
+                <cms:description>description114</cms:description>
+                <cms:license uri="uri101">license80</cms:license>
+            </cms:third-part-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version105</cms:required-version>
+                <cms:tested-version>tested-version105</cms:tested-version>
+                <cms:description>description115</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version106</cms:required-version>
+                <cms:tested-version>tested-version106</cms:tested-version>
+                <cms:description>description116</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:monitored-dependency>
+                <cms:component>alarm-srv</cms:component>
+                <cms:required-version>required-version107</cms:required-version>
+                <cms:tested-version>tested-version107</cms:tested-version>
+                <cms:description>description117</cms:description>
+            </cms:monitored-dependency>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version24</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version24</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description24</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version25</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version25</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description25</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+<!--            <cms:integrates-packages>
+                <cms:integrates-packages-name>tmsi_imsi_server</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>integrates-packages-required-version26</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version>integrates-packages-tested-version26</cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>integrates-packages-description26</cms:integrates-packages-description>
+            </cms:integrates-packages>-->
+        </cms:dependencies>
+<!--        <cms:activities released-in-version="released-in-version2">
+            <cms:epr id="0" uri="uri102">epr18</cms:epr>
+            <cms:epr id="0" uri="uri103">epr19</cms:epr>
+            <cms:epr id="0" uri="uri104">epr20</cms:epr>
+            <cms:epr id="0" uri="uri105">epr21</cms:epr>
+            <cms:epr id="0" uri="uri106">epr22</cms:epr>
+            <cms:epr id="0" uri="uri107">epr23</cms:epr>
+            <cms:epr id="0" uri="uri108">epr24</cms:epr>
+            <cms:epr id="0" uri="uri109">epr25</cms:epr>
+            <cms:epr id="0" uri="uri110">epr26</cms:epr>
+        </cms:activities>-->
+    </cms:part-release>
+</cms:release>
