@@ -2,8 +2,9 @@
 
 <cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
-		   
+           !-- xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
+
+
              version="1.0">
     <!-- Basic authoring details -->
     <cms:author>Probe Team</cms:author>
