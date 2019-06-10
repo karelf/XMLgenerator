@@ -9,10 +9,9 @@
             targetNamespace="http://www.anritsu.com/CMS/2.10"
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
-
-    <!-- <xsd:include schemaLocation="http://rdstorage:8081/artifactory/cms-repo-local/com/anritsu/cms-restrictions/current/cms-restrictions-current.xsd"/> -->
             <xsd:include schemaLocation="C:\Users\forkar\Documents\GIT-SVN-BitBuck\XMLgenerator\template\cms-restrictions-current.xsd"/>
  <!--
+        <xsd:include schemaLocation="http://rdstorage:8081/artifactory/cms-repo-local/com/anritsu/cms-restrictions/current/cms-restrictions-current.xsd"/>
         A release represents the act of exposing one or more components to
         the public.
         The release describes basic informations (who did it, when, why),

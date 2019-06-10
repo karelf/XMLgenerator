@@ -2,10 +2,11 @@
 
 <cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           !-- xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
-
-
+            xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 C:\Users\forkar\Documents\GIT-SVN-BitBuck\XMLgenerator\template\CMS-2-10.xsd" 
              version="1.0">
+
+
+<!-- http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd -->
     <!-- Basic authoring details -->
     <cms:author>Probe Team</cms:author>
    <!--  <cms:contact>qmpa@anritsu.com</cms:contact>  non official adress -->
@@ -49,7 +50,7 @@
 	</cms:item>
      <cms:item>
         <cms:name>probe-sims--@project.version@.tgz.md5sum</cms:name>
-        <cms:description>filres probe-sims -@project.version@</cms:description>
+        <cms:description>files probe-sims -@project.version@</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
 	<cms:item>
@@ -181,8 +182,8 @@
 	<cms:precaution>(1) Precautions</cms:precaution> 
 	<cms:precaution>(2) Precautions</cms:precaution> 
 	<cms:precaution>(3) Precautions</cms:precaution> 
-	<cms:precaution>(4) Precautions</cms:precaution> 	
-	<cms:precaution>(5) Precautions</cms:precaution> 	
+	<cms:precaution>(4) Precautions</cms:precaution> 
+	<cms:precaution>(5) Precautions</cms:precaution> 
     
     
     
@@ -1064,10 +1065,10 @@
 
             <cms:activities released-in-version="current release">
                 <cms:epr id="45171" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45171">EPR1 current release</cms:epr>
-                <cms:enh type="ECR" id="111"                   	uri="http://google.com" 	availability="SDR">ECR current release</cms:enh>
-                <cms:enh type="TASK" id="Fiberblaze SW 2.4.4.1" 	uri="http://google.com"	availability="FCA">TASK current release</cms:enh>
-                <cms:enh type="PDP"  id="1562"                  	uri="http://"           	availability="GCA">PDP current release</cms:enh>
-			 <cms:enh type="PDP"  id="2772836"      		uri="http://" 			availability="TQR">PDP 2 current release</cms:enh>
+                <cms:enh type="ECR" id="111" uri="http://google.com" availability="SDR">ECR current release</cms:enh>
+                <cms:enh type="TASK" id="Fiberblaze SW 2.4.4.1" uri="http://google.com"	availability="FCA">TASK current release</cms:enh>
+                <cms:enh type="PDP"  id="1562" uri="http://" availability="GCA">PDP current release</cms:enh>
+			 <cms:enh type="PDP"  id="2772836" uri="http://" availability="TQR">PDP 2 current release</cms:enh>
 
              </cms:activities>
 
