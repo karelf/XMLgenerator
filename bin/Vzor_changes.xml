@@ -18,7 +18,7 @@
     <cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
     <cms:group>Probe</cms:group>
     <cms:summary>Summary</cms:summary>
-    <cms:description>Description</cms:description>
+    <cms:description>Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:description>
     <cms:arch>x86_64</cms:arch>
     
     
@@ -30,7 +30,7 @@
     <!-- Release details -->
     <cms:release-name>probe-sims</cms:release-name>
     <cms:release-long-name>Long name release</cms:release-long-name>
-    <cms:release-version>6.6.6</cms:release-version> <!-- @project.version@ -->
+    <cms:release-version>@project.version@</cms:release-version> <!-- @project.version@ -->
     
     
 <!-- ****************************************************** -->
@@ -214,7 +214,7 @@
             New Features
             Bug Fixing and New Features
         -->
-		<cms:purpose />
+		<cms:purpose></cms:purpose>
 
             <!--
                 Declare the baselines the part release works on
@@ -450,25 +450,25 @@
                 <cms:integrates-packages-name>apmlinux</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@apmlinux.verison@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@apmlinux.verison@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>hpcheck</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@hpcheck.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@hpcheck.version@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>hpe-service</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@hpe-service.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@hpe-service.version@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>scanning-module-sim</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@scanning-module-sim.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@scanning-module-sim.version@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 <!-- monitored dependency  -->
             <cms:monitored-dependency>
@@ -528,14 +528,14 @@
                <cms:description>Compiler</cms:description>
                <cms:license>7.1 Commercial License for Deployment OSS Nokalva  license 9669</cms:license>
           </cms:third-part-dependency>
-	<!-- 	<cms:third-part-dependency> 
+          <cms:third-part-dependency> 
                <cms:component>CentOS-RHEL_FBC</cms:component>
                <cms:required-version>2.1(2).1(2)</cms:required-version>
                <cms:tested-version>2.1(2).1(2)</cms:tested-version>
                <cms:description>Needed for eoCapture (FBC) usage</cms:description>
                <cms:license></cms:license>
           </cms:third-part-dependency>
-	-->	
+
 		<cms:third-part-dependency> 
                <cms:component>DPDK</cms:component>
                <cms:required-version>Any</cms:required-version>
@@ -746,25 +746,25 @@
                 <cms:integrates-packages-name>apmlinux</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@apmlinux.verison@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@apmlinux.verison@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>hpcheck</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@hpcheck.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@hpcheck.version@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>hpe-service</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@hpe-service.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@hpe-service.version@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 		  <cms:integrates-packages>
                 <cms:integrates-packages-name>scanning-module-sim</cms:integrates-packages-name>
                 <cms:integrates-packages-required-version>@scanning-module-sim.version@</cms:integrates-packages-required-version>
                 <cms:integrates-packages-tested-version>@scanning-module-sim.version@</cms:integrates-packages-tested-version>
-                <cms:integrates-packages-description>Description</cms:integrates-packages-description>
+                <cms:integrates-packages-description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam quis nulla. Nulla non lectus sed nisl molestie malesuada. Aenean fermentum risus id tortor. Nulla pulvinar eleifend sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas sollicitudin. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.Nullam sit amet magna in magna gravida vehicula. Donec quis nibh at felis congue commodo. Fusce consectetuer risus a nunc. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Nulla est. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce nibh. Nullam faucibus mi quis velit. Curabitur vitae diam non enim vestibulum interdum.</cms:integrates-packages-description>
             </cms:integrates-packages>
 <!-- monitored dependency --> 
             <cms:monitored-dependency>
@@ -1063,10 +1063,10 @@
 
             <cms:activities released-in-version="current release">
                 <cms:epr id="45171" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45171">EPR1 current release</cms:epr>
-                <cms:enh type="ECR" id="111"                   	uri="http://google.com" 	availability="SDR">ECR current release</cms:enh>
-                <cms:enh type="TASK" id="Fiberblaze SW 2.4.4.1" 	uri="http://google.com"	availability="FCA">TASK current release</cms:enh>
-                <cms:enh type="PDP"  id="1562"                  	uri="http://"           	availability="GCA">PDP current release</cms:enh>
-			 <cms:enh type="PDP"  id="2772836"      		uri="http://" 			availability="TQR">PDP 2 current release</cms:enh>
+                <cms:enh type="ECR" id="111" uri="http://google.com" availability="SDR">ECR current release</cms:enh>
+                <cms:enh type="TASK" id="Fiberblaze SW 2.4.4.1" uri="http://google.com"	availability="FCA">TASK current release</cms:enh>
+                <cms:enh type="PDP"  id="1562" uri="http://" availability="GCA">PDP current release</cms:enh>
+                <cms:enh type="PDP"  id="2772836" uri="http://" availability="TQR">PDP 2 current release</cms:enh>
 
              </cms:activities>
 
@@ -1092,7 +1092,7 @@
                 <cms:epr id="46311" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46311">TEST EPR</cms:epr>
                 <cms:enh type="ECR" uri="http//" availability="GCA" id="2039">TEST ECR</cms:enh>
                 <cms:enh type="TASK" uri="http//" availability="TQR" id="Fiberblaze SW 2.4.4.1">TEST TASK</cms:enh>
-                <cms:enh type="PDP" uri="http//" availability="FCA" id="115">TEST PSP</cms:enh>
+                <cms:enh type="PDP" uri="http//" availability="FCA" id="115">TEST PDP</cms:enh>
             </cms:activities>
 
     <!-- old releases  pro celou verzi MC 12, 13, ... -->
