@@ -1,0 +1,1 @@
+doc-generator.bat Vzor_changes.xml final-xml.xml _str-test.doc docGenerator/str.doc

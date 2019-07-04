@@ -53,12 +53,12 @@
 	</cms:item>
 	<cms:item>
         <cms:name>probe-sims--@project.version@.x86_64.rpm</cms:name>
-        <cms:description>filres probe-sims -@project.version@</cms:description>
+        <cms:description>Install files probe-sims @project.version@.rpm</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
 	<cms:item>
 	<cms:name>probe-sims--@project.version@.x86_64.rpm.md5sum</cms:name>
-        <cms:description>filres probe-sims -@project.version@</cms:description>
+        <cms:description>files probe-sims -@project.version@</cms:description>
         <cms:location>http://utmnnfs/quest7-packages/probe-sims</cms:location>
 	</cms:item>
 <!-- probe-sims END -->    
@@ -72,7 +72,7 @@
 	</cms:item>
 	<cms:item>
 		<cms:name>measif-@project.version@.tgz</cms:name>
-		<cms:description>file qmpa-@project.version@.tgz</cms:description>
+		<cms:description>install file qmpa @project.version@.tgz</cms:description>
 		<cms:location>http://utmnnfs/quest7-packages/measif</cms:location>
 	</cms:item>
 	<cms:item>
