@@ -1,2 +1,3 @@
-bin/createDoc/*.doc
-
+bin/docGenerator/~*.doc*
+bin/~*.doc*
+~*.doc*
