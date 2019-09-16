@@ -354,7 +354,7 @@
                 <cms:enh type="PDP" uri="http//" availability="TQR" id="115">PDP - not fixed</cms:enh>
             </cms:activities>
 
-    <!-- NOT FIXED FATAL current precautions (fatal)  
+    <!-- NOT FIXED FATAL current precautions (fatal)  -->
             <cms:activities released-in-version="NOT_FIXED_FATAL">
                 <cms:epr id="46311" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46311">EPR FATAL</cms:epr>
                 <cms:enh type="ECR" uri="http//" availability="TQR" id="2039">Enhacmen FATAL</cms:enh>
@@ -362,7 +362,7 @@
                 <cms:enh type="PDP" uri="http//" availability="TQR" id="115">PDP FATAL</cms:enh>
             </cms:activities>
 
--->
+
 
     <!-- old releases -->
 
