@@ -1,0 +1,1 @@
+doc-generator.bat Vzor_changes.xml final-xml.xml _rn-test-new-template.doc docGenerator/RN.doc

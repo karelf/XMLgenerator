@@ -137,7 +137,7 @@
                 <cms:customers></cms:customers>
             </cms:other>
 		<cms:other>
-                <cms:name>Other availability type</cms:name>
+                <cms:name>Other availability type 2</cms:name>
                 <cms:mc-version>8.0</cms:mc-version>
                 <cms:level>TQR</cms:level>
                 <cms:description>Other avalability type description 2</cms:description>
@@ -640,12 +640,12 @@
 
     <!-- current release, must be first for generated mail to work!!! -->
 
-            <cms:activities released-in-version="TEST*VERSION">
+            <cms:activities released-in-version="TEST_VERSION">
                 <cms:epr id="45171" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45171">EPR1</cms:epr>
                 <cms:enh type="ECR" id="2039"                   uri="http://google.com" availability="SDR">ECR</cms:enh>
                 <cms:enh type="TASK" id="Fiberblaze SW 2.4.4.1" uri="http://google.com" availability="SDR">TASK</cms:enh>
                 <cms:enh type="PDP"  id="1"                     uri="http://"           availability="TQR">PDP</cms:enh>
-			 <cms:enh type="PDP" uri="http://" availability="TQR" id="1234">Text</cms:enh>
+			 <cms:enh type="PDP" uri="http://" availability="FCA" id="1234">Text</cms:enh>
 
              </cms:activities>
 
