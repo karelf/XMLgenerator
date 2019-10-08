@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    A release represents the act of exposing component to the public.
+    The release describes basic informations (who did it, when, why),
+    and the details of the single  'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage:8081/artifactory/simple/cms-repo-local/com/anritsu/cms/2.10/cms-2.10.xsd"
+											
+             version="1.0">
+  <!-- Basic authoring details -->
+    <cms:author>Probe Team</cms:author>
+   <cms:contact>karel.forst@anritsu.com</cms:contact>
+   <cms:date>@timestamp@</cms:date> 
+	<!-- MUST changes elements - Date, relase-number before create next release -->
+	<!-- @timestamp@ and time format fo manual settings 2017-08-23T12:01:50Z  -->
+    
+	<cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
+    <cms:group>Probe</cms:group>
+    <cms:arch>x86_64</cms:arch>
+ 
+	<!-- version release @project.verison@ -->
+	
+	
+   <!-- The list of distribution mailing list.-->
+   <!-- <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases</cms:distribution-list>  -->
+   <cms:distribution-list type="RELEASE">_EU-GL M4 Engineering Releases</cms:distribution-list> 
+
+   <!-- Release details -->
+   <cms:release-name>li-ether-sim</cms:release-name>
+   <cms:release-version>@project.version@</cms:release-version>
+
+   <!-- List of item releases -->
+   <cms:item>
+       <cms:name>li-ether-sim-@project.version@-1.x86_64.rpm</cms:name>
+       <cms:description>Deployment package for Linux</cms:description>
+       <cms:location>http://utmnnfs/quest7-packages/li-ether-sim</cms:location>
+   </cms:item>
+      
+   <cms:item>
+   <cms:name>li-ether-sim-@project.version@.md5sum</cms:name>
+       <cms:description>Checksum file</cms:description>
+       <cms:location>http://utmnnfs/quest7-packages/li-ether-sim</cms:location>
+   </cms:item>
+
+
+   <!-- Precautions for this release -->
+     <!-- <cms:precaution>for eoCapture (FBC) usage FBC platform patch 2.1.2 is needed</cms:precaution> -->
+   
+   
+
+
+   <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+   <cms:part-release>
+
+       <cms:status>NEW</cms:status>
+       <!--NEW, UPDATE, CANCEL -->
+
+       <!-- Purpose values can be:
+           <Empty>->the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+		  Please not insert any data.
+        -->
+       <cms:purpose/>
+
+       <!--
+            Declare the baselines the part release works on
+        -->
+       <cms:baseline>MasterClaw 8.0</cms:baseline>
+	  <cms:baseline>MasterClaw 8.0.1</cms:baseline>
+
+       <cms:test-level>1</cms:test-level>
+
+       <cms:reference type="STR" name="System Test Report" docName="li-ether-sim-@project.version@-str-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/li-ether-sim/tqr"/>
+       <cms:reference type="STS" name="System Test Specification" docName=""
+                       uri="http://rddoc/rddoc"/>
+       <cms:reference type="MANUAL" name="Probes Installation and Configuration Manual" docName=""
+                       uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw User Documentation/Forms/MasterClaw_8.0.aspx"/>
+
+       <cms:reference type="RN" name="Release Notes" docName="li-ether-sim-@project.version@-rn-v1.doc"
+                       uri="http://utmnnfs/quest7-packages/li-ether-sim/tqr"/>
+       <cms:reference type="QBASE" name="Deployment package for Linux" docName="li-ether-sim-@project.version@-1.x86_64.rpm"
+                       uri="http://utmnnfs/quest7-packages/li-ether-sim/tqr"/> 
+       <!-- <cms:reference type="NOTE" name="VMACRLC2 layer" docName="VMACRLC2.doc"
+                       uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/Product%20Documents/Probes/"/> -->
+
+       <cms:availabilities>
+
+
+           <cms:global>
+               <cms:package>li-ether-sim package for Linux platform</cms:package>
+               <cms:mc-version>8.0</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+           </cms:global>
+		 <cms:global>
+               <cms:package>li-ether-sim package for Linux platform</cms:package>
+               <cms:mc-version>8.0.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+           </cms:global>
+
+   <!-- feature availability, leave in template for future use -->
+	<!-- -->
+		<cms:feature>
+               <cms:name>PDP 138</cms:name>
+               <cms:mc-version>8.0.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+               <cms:reason>Requires further testing</cms:reason>
+               <cms:customers></cms:customers>
+               <cms:description>ECR 2115 - DNS empty Query, should not be captured</cms:description>
+          </cms:feature>
+		<cms:feature>
+               <cms:name>PDP 138</cms:name>
+               <cms:mc-version>8.0.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+               <cms:reason>Requires further testing</cms:reason>
+               <cms:customers></cms:customers>
+               <cms:description>ECR 2206 - IMEI in SIP CSDRs</cms:description>
+          </cms:feature>
+		<cms:feature>
+               <cms:name>PDP 138</cms:name>
+               <cms:mc-version>8.0.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+               <cms:reason>Requires further testing</cms:reason>
+               <cms:customers></cms:customers>
+               <cms:description>ECR 2269 - Ciphering indication in CSDRs for IuB</cms:description>
+          </cms:feature>
+		<cms:feature>
+               <cms:name>PDP 138</cms:name>
+               <cms:mc-version>8.0.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+               <cms:reason>Requires further testing</cms:reason>
+               <cms:customers></cms:customers>
+               <cms:description>ECR 2298 - Correlation optimization in eoNGN for IMS calls</cms:description>
+          </cms:feature>
+          <cms:feature>
+               <cms:name>ECR 1432</cms:name>
+               <cms:mc-version>8.0.1</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:risk>High</cms:risk>
+               <cms:reason>Requires further testing</cms:reason>
+               <cms:customers></cms:customers>
+               <cms:description>UCP protocol support in MasterClaw</cms:description>
+           </cms:feature>
+	<!-- Other availability type 
+          <cms:other>
+               <cms:name>Other availability type</cms:name>
+               <cms:mc-version>8.0</cms:mc-version>
+               <cms:level>TQR</cms:level>
+               <cms:description>Other avalability type description 1: section 1</cms:description>
+               <cms:risk>High</cms:risk>
+               <cms:customers></cms:customers>
+          </cms:other>
+     -->      
+
+	
+     </cms:availabilities>
+
+     <cms:dependencies mc-version="8.0">
+
+       <!-- Platform dependency -->
+        
+           <cms:platform-dependency>
+               <cms:component>CentOS7-x86_64</cms:component>
+               <cms:required-version>5.0.0+</cms:required-version>
+               <cms:tested-version>5.0.7</cms:tested-version>
+               <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+               <cms:license></cms:license>
+           </cms:platform-dependency>
+           <cms:integrates-packages>
+                <cms:integrates-packages-name>li-ether-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-ether-sim-@project.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>purpose of is to intercept the signalling traffic (SoIP probe) or user plane traffic (VoIP probe) carried on IP, to strip the tunnelling protocols if any and to deliver the content to qmpa5 as PDU messages. Further the generated statistics, alarms and optionally also STAT CSDRs are delivered to qmpa5 via TCP socket based SIM interface too. Optionally also the DoIP functionality may be enabled in li-ether-sim. In addition to standard Ethernet interfaces the IP traffic may be captured also using special board types for higher performance using included kernel drivers.</cms:integrates-packages-description>
+           </cms:integrates-packages>
+		 <cms:integrates-packages>
+                <cms:integrates-packages-name>li-usim-ip</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>@li-usim-ip.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10 interfaces carried on IP links, via standard Ethernet interfaces or using special board types for higher performance using included kernel drivers. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
+           </cms:integrates-packages>  
+          
+            
+       <!-- no 3rd party dependency thirdPart  -->
+          <cms:third-part-dependency> 
+               <cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+               <cms:required-version>2.1.2</cms:required-version>
+               <cms:tested-version>2.1.2</cms:tested-version>
+               <cms:description>Needed for FBC usage</cms:description>
+               <cms:license uri=""></cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>ASN.1 Compiler</cms:component>
+               <cms:required-version>9.0.2+</cms:required-version>
+               <cms:tested-version>9.0.2</cms:tested-version>
+               <cms:description>Compiler</cms:description>
+               <cms:license uri="">Commercial License for Deployment OSS Nokalva  license 9669</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>DPDK</cms:component>
+               <cms:required-version>17.02+</cms:required-version>
+               <cms:tested-version>17.02+</cms:tested-version>
+               <cms:description>Libraries and drivers for fast packet processing</cms:description>
+               <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">BSD</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>google protobufs</cms:component>
+               <cms:required-version>3.5.0+</cms:required-version>
+               <cms:tested-version>3.5.0</cms:tested-version>
+               <cms:description>Mechanism for serializing structured data </cms:description>
+               <cms:license uri="https://github.com/google/protobuf/blob/master/LICENSE"></cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>LZ4</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license uri="https://opensource.org/licenses/bsd-license.php">2-Clause BSD license</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>LIBPCAP PCAP library</cms:component>
+               <cms:required-version>1.8.1+</cms:required-version>
+               <cms:tested-version>1.8.1</cms:tested-version>
+               <cms:description>Library for capturing packets</cms:description>
+               <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">3-clause BSD license</cms:license>
+          </cms:third-part-dependency>
+	 
+		<cms:third-part-dependency> 
+               <cms:component>PF_RING</cms:component>
+               <cms:required-version>5.6.1+</cms:required-version>
+               <cms:tested-version>5.6.1</cms:tested-version>
+               <cms:description>PF_RING library</cms:description>
+               <cms:license uri="">BSD, GPL v2</cms:license>
+          </cms:third-part-dependency>
+	 
+		<cms:third-part-dependency> 
+               <cms:component>Qosmos - ixEngine</cms:component>
+               <cms:required-version>5.2.0+</cms:required-version>
+               <cms:tested-version>5.2.0</cms:tested-version>
+               <cms:description>DPI SW engine for IP traffic analysis</cms:description>
+               <cms:license uri="">Commercial License for Deployment  See Section 4 for MasterClaw License Terms.</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>Telchemy - VQMon</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Voice Quality Measurement System</cms:description>
+               <cms:license uri="">Commercial License for Deployment  See Section 4 for MasterClaw License Terms.</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>Unwind</cms:component>
+               <cms:required-version>1.x+</cms:required-version>
+               <cms:tested-version></cms:tested-version>
+               <cms:description>Define a portable and efficient API</cms:description>
+               <cms:license uri="http://www.xfree86.org/3.3.6/COPYRIGHT2.html#3"></cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>ZLIB</cms:component>
+               <cms:required-version>1.2.0+</cms:required-version>
+               <cms:tested-version></cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license uri="https://www.zlib.net/zlib_license.html">Free license for zlib</cms:license>
+			
+          </cms:third-part-dependency>
+	 
+	 
+	 <!-- Local dependency -->      
+          <cms:local-dependency>
+               <cms:component>probe-conf</cms:component> 
+               <cms:required-version>6.0.0+</cms:required-version>
+               <cms:tested-version>6.0.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Configuration data for MC</cms:description>
+          </cms:local-dependency>
+
+          <cms:local-dependency>
+               <cms:component>deploy-server</cms:component>
+               <cms:required-version>6.0.0+</cms:required-version>
+               <cms:tested-version>6.0.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Configuration software for MC</cms:description>
+          </cms:local-dependency>
+            
+          <cms:local-dependency>
+               <cms:component>qmpa5</cms:component>
+               <cms:required-version>7.0.5+</cms:required-version>
+               <cms:tested-version>7.1.2</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>SIM data consumer</cms:description>
+          </cms:local-dependency>
+            
+          <cms:local-dependency>
+               <cms:component>infoservers</cms:component>
+               <cms:required-version>3.4.0+</cms:required-version>
+               <cms:tested-version>3.5.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Needed for ECR 2035</cms:description>
+          </cms:local-dependency>
+            
+          <cms:local-dependency>
+               <cms:component>configtool</cms:component>
+               <cms:required-version>6.0.0+</cms:required-version>
+               <cms:tested-version>6.1.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Configuration software for MC</cms:description>
+          </cms:local-dependency>
+      </cms:dependencies>
+	
+	
+<!-- dependencies MC 8.0.1 -->
+	<cms:dependencies mc-version="8.0.1">
+		<cms:platform-dependency>
+               <cms:component>CentOS7-x86_64</cms:component>
+               <cms:required-version>5.0.0+</cms:required-version>
+               <cms:tested-version>5.0.7</cms:tested-version>
+               <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+               <cms:license></cms:license>
+           </cms:platform-dependency>
+           <cms:integrates-packages>
+                <cms:integrates-packages-name>li-ether-sim</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>li-ether-sim-@project.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>purpose of is to intercept the signalling traffic (SoIP probe) or user plane traffic (VoIP probe) carried on IP, to strip the tunnelling protocols if any and to deliver the content to qmpa5 as PDU messages. Further the generated statistics, alarms and optionally also STAT CSDRs are delivered to qmpa5 via TCP socket based SIM interface too. Optionally also the DoIP functionality may be enabled in li-ether-sim. In addition to standard Ethernet interfaces the IP traffic may be captured also using special board types for higher performance using included kernel drivers.</cms:integrates-packages-description>
+           </cms:integrates-packages>
+		 <cms:integrates-packages>
+                <cms:integrates-packages-name>li-usim-ip</cms:integrates-packages-name>
+                <cms:integrates-packages-required-version>@li-usim-ip.version@</cms:integrates-packages-required-version>
+                <cms:integrates-packages-tested-version></cms:integrates-packages-tested-version>
+                <cms:integrates-packages-description>is intended to monitor UMTS access network, particularly FDD Iub 3GPP Rel10, FDD Iur 3GPP Rel10 interfaces carried on IP links, via standard Ethernet interfaces or using special board types for higher performance using included kernel drivers. The content is delivered to qmpa5 via TCP socket based SIM interface as PDU messages, generated statistics and alarms. For IUB interface traffic deciphering functionality the usim_ctxkey_srv info-server connection is needed as well.</cms:integrates-packages-description>
+           </cms:integrates-packages>  
+          <!-- 
+		<cms:monitored-dependency>
+                <cms:component>ndaf-elasticsearch</cms:component>
+                <cms:required-version>14</cms:required-version>
+                <cms:tested-version>TestedVersiion  8.0.1</cms:tested-version>
+                <cms:description>8.0 Monitored description  8.0.1</cms:description>
+          </cms:monitored-dependency>
+		-->
+            
+       <!-- no 3rd party dependency thirdPart  -->
+          <cms:third-part-dependency> 
+               <cms:component>CentOS-RHEL_FBCsupport_PA</cms:component>
+               <cms:required-version>2.1.2</cms:required-version>
+               <cms:tested-version>2.1.2</cms:tested-version>
+               <cms:description>Needed for FBC usage</cms:description>
+               <cms:license></cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>ASN.1 Compiler</cms:component>
+               <cms:required-version>9.0.2+</cms:required-version>
+               <cms:tested-version>9.0.2</cms:tested-version>
+               <cms:description>Compiler</cms:description>
+               <cms:license>Commercial License for Deployment OSS Nokalva  license 9669</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>DPDK</cms:component>
+               <cms:required-version>17.02+</cms:required-version>
+               <cms:tested-version>17.02+</cms:tested-version>
+               <cms:description>Libraries and drivers for fast packet processing</cms:description>
+               <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">2-Clause BSD licence</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>google protobufs</cms:component>
+               <cms:required-version>3.5.0+</cms:required-version>
+               <cms:tested-version>3.5.0</cms:tested-version>
+               <cms:description>Mechanism for serializing structured data </cms:description>
+               <cms:license uri="https://github.com/google/protobuf/blob/master/LICENSE"></cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>LZ4</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license uri="https://opensource.org/licenses/bsd-license.php">2-Clause BSD license</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>LIBPCAP PCAP library</cms:component>
+               <cms:required-version>1.8.1+</cms:required-version>
+               <cms:tested-version>1.8.1</cms:tested-version>
+               <cms:description>Library for capturing packets</cms:description>
+               <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">3-clause BSD license</cms:license>
+          </cms:third-part-dependency>
+	 
+		<cms:third-part-dependency> 
+               <cms:component>PF_RING</cms:component>
+               <cms:required-version>5.6.1+</cms:required-version>
+               <cms:tested-version>5.6.1</cms:tested-version>
+               <cms:description>PF_RING library</cms:description>
+               <cms:license>BSD, GPL v2</cms:license>
+          </cms:third-part-dependency>
+	 
+		<cms:third-part-dependency> 
+               <cms:component>Qosmos - ixEngine</cms:component>
+               <cms:required-version>5.2.0+</cms:required-version>
+               <cms:tested-version>5.2.0</cms:tested-version>
+               <cms:description>DPI SW engine for IP traffic analysis</cms:description>
+               <cms:license>Commercial License for Deployment  See Section 4 for MasterClaw License Terms.</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>Telchemy - VQMon</cms:component>
+               <cms:required-version>any</cms:required-version>
+               <cms:tested-version>any</cms:tested-version>
+               <cms:description>Voice Quality Measurement System</cms:description>
+               <cms:license>Commercial License for Deployment  See Section 4 for MasterClaw License Terms.</cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>Unwind</cms:component>
+               <cms:required-version>1.x+</cms:required-version>
+               <cms:tested-version></cms:tested-version>
+               <cms:description>Define a portable and efficient API</cms:description>
+               <cms:license uri="http://www.xfree86.org/3.3.6/COPYRIGHT2.html#3"></cms:license>
+          </cms:third-part-dependency>
+		
+		<cms:third-part-dependency> 
+               <cms:component>ZLIB</cms:component>
+               <cms:required-version>1.2.0+</cms:required-version>
+               <cms:tested-version></cms:tested-version>
+               <cms:description>Compression library</cms:description>
+               <cms:license uri="https://www.zlib.net/zlib_license.html">Free license for zlib</cms:license>
+		</cms:third-part-dependency>
+	 
+	 
+	 <!-- Local dependency -->      
+           <cms:local-dependency>
+               <cms:component>probe-conf</cms:component> 
+               <cms:required-version>6.0.0+</cms:required-version>
+               <cms:tested-version>6.0.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Configuration data for MC</cms:description>
+           </cms:local-dependency>
+
+           <cms:local-dependency>
+               <cms:component>deploy-server</cms:component>
+               <cms:required-version>6.0.0+</cms:required-version>
+               <cms:tested-version>6.0.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Configuration software for MC</cms:description>
+           </cms:local-dependency>
+            
+           <cms:local-dependency>
+               <cms:component>qmpa5</cms:component>
+               <cms:required-version>7.0.5+</cms:required-version>
+               <cms:tested-version>7.1.2</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>SIM data consumer</cms:description>
+           </cms:local-dependency>
+            
+           <cms:local-dependency>
+               <cms:component>infoservers</cms:component>
+               <cms:required-version>3.4.0+</cms:required-version>
+               <cms:tested-version>3.5.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Needed for ECR 2035</cms:description>
+           </cms:local-dependency>
+            
+          <cms:local-dependency>
+               <cms:component>configtool</cms:component>
+               <cms:required-version>6.0.0+</cms:required-version>
+               <cms:tested-version>6.1.0</cms:tested-version>
+               <cms:required>No</cms:required>
+               <cms:description>Configuration software for MC</cms:description>
+          </cms:local-dependency>
+	
+	
+	</cms:dependencies>
+
+
+       <!-- current release, must be first for generated mail to work!!! -->
+	  
+
+
+          <cms:activities released-in-version="@project.version@">
+			<cms:enh type="ECR" id="1432" uri="http://" availability="TQR">UCP protocol support in MasterClaw</cms:enh>
+			<cms:enh type="PDP" id="138" uri="http://" availability="TQR">ECR 2115 - DNS empty Query, should not be captured ECR 2206 - IMEI in SIP CSDRs ECR 2269 - Ciphering indication in CSDRs for IuB ECR 2298 - Correlation optimization in eoNGN for IMS calls</cms:enh>
+
+          </cms:activities>
+
+        <!--  must not be first, because first "activities" is used by script as "CurrentReleaseActivities" in mail -->
+        <!-- current precautions (non fatal) 
+
+		<cms:activities released-in-version="NOT_FIXED">
+			<cms:epr id="47822" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47822">Dummy field not present in protocol</cms:epr>
+
+		</cms:activities>
+        -->
+        
+        <!-- NOT FIXED FATAL current precautions (fatal)  
+
+        <cms:activities released-in-version="NOT_FIXED_FATAL">
+            <cms:epr id="45955" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=45955">[li-ether-sim] FBC - Panic bit 51 and 53</cms:epr>
+        </cms:activities>
+        -->
+        
+        
+        <!-- old releases -->
+	   
+	   
+	
+
+
+
+	<!-- Old branch 12.2.x please not activate **********
+	   <cms:activities released-in-version="12.2.4">
+			<cms:epr id="47821" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47821">Inspect coop disconnect "mpa_id" is not disconnecting qmpa in li-ether-sim 12.2.0</cms:epr>
+			<cms:epr id="47859" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47859">Sip traffic with 2 vlans not decoded</cms:epr>
+			<cms:epr id="47073" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47073">qmpa5 and probe-sims list themselves as dependency</cms:epr>
+			<cms:epr id="47822" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47822">Dummy field not present in protocol</cms:epr>
+			<cms:enh type="ECR" id="2014" uri="" availability="FCA">Cooperation group improved redundancy</cms:enh>
+			<cms:enh type="ECR" id="2349" uri="http://intranet2.eu.anritsu.com/SBU6/Test/mc80/ULTR%20Library/PDP%20113%20-%20MC%208.0/ECR%202349%20-%20LDAP%20distribution%20(Phase%201)/ULTR%20ECR%202349%20-%20LDAP%20distribution%20(Phase%201).docx" availability="FCA">LDAP distribution (Phase 1)</cms:enh>
+
+          </cms:activities>
+	   
+	   <cms:activities released-in-version="12.2.2">
+			<cms:epr uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47073" id="47073">qmpa5 and probe-sims list themselves as dependency</cms:epr>
+			<cms:epr uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47821" id="47821">Inspect coop disconnect "mpa_id" is not disconnecting qmpa in li-ether-sim 12.2.0</cms:epr>
+			<cms:epr uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47822" id="47822">Dummy field not present in protocol</cms:epr>
+			<cms:epr uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47836" id="47836">li-ether-sim 12.2.0 restarts when using cooperation group config</cms:epr>
+			<cms:epr uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47859" id="47859">Sip traffic with 2 vlans not decoded</cms:epr>
+          </cms:activities>
+	   
+	    <cms:activities released-in-version="12.2.1">
+               <cms:enh type="PDP" id="138">ECR 2115 - DNS empty Query, should not be captured</cms:enh>
+               <cms:enh type="PDP" id="138">ECR 2269 - Ciphering indication in CSDRs for IuB</cms:enh>
+          </cms:activities>
+	   
+	   
+          <cms:activities released-in-version="12.2.0">
+               <cms:enh type="PDP" id="124">Selfmon evolution (support for eoCapture card and GTPd information)</cms:enh>
+               <cms:enh type="ECR" id="2273">New codecs from Telchemy</cms:enh>
+               <cms:enh type="ECR" id="2349">LDAP distribution (Phase 1)</cms:enh>
+               <cms:epr id="47124" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47124">Security problems in li-ether-sim (Non-restrictive permissions on files and directories)</cms:epr>
+               <cms:epr id="46815" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46815">autoconfiguration scan failed to start</cms:epr>
+               <cms:epr id="47380" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47380">GTP persistency is not functioning</cms:epr>
+          </cms:activities>
+     -->
+	 <!-- Old branch 12.1.x please not activate **********
+		<cms:activities released-in-version="12.1.1">
+                <cms:enh type="PDP" id="124">Selfmon evolution (support for eoCapture card and GTPd information)</cms:enh>
+			<cms:epr id="47124" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47124">Security problems in li-ether-sim (Non-restrictive permissions on files and directories)</cms:epr>
+			<cms:epr id="46815" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46815">autoconfiguration scan failed to start</cms:epr>
+			<cms:epr id="47380" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47380">GTP persistency is not functioning</cms:epr>
+		</cms:activities>
+	 
+		<cms:activities released-in-version="12.1.0">
+			<cms:epr id="47049" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=47049">Rtcp packets are saved multiple times when using data save</cms:epr>
+		</cms:activities>
+		
+	     <cms:activities released-in-version="12.0.4">
+			<cms:enh type="ECR" id="2031">Support for MTP Point Code size for li-ether-sim</cms:enh>
+			<cms:epr id="46704" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46704">li-ether-sim 12.0.2 restarts observed</cms:epr>
+			<cms:enh type="PDP" id="120">Platform Auto Install and Config</cms:enh>
+			<cms:enh type="PDP" id="123">Platform, Platform Security</cms:enh>
+			<cms:enh type="PDP" id="128">Protocols Evolution</cms:enh>
+			<cms:enh type="PDP" id="115">Probe Performance  (Phase 1) </cms:enh>
+			<cms:enh type="ECR" id="1501">SIP over TLS</cms:enh>
+			<cms:enh type="ECR" id="2000">YUM and RPM packaging</cms:enh>
+			<cms:enh type="ECR" id="2035">4G-3G handover for UP_STAT</cms:enh>
+			<cms:enh type="ECR" id="2039">Raw Data Capture</cms:enh>
+			<cms:enh type="ECR" id="2103">Roaming traffic statistics (ph1)</cms:enh>
+			<cms:enh type="ECR" id="2229">MICA Platform security fixes</cms:enh>
+			<cms:enh type="ECR" id="2101">Introduction of Peak Throughput (Phase 1)</cms:enh>
+			<cms:enh type="ECR" id="2158">Package merging for probe</cms:enh>
+			<cms:enh type="ECR" id="2178">Orange vProbe PoC</cms:enh>
+			<cms:enh type="ECR" id="2183">Raw data capture probes - Hardware design improvement</cms:enh>
+			<cms:enh type="ECR" id="2233">Improve IMSI filling</cms:enh>
+		</cms:activities>
+	   
+	   
+       
+		<cms:activities released-in-version="12.0.3">
+            <cms:epr id="46730" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46730">probe connectivity lost when sending snapshots</cms:epr>
+            <cms:epr id="46728" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46728">Qosmos5Worker::Qosmos5Worker(Qosmos5Class*): Assertion `m...</cms:epr>
+            <cms:enh type="ECR" id="2056">rtp header saving part</cms:enh>
+		</cms:activities>
+       
+		<cms:activities released-in-version="12.0.2">
+            <cms:enh type="PDP" id="116">DPDK vProbe prototype v1</cms:enh>
+            <cms:enh type="ECR" id="2103">Roaming traffic statistics, Phase 1: Support of GTPv0 in CP_STATS and UP_STATS</cms:enh>
+            <cms:enh type="ECR" id="2103">Roaming traffic statistics, Phase 2: Counting large and total IP packets on CP_SUMMARY CSDR</cms:enh>
+            <cms:enh type="ECR" id="2101">Introduction of Peak Throughput measures</cms:enh>
+            <cms:epr id="46575" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46575">q7adm start li-ether-sim displays error package not installed</cms:epr>
+		</cms:activities>
+
+       <cms:activities released-in-version="12.0.1 Cancelled" /> 
+
+		<cms:activities released-in-version="12.0.0">
+            <cms:enh type="ECR" id="2158">Package merging for probe</cms:enh>
+
+		</cms:activities>
+       
+		<cms:activities released-in-version="5.1.2">
+            <cms:epr id="46225" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46225">vlan traffic is not captured on ethernet intefaces</cms:epr>
+		</cms:activities>
+	- old branche 12.1.x -->  
+
+		
+  </cms:part-release>
+
+</cms:release>
