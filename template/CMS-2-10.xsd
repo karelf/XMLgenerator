@@ -1,0 +1,368 @@
+
+
+<!--
+    The XML Schema Definition for XML Releases, version 1.0
+    Copyright 2014 Anritsu. All rights reserved.
+-->
+<xsd:schema xmlns:cms="http://www.anritsu.com/CMS/2.10"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.anritsu.com/CMS/2.10"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+            <xsd:include schemaLocation="C:\Users\forkar\Documents\GIT-SVN-BitBuck\XMLgenerator\template\cms-restrictions-current.xsd"/>
+ <!--
+        <xsd:include schemaLocation="http://rdstorage:8081/artifactory/cms-repo-local/com/anritsu/cms-restrictions/current/cms-restrictions-current.xsd"/>
+        A release represents the act of exposing one or more components to
+        the public.
+        The release describes basic informations (who did it, when, why),
+        and the details of the single 'Part Release's the release comprises.
+    -->
+ 
+    <xsd:element name="release">
+        <xsd:complexType>
+            <xsd:sequence>
+                <!--
+                    Details of the Releaser
+                -->
+                <xsd:element name="author" type="xsd:string" />
+                <xsd:element name="contact" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="date" type="xsd:dateTime" />
+          <xsd:element name="tier" type="cms:tier-type" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="group" type="cms:group-type" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="summary" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="arch" type="cms:arch-type" minOccurs="0" maxOccurs="1"/>
+
+
+                <!--
+                    The list of distribution mailing list.
+                    For testing purposes own email address can be used instead of Developers of Releases.
+                 -->
+                <xsd:element name="distribution-list" type="cms:distribution-list-type"  minOccurs="1" maxOccurs="unbounded"/>
+
+                <!--
+                    Details of the SW released
+                -->
+                <xsd:element name="release-name" type="cms:component-name-enumeration" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="release-long-name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="release-version" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+
+
+                <!--
+                    The list of items released. The list must contain only installable files or md5sum. (rpm, tgz, gz, pkg, sh, exe, md5sum)
+                -->
+                <xsd:element name="item"
+                             type="cms:item-type"
+                             minOccurs="1"
+                             maxOccurs="unbounded"/>
+
+                <!--
+                    The list of precautions, if any.
+                -->
+                <xsd:element name="precaution" minOccurs="0" maxOccurs="unbounded"/>
+
+                <!--
+                    The parts we are releasing. We need at least one
+                -->
+                <xsd:element name="part-release"
+                             type="cms:part-release-type"
+                             minOccurs="1"
+                             maxOccurs="1"/>
+
+                  <!--
+                    The role to which the packet belongs
+                -->
+                <!--xsd:element name="role"
+                             type="xsd:string"
+                             minOccurs="1"
+                             maxOccurs="1"/-->            
+
+            </xsd:sequence>
+
+            <!--
+                The version of the format. It may be used by applications
+                to apply different logic to validate and import data
+            -->
+            <xsd:attribute name="version" type="cms:version-type"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--
+        A Product Release represents a release of the Product. The element
+        "product" shall exist in the system, while the version can be
+        created if missing.
+    -->
+    <xsd:complexType name="product-release-type">
+        <xsd:sequence>
+            <xsd:element name="product" type="xsd:string"/>
+            <xsd:element name="version" type="cms:version-type"/>
+            <xsd:element name="availability" type="cms:availability-level-type"/>
+        </xsd:sequence>
+    </xsd:complexType>	
+    
+ <!--
+        One of the parts we are releasing.
+    -->
+    <xsd:complexType name="part-type">
+        <xsd:sequence>
+            <xsd:element name="codename" type="cms:codename-type"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="description" type="xsd:string"/>
+            <xsd:element name="type">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Anritsu Software"/>
+                        <xsd:enumeration value="Anritsu Hardware"/>
+                        <xsd:enumeration value="Anritsu License"/>
+                        <xsd:enumeration value="3rd Party Software"/>
+                        <xsd:enumeration value="3rd Party Hardware"/>
+                        <xsd:enumeration value="3rd Party License"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+        One of the parts we are releasing.
+    -->
+    <xsd:complexType name="part-release-type">
+        <xsd:sequence>
+            <xsd:element name="status">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="NEW"/>
+                        <xsd:enumeration value="UPDATE"/>
+                        <xsd:enumeration value="CANCEL"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="purpose" type="xsd:string"/>
+            <xsd:element name="baseline" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element name="test-level" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="reference" type="cms:reference-type" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="availabilities" type="cms:availabilities-type" minOccurs="1" maxOccurs="1" />
+            <xsd:choice minOccurs="1" maxOccurs="unbounded">
+                <xsd:element name="dependencies" type="cms:dependencies-type"/>
+                <xsd:element name="activities" type="cms:activity-list-type"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--These are basic type. They can be resused multiple times in the
+    schema definition. RN and STR type are mandatory for automatic release-->
+
+    <xsd:complexType name="reference-type">
+        <xsd:attribute name="codename" type="cms:codename-type"/>
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="uri" type="xsd:string" use="required"/>
+        <xsd:attribute name="docName" type="xsd:string" use="required"/>
+        <xsd:attribute name="level" type="xsd:string"/>
+        <xsd:attribute name="type" type="cms:reference-type-type" use="required" />
+    </xsd:complexType>
+
+    <!--
+    -->
+    <xsd:complexType name="item-type">
+        <xsd:sequence>
+            <xsd:element name="name"  minOccurs="1"  type="xsd:string" />
+            <xsd:element name="description"  minOccurs="1"  type="xsd:string" />
+            <xsd:element name="location"  minOccurs="1"  type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+    -->
+    <xsd:complexType name="availabilities-type">
+        <xsd:sequence>
+            <xsd:element name="global"  minOccurs="1" maxOccurs="unbounded" type="cms:global-availability-type" />
+            <xsd:element name="feature" minOccurs="0" maxOccurs="unbounded" type="cms:feature-availability-type" />
+            <xsd:element name="other" minOccurs="0" maxOccurs="unbounded" type="cms:other-availability-type" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+    -->
+    <xsd:complexType name="global-availability-type">
+        <xsd:sequence>
+            <xsd:element name="package" type="xsd:string" />
+            <xsd:element name="mc-version" type="cms:mc-version-type" />
+            <xsd:element name="level" type="cms:availability-level-type" />
+            <xsd:element name="risk" type="cms:risk-level-type" />
+            <xsd:element name="reason" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="customers" type="cms:customers" minOccurs="0"/>
+            <xsd:element name="note" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+    -->
+    <xsd:complexType name="feature-availability-type">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="mc-version" type="cms:mc-version-type" />
+            <xsd:element name="level" type="cms:availability-level-type" />
+            <xsd:element name="risk" type="cms:risk-level-type" />
+            <xsd:element name="reason" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="customers" type="cms:customers" minOccurs="0"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+    -->
+    <xsd:complexType name="other-availability-type">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="mc-version" type="cms:mc-version-type" />
+            <xsd:element name="level" type="cms:availability-level-type" />
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="risk" type="cms:risk-level-type" minOccurs="0"/>
+            <xsd:element name="customers" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+ 
+ <!--
+ -->
+    <xsd:complexType name="third-part-dependency-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="xsd:string"/>
+            <xsd:element name="required-version" type="xsd:string"/>
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+ 
+    <!--
+ -->
+    <xsd:complexType name="dependency-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="cms:component-name-enumeration"/>
+            <xsd:element name="required-version">
+   <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[+]?"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+   </xsd:element>
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+ -->
+    <xsd:complexType name="dependency-local-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="cms:component-name-enumeration"/>
+            <xsd:element name="required-version">
+   <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="([0-9]{1,3})[.]([0-9]{1,3})[.]?([0-9]{1,3})?[.]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[.|-]?([0-9]{1,3})?[+]?"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+   </xsd:element>
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="license" type="cms:license-type" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="required" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="monitored-type">
+        <xsd:sequence>
+            <xsd:element name="component" type="cms:component-name-enumeration"/>
+            <xsd:element name="required-version" type="xsd:string"/>
+            <xsd:element name="tested-version" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="dependencies-type">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="local-dependency" type="cms:dependency-local-type"/>
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="platform-dependency" type="cms:dependency-type"/>
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="third-part-dependency" type="cms:third-part-dependency-type"/>
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="monitored-dependency" type="cms:monitored-type"/>
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="integrates-packages" type="cms:integrates-packages"/>
+        </xsd:choice>
+        <xsd:attribute  name="mc-version" type="cms:mc-version-type"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="integrates-packages">
+    	<xsd:sequence>
+            <xsd:element name="integrates-packages-name" type="cms:integrates-packages-name"/>
+            <xsd:element name="integrates-packages-required-version" type="xsd:string"/>
+            <xsd:element name="integrates-packages-tested-version" type="xsd:string"/>
+            <xsd:element name="integrates-packages-description" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <!--
+    -->
+    <xsd:complexType name="activity-list-type">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="epr" type="cms:activity-type-epr"/>
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="enh" type="cms:activity-type-enh"/>
+        </xsd:choice>
+        <xsd:attribute  name="released-in-version" type="xsd:string"/>
+    </xsd:complexType>
+
+    <!--
+    -->
+    <xsd:complexType name="activity-type-epr">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute  name="id" type="xsd:integer" use="required"/>
+                <xsd:attribute  name="uri" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>   
+ 
+ <xsd:complexType name="activity-type-enh">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute  name="id" type="xsd:string" />
+                <xsd:attribute  name="uri" type="xsd:string"/>
+                <xsd:attribute  name="type" type="cms:activity-type-enumeration-list"/>
+    <xsd:attribute  name="availability" type="cms:availability-level-type" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>  
+
+    <!--
+   -->
+    <xsd:complexType name="license-type">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute  name="uri" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="distribution-list-type">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute  name="type" type="cms:distribution-list-enumeration"/>
+                <xsd:attribute  name="email" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>    
+
+    <xsd:complexType name="customers">
+        <xsd:sequence>
+            <xsd:element minOccurs="0"  maxOccurs="unbounded" name="customer" type="cms:customer-list-enumeration"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
